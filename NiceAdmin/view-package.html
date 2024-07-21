@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Package - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <style>
+      .custom-dropdown-toggle::after {
+        margin-left: 25px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .w-220px {
+        width: 220px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <!-- End Profile Page Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <!-- Step 1 -->
+      <div id="step1" class="step">
+        <div class="text-center mt-4">
+          <h5><small>Lengkapi form berikut</small></h5>
+        </div>
+
+        <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+          <h6>Lokasi Indekos</h6>
+          <a href="#" class="card-link" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#editLocationModal">ubah</a>
+        </div>
+
+        <div class="alamat alert alert-light">
+          <h6 class="kos mt-3 mb-2" style="font-weight: bold; font-size: 17px"><i class="bi bi-geo-alt-fill"></i> Kost Pondok Amanah</h6>
+          <p class="jalan mb-1" style="font-size: 15.5px">Jl. Radio Sukabirus</p>
+          <p class="daerah text-muted"><small>Dayeuhkolot</small></p>
+          <div class="col-md-12 mb-2">
+            <input type="text" class="patokan form-control" placeholder="Tambah patokan" />
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="editLocationModal" tabindex="-1" aria-labelledby="editLocationModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="editLocationModalLabel">Edit Lokasi</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="saved-locations-tab" data-bs-toggle="tab" href="#saved-locations" role="tab" aria-controls="saved-locations" aria-selected="true">Alamat Favorit</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="maps-tab" data-bs-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="false">Cari di Maps</a>
+                  </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content mt-3">
+                  <div class="tab-pane fade show active" id="saved-locations" role="tabpanel" aria-labelledby="saved-locations-tab">
+                    <!-- Form for saved locations -->
+                    <form id="editLocationForm">
+                      <div class="pagetitle mt-4">
+                        <h6>Pilih Alamat</h6>
+                      </div>
+
+                      <div class="mb-4">
+                        <ul class="list-group">
+                          <li class="list-group-item">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
+                              <label class="form-check-label" for="gridRadios1">
+                                <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Pondok Amanah</h6>
+                                <p class="card-text mb-1" style="font-size: 14px">Jl. Radio Sukabirus</p>
+                                <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
+                              <label class="form-check-label" for="gridRadios2">
+                                <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Aminah</h6>
+                                <p class="card-text mb-1" style="font-size: 14px">Jl. Umayyah Sukapura</p>
+                                <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
+                              </label>
+                            </div>
+                          </li>
+                          <li class="list-group-item">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" />
+                              <label class="form-check-label" for="gridRadios3">
+                                <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Cobain ngeKost</h6>
+                                <p class="card-text mb-1" style="font-size: 14px">Jl. Cengkeh II</p>
+                                <p class="card-text text-muted"><small>Bojongsoang</small></p>
+                              </label>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <button type="submit" class="btn btn-primary">Simpan</button>
+                    </form>
+                  </div>
+                  <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+                    <div class="mb-2 col-12">
+                      <input type="text" id="streetAddress" class="form-control" placeholder="Cari alamat..." />
+                    </div>
+                    <div class="mb-3">
+                      <button class="btn btn-light btn-sm"><i class="bi-crosshair2" style="color: chocolate"></i> Gunakan lokasi saat ini</button>
+                    </div>
+                    <!-- Embed Google Maps iframe or any map search functionality here -->
+                    <div id="map-container" style="height: 300px">
+                      <iframe src="https://maps.google.com/maps?q=-6.934469,107.605186&z=15&output=embed" width="100%" height="100%" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+          <h6>Ukuran Kamar</h6>
+        </div>
+
+        <div class="alert alert-info">
+          <h4 class="alert-heading">Info Heading</h4>
+          <p>Et suscipit deserunt earum itaque dignissimos</p>
+          <hr />
+          <p class="mb-0">Temporibus quis et qui</p>
+        </div>
+
+        <div class="card-deck">
+          <div class="card">
+              <img src="small-room.png" class="card-img-top" alt="Small Room">
+              <div class="card-body">
+                  <h5 class="card-title">Small</h5>
+                  <p class="card-text">≤ 7 m²</p>
+                  <p class="card-text"><strong>Rp5.000</strong></p>
+                  <button class="btn btn-primary">Pilih</button>
+              </div>
+          </div>
+          <div class="card">
+              <img src="regular-room.png" class="card-img-top" alt="Regular Room">
+              <div class="card-body">
+                  <h5 class="card-title">Regular</h5>
+                  <p class="card-text">7.1 - 11.5 m²</p>
+                  <p class="card-text"><strong>Rp10.000</strong></p>
+                  <button class="btn btn-primary">Pilih</button>
+              </div>
+          </div>
+          <div class="card">
+              <img src="big-room.png" class="card-img-top" alt="Big Room">
+              <div class="card-body">
+                  <h5 class="card-title">Big</h5>
+                  <p class="card-text">> 11.5 m²</p>
+                  <p class="card-text"><strong>Rp15.000</strong></p>
+                  <button class="btn btn-primary">Pilih</button>
+              </div>
+          </div>
+      </div>
+      
+
+        <p class="card-text text-muted mt-3">
+          <small>*Aturan dan Ketentuan <a href="">berlaku</a></small>
+        </p>
+      </div>
+      <!-- End Step 1 -->
+    </main>
+
+    <!-- Toast Container -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="customAlertToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Alert</strong>
+          <small class="text-muted">just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Silakan pilih minimal 3 layanan</div>
+      </div>
+    </div>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+  </body>
+</html>

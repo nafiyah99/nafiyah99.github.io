@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Package - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+    <style>
+      .schedule-delivery {
+        max-width: 400px;
+        margin: auto;
+        padding: 20px;
+      }
+      .picker-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2px;
+      }
+      .picker-display {
+        min-width: 220px;
+        text-align: center;
+        font-size: 18px;
+      }
+      .selected-schedule {
+        margin-top: 20px;
+        text-align: center;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="alert alert-light">
+        <div class="container">
+          <div class="schedule-delivery">
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+              <h6>Pilih Jadwal</h6>
+            </div>
+            <h6 class="mb-3"><small>Jadwal Operasional: 07:00 - 21:00</small></h6>
+
+            <div class="alert alert-light">
+              <div class="mb-3">
+                <label class="form-label">Tanggal:</label>
+                <div class="alert alert-light">
+                  <div class="picker-container">
+                    <button id="prev-date" class="btn btn-light "><i class="bi bi-chevron-left"></i></button>
+                    <div id="date-display" class="picker-display">Minggu, 30 Juni</div>
+                    <button id="next-date" class="btn btn-light "><i class="bi bi-chevron-right"></i></button>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Waktu:</label>
+                <div class="alert alert-light">
+                  <div class="picker-container">
+                    <button id="prev-time" class="btn btn-light "><i class="bi bi-chevron-left"></i></button>
+                    <div id="time-display" class="picker-display">21:00</div>
+                    <button id="next-time" class="btn btn-light "><i class="bi bi-chevron-right"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button id="schedule-button" class="btn btn-primary w-100">Jadwalkan Pesanan</button>
+            <div id="saved-schedule" class="selected-schedule">Jadwal disimpan: -</div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        const daysOfWeek = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+        const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+
+        const dates = [];
+        for (let i = 0; i < 7; i++) {
+          const date = new Date();
+          date.setDate(date.getDate() + i);
+          dates.push(date);
+        }
+
+        const times = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
+
+        let dateIndex = 0;
+        let timeIndex = 12; // Set default time to 21:00
+
+        const dateDisplay = document.getElementById('date-display');
+        const timeDisplay = document.getElementById('time-display');
+        const savedSchedule = document.getElementById('saved-schedule');
+
+        function formatDate(date) {
+          return `${daysOfWeek[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
+        }
+
+        function updateDisplays() {
+          dateDisplay.textContent = formatDate(dates[dateIndex]);
+          timeDisplay.textContent = times[timeIndex];
+        }
+
+        function loadSavedSchedule() {
+          const savedDate = localStorage.getItem('savedDate');
+          const savedTime = localStorage.getItem('savedTime');
+          if (savedDate && savedTime) {
+            savedSchedule.textContent = `Jadwal disimpan: ${savedDate}, ${savedTime}`;
+
+            const savedDateIndex = dates.findIndex((date) => formatDate(date) === savedDate);
+            const savedTimeIndex = times.indexOf(savedTime);
+
+            if (savedDateIndex !== -1) dateIndex = savedDateIndex;
+            if (savedTimeIndex !== -1) timeIndex = savedTimeIndex;
+          } else {
+            savedSchedule.textContent = 'Jadwal disimpan: -';
+          }
+        }
+
+        document.getElementById('prev-date').addEventListener('click', () => {
+          if (dateIndex > 0) {
+            dateIndex--;
+            updateDisplays();
+          }
+        });
+
+        document.getElementById('next-date').addEventListener('click', () => {
+          if (dateIndex < dates.length - 1) {
+            dateIndex++;
+            updateDisplays();
+          }
+        });
+
+        document.getElementById('prev-time').addEventListener('click', () => {
+          if (timeIndex > 0) {
+            timeIndex--;
+            updateDisplays();
+          }
+        });
+
+        document.getElementById('next-time').addEventListener('click', () => {
+          if (timeIndex < times.length - 1) {
+            timeIndex++;
+            updateDisplays();
+          }
+        });
+
+        document.getElementById('schedule-button').addEventListener('click', function () {
+          const selectedDate = formatDate(dates[dateIndex]);
+          const selectedTime = times[timeIndex];
+
+          localStorage.setItem('savedDate', selectedDate);
+          localStorage.setItem('savedTime', selectedTime);
+
+          alert(`Pengantaran dijadwalkan pada ${selectedDate} pukul ${selectedTime}`);
+          loadSavedSchedule();
+        });
+
+        // Load saved schedule on page load
+        loadSavedSchedule();
+        updateDisplays();
+      });
+    </script>
+  </body>
+</html>

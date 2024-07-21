@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Package - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intro.js/minified/introjs.min.css" />
+    <style>
+      .measurement-guide {
+        margin: 20px 0;
+      }
+      .measurement-guide h5 {
+        margin-bottom: 10px;
+      }
+      .measurement-guide p {
+        margin-bottom: 5px;
+      }
+    </style>
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <style>
+      .bullet {
+        font-size: 14px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      /* Container for the progress bar */
+      .progress-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      /* Wrapper for the progress bar circles and lines */
+      .progress-bar-wrapper {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Style for the circles */
+      .progress-bar-circle {
+        width: 20px;
+        height: 20px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+      }
+
+      /* Style for the lines between circles */
+      .progress-bar-line {
+        width: 150px;
+        height: 2px;
+        background-color: #ccc;
+        display: inline-block;
+        vertical-align: middle;
+        transition: background-color 0.3s;
+      }
+
+      /* Active state */
+      .progress-bar-circle.active {
+        background-color: #4caf50;
+      }
+
+      .progress-bar-line.active {
+        background-color: #4caf50;
+      }
+
+      /* Label under the progress bar */
+      .progress-bar-label {
+        margin-top: 10px;
+        font-size: 14px;
+        color: #aaa;
+      }
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+
+      @media only screen and (max-width: 725px) {
+        .card-container .collapse #ukuranKamar {
+          flex-direction: column;
+        }
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 6px;
+      }
+
+      .hitung p {
+        font-size: 15px;
+      }
+
+      .form-control {
+        margin-bottom: 10px;
+      }
+      .initial-text {
+        color: red;
+      }
+      .result-text {
+        color: green;
+      }
+      .bold-text {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <!-- End Profile Page Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Pesanan</h5>
+
+          <!-- Custom Progress Indicator -->
+          <div class="progress-container">
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar-circle" id="circle1"></div>
+              <div class="progress-bar-line" id="line1"></div>
+              <div class="progress-bar-circle" id="circle2"></div>
+              <div class="progress-bar-line" id="line2"></div>
+              <div class="progress-bar-circle" id="circle3"></div>
+            </div>
+          </div>
+          <!-- End Custom Progress Indicator -->
+
+          <!-- Step 1 -->
+          <div id="step1" class="step">
+            <div class="text-center mt-4">
+              <h5><small>Lengkapi form berikut</small></h5>
+            </div>
+
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+              <h6>Lokasi Indekos</h6>
+              <a href="#" class="card-link" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#editLocationModal">ubah</a>
+            </div>
+
+            <div class="alamat alert alert-light">
+              <h6 class="kos mt-3 mb-2" style="font-weight: bold; font-size: 17px"><i class="bi bi-geo-alt-fill"></i> Kost Pondok Amanah</h6>
+              <p class="jalan mb-1" style="font-size: 15.5px">Jl. Radio Sukabirus</p>
+              <p class="daerah text-muted"><small>Dayeuhkolot</small></p>
+              <div class="col-md-12 mb-2">
+                <input type="text" class="patokan form-control" placeholder="Tambah patokan" />
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="editLocationModal" tabindex="-1" aria-labelledby="editLocationModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="editLocationModalLabel">Edit Lokasi</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="saved-locations-tab" data-bs-toggle="tab" href="#saved-locations" role="tab" aria-controls="saved-locations" aria-selected="true">Alamat Favorit</a>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="maps-tab" data-bs-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="false">Cari di Maps</a>
+                      </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content mt-3">
+                      <div class="tab-pane fade show active" id="saved-locations" role="tabpanel" aria-labelledby="saved-locations-tab">
+                        <!-- Form for saved locations -->
+                        <form id="editLocationForm">
+                          <div class="pagetitle mt-4">
+                            <h6>Pilih Alamat</h6>
+                          </div>
+
+                          <div class="mb-4">
+                            <ul class="list-group">
+                              <li class="list-group-item">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
+                                  <label class="form-check-label" for="gridRadios1">
+                                    <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Pondok Amanah</h6>
+                                    <p class="card-text mb-1" style="font-size: 14px">Jl. Radio Sukabirus</p>
+                                    <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
+                                  </label>
+                                </div>
+                              </li>
+                              <li class="list-group-item">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
+                                  <label class="form-check-label" for="gridRadios2">
+                                    <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Aminah</h6>
+                                    <p class="card-text mb-1" style="font-size: 14px">Jl. Umayyah Sukapura</p>
+                                    <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
+                                  </label>
+                                </div>
+                              </li>
+                              <li class="list-group-item">
+                                <div class="form-check">
+                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" />
+                                  <label class="form-check-label" for="gridRadios3">
+                                    <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Cobain ngeKost</h6>
+                                    <p class="card-text mb-1" style="font-size: 14px">Jl. Cengkeh II</p>
+                                    <p class="card-text text-muted"><small>Bojongsoang</small></p>
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+
+                          <button type="submit" class="btn btn-primary">Simpan</button>
+                        </form>
+                      </div>
+                      <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+                        <div class="mb-2 col-12">
+                          <input type="text" id="streetAddress" class="form-control" placeholder="Cari alamat..." />
+                        </div>
+                        <div class="mb-3">
+                          <button class="btn btn-light btn-sm"><i class="bi-crosshair2" style="color: chocolate"></i> Gunakan lokasi saat ini</button>
+                        </div>
+                        <!-- Embed Google Maps iframe or any map search functionality here -->
+                        <div id="map-container" style="height: 300px">
+                          <iframe src="https://maps.google.com/maps?q=-6.934469,107.605186&z=15&output=embed" width="100%" height="100%" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center" id="choose">
+              <h6>Kategori Kamar</h6>
+            </div>
+
+            <div class="hitung alert alert-info">
+              <h4 class="alert-heading">Info</h4>
+              <p>Kategori kamar ditentukan oleh luas kamar dalam meter persegi (m²). Pilih kategori kamar yang tepat sesuai luas kamar Anda berdasarkan tabel berikut:</p>
+              <table>
+                <tr>
+                  <th>Kategori Kamar</th>
+                  <th>Luas Kamar (m²)</th>
+                </tr>
+                <tr>
+                  <td>Big</td>
+                  <td>> 11.5</td>
+                </tr>
+                <tr>
+                  <td>Regular</td>
+                  <td>7.1 - 11.5 m²</td>
+                </tr>
+                <tr>
+                  <td>Small</td>
+                  <td>≤ 7 m²</td>
+                </tr>
+              </table>
+              <hr />
+              <p class="mb-0">Gunakan tutorial di bawah untuk membantu Anda mengetahui kategori kamar Anda</p>
+              <br />
+              <button
+                class="btn btn-light btn-sm alert alert-light mb-3 d-flex align-items-center"
+                type="button"
+                style="height: 40px"
+                data-bs-toggle="collapse"
+                data-bs-target="#ukuranKamar"
+                aria-expanded="false"
+                aria-controls="ukuranKamar"
+              >
+                Cara Mengukur Luas Kamar
+              </button>
+            </div>
+
+            <div class="card-container">
+              <div class="collapse" id="ukuranKamar">
+                <div class="card mb-3">
+                  <div class="card-body mt-4">
+                    <h6>Cara Mengukur Luas Kamar</h6>
+                    <!-- <div class="mt-3 d-flex flex-wrap justify-content-around btn-container">
+                      <div class="dropdown">
+                        <button
+                          style="height: 38.33px; width: 168px"
+                          class="ulasan-dropdown-toggle btn btn-light btn-sm alert alert-light text-start d-flex align-items-center ulasan"
+                          type="button"
+                          id="dropdownMenuButton"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Semua Ulasan <i class="ms-4 bi bi-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="dropdownMenuButton">
+                          <li><a class="dropdown-item rounded-2 active" href="#" data-value="">Semua Ulasan</a></li>
+                          <li><a class="dropdown-item rounded-2" href="#" data-value="Essential Clean">Essential Clean</a></li>
+                          <li><a class="dropdown-item rounded-2" href="#" data-value="Intensive Clean">Intensive Clean</a></li>
+                          <li><a class="dropdown-item rounded-2" href="#" data-value="Flexible Clean">Flexible Clean</a></li>
+                        </ul>
+                      </div>
+                    </div> -->
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="alert alert-light">
+                          <h5 class="card-text">Mengukur Kamar dengan Jengkal Tangan</h5>
+                          <p class="card-text">1. Buka tangan Anda dengan jari-jari tersebar.</p>
+                          <p class="card-text">2. Ukur panjang kamar Anda dengan meletakkan jengkal tangan satu di depan yang lain dari ujung ke ujung.</p>
+                          <p class="card-text">3. Hitung berapa jengkal yang dibutuhkan untuk panjang kamar.</p>
+                          <p class="card-text">4. Lakukan hal yang sama untuk lebar kamar.</p>
+                          <p class="card-text">5. Kalikan jumlah jengkal dengan 20 cm (rata-rata panjang jengkal) untuk mendapatkan panjang dan lebar dalam cm, kemudian konversikan ke meter.</p>
+                          <p class="card-text">
+                            Contoh: Jika panjang kamar adalah 15 jengkal dan lebar adalah 10 jengkal, maka panjang kamar adalah 15 * 20 cm = 300 cm = 3 meter, dan lebar kamar adalah 10 * 20 cm = 200 cm = 2 meter. Luas kamar = 3 meter * 2
+                            meter = 6 m².
+                          </p>
+                          <p class="card-text">Kalkulator di samping akan memudahkan Anda dalam melakukan perhitungan di atas</p>
+                        </div>
+                      </div>
+
+                      <div class="col-6">
+                        <!-- <div class="alert alert-light">
+                          <div class="calculator" id="calculator">
+                            <label for="length">Panjang (meter)</label>
+                            <input type="number" id="length" class="form-control mb-2 mt-1" oninput="calculateArea()" />
+
+                            <label for="width">Lebar (meter)</label>
+                            <input type="number" id="width" class="form-control mt-1" oninput="calculateArea()" />
+
+                            <h5 class="mt-4">Luas Kamar Anda: <span id="area">0</span> m²</h5>
+                          </div>
+                        </div> -->
+
+                        <div class="container my-4">
+                          <h5 class="mb-4">Kalkulator Luas Kamar (Menggunakan Jengkal Tangan)</h5>
+                          <form id="measurementForm">
+                            <div class="mb-3">
+                              <label for="length" class="form-label">Panjang Kamar (dalam jengkal)</label>
+                              <input type="number" class="form-control" id="length" placeholder="Masukkan panjang kamar dalam jengkal" required />
+                            </div>
+                            <div class="mb-3">
+                              <label for="width" class="form-label">Lebar Kamar (dalam jengkal)</label>
+                              <input type="number" class="form-control" id="width" placeholder="Masukkan lebar kamar dalam jengkal" required />
+                            </div>
+                          </form>
+                          <div class="mt-4">
+                            <h4>Hasil Perhitungan:</h4>
+                            <p id="result" class="initial-text">Masukkan panjang dan lebar untuk menghitung luas kamar.</p>
+                            <h4>Kategori Kamar:</h4>
+                            <p id="recommendation" class="initial-text"></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <form id="ukuran">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="roomSize" id="smallRoom" value="small" />
+                <label class="form-check-label" for="smallRoom"> Small </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="roomSize" id="regularRoom" value="regular" />
+                <label class="form-check-label" for="regularRoom"> Regular </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="roomSize" id="bigRoom" value="big" />
+                <label class="form-check-label" for="bigRoom"> Big </label>
+              </div>
+            </form>
+
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#measurementGuide">Cara Mengukur Kamar</button>
+
+            <div class="modal fade" id="measurementGuide" tabindex="-1" role="dialog" aria-labelledby="measurementGuideTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="measurementGuideTitle">Cara Mengukur Kamar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <h6>Langkah 1: Ukur Panjang</h6>
+                    <p>Gunakan meteran untuk mengukur panjang kamar Anda dari ujung ke ujung.</p>
+
+                    <h6>Langkah 2: Ukur Lebar</h6>
+                    <p>Ukur lebar kamar dari sisi ke sisi.</p>
+
+                    <h6>Langkah 3: Hitung Luas</h6>
+                    <p>Kali panjang dan lebar untuk mendapatkan luas kamar. Misal, panjang 3 meter dan lebar 2 meter, maka luas = 3m x 2m = 6m².</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="container">
+              <button type="button" class="btn btn-info" onclick="startWalkthrough()">Panduan Interaktif Mengukur Kamar</button>
+            </div>
+
+            <div id="choose-section" class="alert alert-light container text-center"></div>
+
+            <p class="card-text text-muted mt-3">
+              <small>*Aturan dan Ketentuan <a href="">berlaku</a></small>
+            </p>
+          </div>
+          <!-- End Step 1 -->
+
+          <!-- Step 2 -->
+          <div id="step2" class="step hidden">
+            <div class="text-center mt-4">
+              <h5><small>Lengkapi form berikut</small></h5>
+            </div>
+
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+              <h6>Jadwal Pesanan</h6>
+            </div>
+
+            <div class="alert alert-light">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="d-flex align-items-center" style="color: #202424"> <i class="bi bi-calendar me-2"></i><span id="selectedSchedule"></span> <span id="scheduleText">Pilih Jadwal</span> </span>
+                <a href="#" class="card-link" style="font-size: 14px" data-toggle="modal" data-target="#calendarModal">pilih</a>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="calendarModal" tabindex="-1" role="dialog" aria-labelledby="calendarModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="calendarModalLabel">Pilih Jadwal</h5>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
+                      <!-- <span aria-hidden="true">&times;</span> -->
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div>
+                      <span>Jam Operasional: 07:00 - 21:00</span>
+                    </div>
+                    <hr />
+                    <div id="calendarContainer">
+                      <!-- Kalender dan waktu akan di-generate di sini -->
+                    </div>
+                    <small
+                      >Terpilih:
+                      <div id="selectedScheduleModal"></div
+                    ></small>
+
+                    <!-- Menampilkan jadwal yang dipilih di dalam modal -->
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" data-dismiss="modal" id="saveButton">Simpan</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+              <h6>Durasi Layanan</h6>
+              <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="durasi yang kami rekomendasikan adalah 2 jam"></i>
+            </div>
+
+            <!-- List group With Checkboxes and radios -->
+            <ul class="list-group mt-2">
+              <li class="list-group-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" />
+                  <label class="form-check-label" for="gridRadios1"> 1 jam </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option2" />
+                  <label class="form-check-label" for="gridRadios1"> 2 jam </label>
+                </div>
+              </li>
+              <li class="list-group-item">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option3" />
+                  <label class="form-check-label" for="gridRadios1"> 3 jam </label>
+                </div>
+              </li>
+            </ul>
+            <!-- End List Checkboxes and radios -->
+
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+              <h6>Gender Petugas</h6>
+            </div>
+
+            <div id="pick-section" class="alert alert-light container text-center"></div>
+          </div>
+          <!-- End Step 2 -->
+
+          <!-- Step 3 -->
+          <div id="step3" class="step hidden">
+            <div class="card"></div>
+            <div class="text-center mt-4">
+              <h5><small>Lengkapi form berikut</small></h5>
+            </div>
+
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+              <h6>Konfirmasi Pesanan</h6>
+            </div>
+
+            <div class="alert alert-light">
+              <div class="pagetitle">
+                <h6 style="font-weight: bold"><i class="bi bi-clipboard-fill"></i> Detail Pesanan</h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Paket Layanan</small></h6>
+                <h6><small>Essential Clean</small></h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Durasi Layanan</small></h6>
+                <h6><small>1 Jam</small></h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Jenis Ruangan</small></h6>
+                <h6><small>Regular</small></h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Gender Petugas</small></h6>
+                <div class="d-flex justify-content-between align-items-center me-1">
+                  <i class="bi bi-person-standing-dress" style="color: palevioletred"></i>
+                  <h6 class="ms-2 mb-0"><small> Wanita</small></h6>
+                </div>
+              </div>
+
+              <hr />
+              <div class="pagetitle mt-4">
+                <h6 style="font-weight: bold"><i class="bi bi-geo-alt-fill"></i> Detail Alamat</h6>
+              </div>
+              <h6 class="card-subtitle mt-0 mb-1" style="font-size: 16px"><small>Kost Pondok Amanah</small></h6>
+              <p class="card-text mb-1" style="font-size: 15.5px"><small>Jl. Radio Sukabirus</small></p>
+              <p class="card-text text-muted" style="font-size: 15px"><small>Catatan: Dayeuhkolot, Samping Lapangan Tenis</small></p>
+
+              <hr />
+              <div class="pagetitle mt-4">
+                <h6 style="font-weight: bold"><i class="bi bi-calendar-fill"></i> Jadwal Pesanan</h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Minggu, 30 Jun, 21:00 WIB</small></h6>
+              </div>
+            </div>
+
+            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+              <h6>Kode Promo</h6>
+            </div>
+
+            <div class="alert alert-light border-primary" style="color: rgb(37, 128, 219)">
+              <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                <span class="d-flex align-items-center"> <i class="bi bi-tags me-2"></i> <span class="promo">Pilih Promo</span> </span>
+                <i class="bi bi-chevron-right"></i>
+              </button>
+            </div>
+
+            <div class="mt-4 alert alert-light">
+              <div class="pagetitle">
+                <h6 style="font-weight: bold"><i class="bi bi-credit-card-fill"></i> Detail Pembayaran</h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Harga</small></h6>
+                <h6><small>Rp40.000</small></h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Biaya Ukuran Ruangan</small></h6>
+                <h6><small>Rp10.000</small></h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Diskon</small></h6>
+                <h6><small>-</small></h6>
+              </div>
+              <hr style="border-style: dotted" />
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Total</small></h6>
+                <h6><small>Rp50.000</small></h6>
+              </div>
+              <hr style="border-style: dotted" />
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Metode Pembayaran</small></h6>
+                <h6><small>Bank CIMB Niaga</small></h6>
+              </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="promoModal" tabindex="-1" aria-labelledby="promoModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="promoModalLabel">Pilih Promo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <!-- List of available promotions -->
+                    <ul class="list-group">
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="col-12 mt-3 alert alert-light">
+                          <h6 class="pagetitle">Diskon 5%</h6>
+                          <ul>
+                            <li class="bullet">Berlaku untuk pengguna baru</li>
+                            <li class="bullet">Min. ukuran Regular</li>
+                          </ul>
+                          <hr />
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p>
+                              <small><i class="bi bi-clock"></i> Persediaan terbatas</small>
+                            </p>
+                            <button class="btn btn-primary btn-sm select-promo" data-promo="Promo 1">Pilih</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="col-12 mt-3 alert alert-light">
+                          <h6 class="pagetitle">Diskon 10%</h6>
+                          <ul>
+                            <li class="bullet">Berlaku untuk pengguna baru</li>
+                            <li class="bullet">Min. ukuran Regular</li>
+                          </ul>
+                          <hr />
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p>
+                              <small><i class="bi bi-clock"></i> Persediaan terbatas</small>
+                            </p>
+                            <button class="btn btn-primary btn-sm select-promo" data-promo="Promo 2">Pilih</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <div class="col-12 mt-3 alert alert-light">
+                          <h6 class="pagetitle">Diskon 15%</h6>
+                          <ul>
+                            <li class="bullet">Berlaku untuk pengguna baru</li>
+                            <li class="bullet">Min. ukuran Big</li>
+                          </ul>
+                          <hr />
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p>
+                              <small><i class="bi bi-clock"></i> Persediaan terbatas</small>
+                            </p>
+                            <button class="btn btn-primary btn-sm select-promo" data-promo="Promo 3" disabled>Pilih</button>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-check mb-4">
+              <input class="form-check-input" type="checkbox" id="gridCheck2" />
+              <label class="form-check-label" for="gridCheck2">
+                <small>Saya menyetujui <a href="">Syarat dan Ketentuan</a></small>
+              </label>
+            </div>
+
+            <div class="alert alert-light">
+              <div class="d-flex justify-content-between align-items-center">
+                <h6 class="card-title">Total: Rp54.000</h6>
+                <button id="orderButton" class="btn btn-primary col-6">Pesan</button>
+              </div>
+            </div>
+          </div>
+          <!-- End Step 3 -->
+
+          <div class="card-body mt-4 d-flex justify-content-between align-items-center">
+            <button href="" class="btn btn-success" id="backButton" onclick="moveBack()">Kembali</button>
+            <button href="" class="btn btn-success" id="nextButton" onclick="moveNext()">Lanjut</button>
+          </div>
+
+          <!-- Toast Container -->
+          <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="customAlertToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+              <div class="toast-header">
+                <strong class="me-auto">Alert</strong>
+                <small class="text-muted">just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+              <div class="toast-body">
+                <!-- Custom message will be inserted here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/intro.js/minified/intro.min.js"></script>
+    <script>
+      function startWalkthrough() {
+        introJs()
+          .setOptions({
+            steps: [
+              {
+                intro: "Selamat datang di panduan interaktif mengukur kamar! Klik 'Next' untuk melanjutkan.",
+              },
+              {
+                element: document.querySelector('#choose'),
+                intro: 'Pilih metode pengukuran yang paling sesuai untuk Anda.',
+              },
+              {
+                element: document.querySelector('#ukuran'),
+                intro: 'Anda bisa menggunakan jengkal tangan untuk mengukur kamar Anda. Buka tangan Anda dengan jari-jari tersebar.',
+              },
+              {
+                element: document.querySelector('#calculator'),
+                intro: 'Kalikan jumlah jengkal dengan 20 cm untuk mendapatkan panjang dan lebar dalam cm.',
+              },
+            ],
+          })
+          .start();
+      }
+    </script>
+
+    <!-- <script>
+      function calculateArea() {
+        var length = document.getElementById('length').value;
+        var width = document.getElementById('width').value;
+        var area = length * width;
+        document.getElementById('area').innerText = area;
+      }
+    </script> -->
+
+    <script>
+      function calculateArea() {
+        // Ambil input panjang dan lebar dalam jengkal
+        const lengthInHandspans = parseFloat(document.getElementById('length').value);
+        const widthInHandspans = parseFloat(document.getElementById('width').value);
+
+        // Validasi input
+        if (isNaN(lengthInHandspans) || isNaN(widthInHandspans)) {
+          document.getElementById('result').textContent = 'Masukkan nilai panjang dan lebar yang valid.';
+          document.getElementById('result').classList.remove('result-text');
+          document.getElementById('result').classList.add('initial-text');
+          document.getElementById('recommendation').textContent = '';
+          document.getElementById('recommendation').classList.remove('result-text', 'bold-text');
+          document.getElementById('recommendation').classList.add('initial-text');
+          return;
+        }
+
+        // Konversi jengkal ke meter (1 jengkal = 0.2 meter)
+        const lengthInMeters = lengthInHandspans * 0.2;
+        const widthInMeters = widthInHandspans * 0.2;
+
+        // Hitung luas dalam meter persegi
+        const areaInSquareMeters = lengthInMeters * widthInMeters;
+
+        // Tentukan kategori ukuran ruangan
+        let category;
+        if (areaInSquareMeters <= 7) {
+          category = 'Small';
+        } else if (areaInSquareMeters > 7 && areaInSquareMeters <= 11.5) {
+          category = 'Regular';
+        } else {
+          category = 'Big';
+        }
+
+        // Tampilkan hasil
+        document.getElementById('result').textContent = `Luas kamar adalah ${areaInSquareMeters.toFixed(2)} m².`;
+        document.getElementById('result').classList.remove('initial-text');
+        document.getElementById('result').classList.add('result-text');
+
+        document.getElementById('recommendation').textContent = `${category}`;
+        document.getElementById('recommendation').classList.remove('initial-text');
+        document.getElementById('recommendation').classList.add('result-text', 'bold-text');
+      }
+
+      // Event listener untuk input panjang dan lebar
+      document.getElementById('length').addEventListener('input', calculateArea);
+      document.getElementById('width').addEventListener('input', calculateArea);
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        // Ketika tombol "Promo Tersedia" diklik
+        $('.list-group-item-action').click(function () {
+          $('#promoModal').modal('show'); // Tampilkan modal promo
+        });
+
+        // Ketika tombol "Pilih" di modal promo diklik
+        $('.select-promo').click(function () {
+          var selectedPromo = $(this).data('promo'); // Ambil promo yang dipilih
+          $('.promo').text(selectedPromo); // Update teks promo di bagian yang diinginkan
+
+          $('#promoModal').modal('hide'); // Sembunyikan modal setelah memilih promo
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkbox = document.getElementById('gridCheck2');
+        const orderButton = document.getElementById('orderButton');
+        const customAlertToast = document.getElementById('customAlertToast');
+        const toastBody = customAlertToast.querySelector('.toast-body');
+        const toast = new bootstrap.Toast(customAlertToast, { delay: 2000 });
+
+        checkbox.addEventListener('change', function () {
+          orderButton.disabled = !checkbox.checked;
+        });
+
+        orderButton.addEventListener('click', function (event) {
+          if (!checkbox.checked) {
+            event.preventDefault();
+            toastBody.textContent = 'Syarat dan Ketentuan belum dicentang!';
+            toast.show();
+          } else {
+            window.location.href = 'payment-order.html';
+          }
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        // Simpan nilai radio button yang dipilih
+        var selectedOption = $('input[name="gridRadios"]:checked').val();
+
+        // Saat modal akan ditampilkan
+        $('#editLocationModal').on('show.bs.modal', function () {
+          // Pilih kembali radio button yang disimpan sebelumnya tanpa delay
+          $('input[name="gridRadios"][value="' + selectedOption + '"]').prop('checked', true);
+        });
+
+        // Tangkap acara saat formulir modal disubmit
+        $('#editLocationForm').on('submit', function (event) {
+          event.preventDefault(); // Hindari pengiriman form secara default
+
+          // Dapatkan nilai dari radio button yang dipilih
+          var selectedAddress = $('input[name="gridRadios"]:checked').siblings('label');
+          var kos = selectedAddress.find('.card-subtitle').html().trim();
+          var jalan = selectedAddress.find('.card-text.mb-1').html().trim();
+          var daerah = selectedAddress.find('.card-text.text-muted small').html().trim();
+
+          // Update konten alamat di luar modal
+          $('.alamat .kos').html('<i class="bi bi-geo-alt-fill"></i> ' + kos); // Tambahkan ikon ke kos
+          $('.alamat .jalan').html(jalan);
+          $('.alamat .daerah').html('<small>' + daerah + '</small>');
+          $('.alamat .patokan').val(''); // Kosongkan input patokan jika ada
+
+          // Simpan kembali nilai radio button yang dipilih
+          selectedOption = $('input[name="gridRadios"]:checked').val();
+
+          // Sembunyikan modal setelah menyimpan
+          $('#editLocationModal').modal('hide');
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function () {
+        let selectedDay = '';
+        let selectedTime = '';
+        let savedSelectedDay = ''; // Menyimpan jadwal yang sudah disimpan
+        let savedSelectedTime = ''; // Menyimpan jadwal yang sudah disimpan
+        let displayedSelectedDay = ''; // Menyimpan jadwal yang ditampilkan di modal
+        let displayedSelectedTime = ''; // Menyimpan jadwal yang ditampilkan di modal
+
+        generateCalendar();
+
+        function generateCalendar() {
+          const now = new Date();
+          const startHourToday = now.getHours();
+          const calendarContainer = $('#calendarContainer');
+          const days = [
+            'Hari Ini',
+            'Besok',
+            ...Array(5)
+              .fill()
+              .map((_, i) => new Date(now.getTime() + (i + 2) * 24 * 60 * 60 * 1000).toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long' })),
+          ];
+
+          let html = '<table class="table">';
+          days.forEach((day, index) => {
+            html += `<tr><th>${day}</th><td>`;
+            let startHour = 7;
+            if (index === 0) {
+              startHour = startHourToday < 21 ? startHourToday : 20; // start from current hour or 20 if it's past 21:00
+            }
+            for (let hour = startHour; hour <= 21; hour++) {
+              let btnClass = 'btn btn-outline-primary m-1';
+              if (displayedSelectedDay === day && displayedSelectedTime === `${hour}:00`) {
+                btnClass = 'btn btn-primary m-1';
+              }
+              html += `<button class="${btnClass}" data-day="${day}" data-hour="${hour}">${hour}:00</button>`;
+            }
+            html += '</td></tr>';
+          });
+          html += '</table>';
+          calendarContainer.html(html);
+
+          // Add click event listener to buttons
+          $('#calendarContainer button').on('click', function () {
+            // Remove the 'btn-primary' class from any button that has it
+            $('#calendarContainer button').removeClass('btn-primary').addClass('btn-outline-primary');
+            // Add the 'btn-primary' class to the clicked button
+            $(this).removeClass('btn-outline-primary').addClass('btn-primary');
+
+            selectedDay = $(this).data('day');
+            selectedTime = $(this).data('hour') + ':00';
+
+            // Update displayed selected schedule in modal body
+            displayedSelectedDay = selectedDay;
+            displayedSelectedTime = selectedTime;
+
+            // Update selected schedule display in modal body
+            updateSelectedScheduleDisplay();
+          });
+
+          // Update selected schedule display in modal body
+          updateSelectedScheduleDisplay();
+        }
+
+        // Update selected schedule display in modal body
+        function updateSelectedScheduleDisplay() {
+          const selectedScheduleText = displayedSelectedDay && displayedSelectedTime ? `${displayedSelectedDay}, ${displayedSelectedTime} WIB` : 'Pilih Jadwal';
+          $('#selectedScheduleModal').text(selectedScheduleText);
+        }
+
+        // When modal is shown, update the selected schedule and highlight the selected button
+        $('#calendarModal').on('shown.bs.modal', function () {
+          updateSelectedScheduleDisplay();
+          highlightSelectedButton();
+        });
+
+        // Highlight the selected button in the calendar
+        function highlightSelectedButton() {
+          $('#calendarContainer button').removeClass('btn-primary').addClass('btn-outline-primary');
+          $(`#calendarContainer button[data-day="${displayedSelectedDay}"][data-hour="${displayedSelectedTime.split(':')[0]}"]`)
+            .removeClass('btn-outline-primary')
+            .addClass('btn-primary');
+        }
+
+        // When modal is hidden, reset the selected schedule if not saved
+        $('#calendarModal').on('hidden.bs.modal', function () {
+          // Jika ada jadwal yang sudah disimpan, tetapkan ke displayedSelectedDay dan displayedSelectedTime
+          if (savedSelectedDay && savedSelectedTime) {
+            displayedSelectedDay = savedSelectedDay;
+            displayedSelectedTime = savedSelectedTime;
+          } else {
+            // Jika tidak ada jadwal yang disimpan, reset displayedSelectedDay dan displayedSelectedTime
+            displayedSelectedDay = '';
+            displayedSelectedTime = '';
+          }
+          generateCalendar(); // Re-generate calendar when modal is reopened
+        });
+
+        $('#saveButton').on('click', function () {
+          if (selectedDay && selectedTime) {
+            // Simpan jadwal yang dipilih ke savedSelectedDay dan savedSelectedTime
+            savedSelectedDay = selectedDay;
+            savedSelectedTime = selectedTime;
+
+            $('#selectedSchedule').text(`${selectedDay}, ${selectedTime} WIB`);
+            $('#scheduleText').text('');
+            $('#calendarModal').modal('hide');
+          } else {
+            alert('Silakan pilih hari dan jam terlebih dahulu.');
+          }
+        });
+      });
+    </script>
+
+    <script>
+      let currentStep = 1;
+
+      function moveNext() {
+        if (validateInputs(currentStep)) {
+          if (currentStep < 3) {
+            if (currentStep === 2) {
+              // Tampilkan toast dengan pesan custom
+              const customAlertToast = document.getElementById('customAlertToast');
+              const toastBody = customAlertToast.querySelector('.toast-body');
+              toastBody.textContent = 'Memproses...';
+
+              // Aktifkan toast
+              const alertToast = new bootstrap.Toast(customAlertToast, { delay: 2000 });
+              alertToast.show();
+
+              // Menambahkan delay sebelum berpindah dari step 2 ke step 3
+              setTimeout(() => {
+                currentStep++;
+                updateProgressBar();
+                showStep(currentStep);
+              }, 2000); // Durasi delay dalam milidetik
+            } else {
+              currentStep++;
+              updateProgressBar();
+              showStep(currentStep);
+            }
+          }
+        } else {
+          alert('Please fill in all required fields.');
+        }
+      }
+
+      function moveBack() {
+        if (currentStep > 1) {
+          currentStep--;
+          updateProgressBar();
+          showStep(currentStep);
+        }
+      }
+
+      function updateProgressBar() {
+        for (let i = 1; i <= 3; i++) {
+          const circle = document.getElementById(`circle${i}`);
+          const line = document.getElementById(`line${i - 1}`);
+
+          if (i <= currentStep) {
+            circle.classList.add('active');
+            if (line) line.classList.add('active');
+          } else {
+            circle.classList.remove('active');
+            if (line) line.classList.remove('active');
+          }
+        }
+      }
+
+      function showStep(step) {
+        for (let i = 1; i <= 3; i++) {
+          const stepElement = document.getElementById(`step${i}`);
+          if (i === step) {
+            stepElement.classList.remove('hidden');
+          } else {
+            stepElement.classList.add('hidden');
+          }
+        }
+        updateButtons();
+      }
+
+      function updateButtons() {
+        document.getElementById('backButton').classList.toggle('disabled', currentStep === 1);
+        const nextButton = document.getElementById('nextButton');
+        if (currentStep === 3) {
+          nextButton.classList.add('hidden');
+        } else {
+          nextButton.classList.remove('hidden');
+          nextButton.textContent = 'Lanjut';
+        }
+      }
+
+      function validateInputs(step) {
+        const stepElement = document.getElementById(`step${step}`);
+        const inputs = stepElement.querySelectorAll('input[required]');
+        for (let input of inputs) {
+          if (!input.value.trim()) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      updateProgressBar();
+      showStep(currentStep);
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const chooseSection = document.getElementById('choose-section');
+        const pickSection = document.getElementById('pick-section');
+
+        const chooseSize = `
+                <div class="mt-2 justify-content-between align-items-center">
+                    <button class="btn btn-outline-primary mb-2 me-1 feedback-button">Small</button>
+                    <button class="btn btn-outline-primary mb-2 me-1 feedback-button">Regular</button>
+                    <button class="btn btn-outline-primary mb-2 me-1 feedback-button">Big</button>
+                </div>
+            `;
+
+        const pickGender = `
+                <div class="mt-2 gap-1">
+                    <button class="btn btn-outline-primary mb-2 me-1 feedback-button"><i class="bi bi-person-standing" style="color: blue"></i> Pria</button>
+                    <button class="btn btn-outline-primary mb-2 me-1 feedback-button"><i class="bi bi-person-standing-dress" style="color: palevioletred"></i> Wanita</button>
+                    <button class="btn btn-outline-primary mb-2 me-1 feedback-button"><i class="bi bi-person-standing" style="color: blue"></i>/<i class="bi bi-person-standing-dress" style="color: palevioletred"></i> Bebas</button>
+                </div>
+            `;
+
+        chooseSection.innerHTML = chooseSize;
+        pickSection.innerHTML = pickGender;
+
+        document.querySelectorAll('.feedback-button').forEach((button) => {
+          button.addEventListener('click', function () {
+            // Hapus kelas btn-success dari semua tombol
+            document.querySelectorAll('.feedback-button').forEach((btn) => {
+              btn.classList.remove('btn-primary');
+              btn.classList.add('btn-outline-primary');
+            });
+
+            // Tambahkan kelas btn-success pada tombol yang diklik
+            button.classList.add('btn-primary');
+            button.classList.remove('btn-outline-primary');
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

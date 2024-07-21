@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Package - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <style>
+      .custom-dropdown-toggle::after {
+        margin-left: 25px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .w-220px {
+        width: 220px;
+      }
+      #selectedServicesList {
+        font-size: small;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <!-- End Profile Page Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main" style="margin-left: 20px; margin-right: 20px">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Kustom Layanan</h5>
+
+          <div class="text-center mt-4">
+            <h5><small>Pilih layanan yang dibutuhkan</small></h5>
+          </div>
+
+          <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+            <h6>Pilihan Layanan</h6>
+            <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="minimum layanan yang dipilih adalah 3 layanan"></i>
+          </div>
+
+          <!-- List group With Checkboxes and radios -->
+          <ul class="list-group mt-2">
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck1" value="option1" />
+                <label class="form-check-label" for="gridCheck1"> Sapu + Pel Lantai </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck2" value="option2" />
+                <label class="form-check-label" for="gridCheck2"> Rapi Kasur + Meja </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck3" value="option3" />
+                <label class="form-check-label" for="gridCheck3"> Tata Barang </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck4" value="option4" />
+                <label class="form-check-label" for="gridCheck4"> Lap Debu Furnitur + Cermin </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck5" value="option5" />
+                <label class="form-check-label" for="gridCheck5"> Lap Kaca Jendela + Ventilasi Udara </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck6" value="option6" />
+                <label class="form-check-label" for="gridCheck6">
+                  <label for="servicePackage" class="form-label">Sikat Kamar Mandi</label>
+                  <div class="alert alert-light mb-1">
+                    <div class="d-flex">
+                      <div class="me-4 dropdown">
+                        <h6 class="form-label"><small>Pilih jenis layanan</small></h6>
+                        <button
+                          style="height: 38.33px; width: 175px"
+                          class="custom-dropdown-toggle btn btn-light btn-sm alert alert-light text-start d-flex align-items-center custom"
+                          type="button"
+                          id="serviceDropdownButton"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Essential Clean <i class="ms-4 bi bi-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="serviceDropdownButton">
+                          <li><a class="dropdown-item rounded-2 active" href="#" data-value="essential_clean">Essential Clean</a></li>
+                          <li><a class="dropdown-item rounded-2" href="#" data-value="intensive_clean">Intensive Clean (+ Rp2.500)</a></li>
+                        </ul>
+                        <input type="hidden" name="servicePackage" id="servicePackage" value="essential_clean" />
+                      </div>
+                      <div class="dropdown">
+                        <h6 class="form-label"><small>Pilih jenis kamar mandi</small></h6>
+                        <button
+                          style="height: 38.33px; width: 130px"
+                          class="custom-dropdown-toggle btn btn-light btn-sm alert alert-light text-start d-flex align-items-center custom"
+                          type="button"
+                          id="bathroomDropdownButton"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          Standard <i class="ms-4 bi bi-chevron-down"></i>
+                        </button>
+                        <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="bathroomDropdownButton">
+                          <li><a class="dropdown-item rounded-2 active" href="#" data-value="standard">Standard</a></li>
+                          <li><a class="dropdown-item rounded-2" href="#" data-value="complex">Complex* (+ 2.500)</a></li>
+                        </ul>
+                        <input type="hidden" name="bathroomType" id="bathroomType" value="standard" />
+                      </div>
+                    </div>
+                  </div>
+                  <h6 class="mt-2 mb-0"><small>*ukuran luas / dilengkapi wastafel, cermin, shower</small></h6>
+                </label>
+              </div>
+            </li>
+
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck7" value="option7" />
+                <label class="form-check-label" for="gridCheck7"> Sedot Debu </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck8" value="option8" disabled />
+                <label class="form-check-label" for="gridCheck8"> Vacuum Furnitur </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check disabled">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck9" value="option9" disabled />
+                <label class="form-check-label" for="gridCheck9"> Cuci Perabotan </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check disabled">
+                <input class="form-check-input" type="checkbox" name="gridCheck" id="gridCheck10" value="option10" disabled />
+                <label class="form-check-label" for="gridCheck10"> cuci kerak kamar mandi (intensive clean) </label>
+              </div>
+            </li>
+          </ul>
+          <!-- End List Checkboxes and radios -->
+
+          <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+            <h6>Daftar Pilihan</h6>
+          </div>
+          <ul class="list-group mt-2" id="selectedServicesList"></ul>
+          
+
+          <div class="pagetitle mt-4 d-flex justify-content-between align-items-center" style="display: none" id="estimasiContainer">
+            <h6>Estimasi Biaya</h6>
+            <i class="bi bi-info-circle" data-bs-toggle="tooltip" data-bs-placement="left" title="estimasi biaya merupakan harga paket layanan yang belum termasuk biaya lainnya (harga sementara)"></i>
+          </div>
+
+          <div class="alert alert-light">
+            <div class="" id="estimasiBiaya" style="display: none">
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Jumlah Layanan Terpilih</small></h6>
+                <h6>
+                  <small><span id="selectedServices">0 Layanan</span><span id="extraService"></span></small>
+                </h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Harga Normal</small></h6>
+                <h6><small id="normalPrice">Rp0</small></h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center" id="additionalPriceContainer" style="display: none">
+                <h6><small>Harga Tambahan</small></h6>
+                <h6><small id="additionalPrice">Rp0</small></h6>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Diskon Layanan</small></h6>
+                <h6><small id="discount">0%</small></h6>
+              </div>
+              <hr style="border-style: dotted" />
+              <div class="d-flex justify-content-between align-items-center">
+                <h6><small>Harga Layanan</small></h6>
+                <h6><small id="discountedPrice">Rp0</small></h6>
+              </div>
+              <hr style="border-style: dotted" />
+              <div class="d-flex justify-content-between align-items-center" id="additionalServiceContainer" style="display: none">
+                <h6><small>Harga Layanan Tambah</small></h6>
+                <h6><small id="additionalServicePrice">+ Rp17.000</small></h6>
+              </div>
+              <h6><small>*jika ada (+ 1)</small></h6>
+              <hr style="border-style: dotted" />
+              <div class="d-flex justify-content-between align-items-center">
+                <h6 class="mb-0 card-title"><small>Total Harga</small></h6>
+                <h6 class="mb-0 card-title"><small id="totalPrice">Rp0</small></h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-center mt-3">
+            <button class="btn btn-primary col-12" id="lanjutkanButton">
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" style="display: none" id="spinner"></span>
+              Lanjutkan
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <!-- Toast Container -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+      <div id="customAlertToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <strong class="me-auto">Alert</strong>
+          <small class="text-muted">just now</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">Silakan pilih minimal 3 layanan</div>
+      </div>
+    </div>
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('input[name="gridCheck"]');
+        const selectedServicesList = document.getElementById('selectedServicesList');
+
+        document.getElementById('lanjutkanButton').addEventListener('click', function () {
+          window.location.href = 'fill-order.html'; // Ganti dengan URL halaman berikutnya
+        });
+
+        const toastElement = new bootstrap.Toast(document.getElementById('customAlertToast'), { delay: 3000 }); // Mengatur delay menjadi 3 detik
+        const selectedServicesElement = document.getElementById('selectedServices');
+        const extraServiceElement = document.getElementById('extraService');
+        const normalPriceElement = document.getElementById('normalPrice');
+        const additionalPriceContainer = document.getElementById('additionalPriceContainer');
+        const additionalPriceElement = document.getElementById('additionalPrice');
+        const discountElement = document.getElementById('discount');
+        const discountedPriceElement = document.getElementById('discountedPrice');
+        const additionalServiceContainer = document.getElementById('additionalServiceContainer');
+        const additionalServicePriceElement = document.getElementById('additionalServicePrice');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const estimasiContainer = document.getElementById('estimasiContainer');
+        const estimasiBiaya = document.getElementById('estimasiBiaya');
+
+        const SERVICE_PRICE = 17000;
+        const ADDITIONAL_PRICE = 2500;
+        const DISCOUNT_3_SERVICES = 0.1; // 10% for 3 services
+        const DISCOUNT_5_SERVICES = 0.15; // 15% for 5 services
+        const DISCOUNT_7_SERVICES = 0.2; // 20% for 7 services
+        const DISCOUNT_10_SERVICES = 0.25; // 25% for 10 services
+
+        function updateButtonState() {
+          const checkedCheckboxes = document.querySelectorAll('input[name="gridCheck"]:checked');
+          if (checkedCheckboxes.length === 0) {
+            lanjutkanButton.classList.add('disabled');
+            estimasiContainer.style.display = 'none';
+            estimasiBiaya.style.display = 'none';
+          } else {
+            lanjutkanButton.classList.remove('disabled');
+            estimasiContainer.style.display = 'flex';
+            estimasiBiaya.style.display = 'block';
+          }
+        }
+
+        function showToast() {
+          toastElement.show();
+        }
+
+        function updatePrices() {
+          const checkedCheckboxes = document.querySelectorAll('input[name="gridCheck"]:checked');
+          const selectedServicesCount = checkedCheckboxes.length;
+          const displayedCount = selectedServicesCount % 2 === 0 ? selectedServicesCount - 1 : selectedServicesCount;
+          const extraCount = selectedServicesCount - displayedCount;
+
+          selectedServicesElement.textContent = `${displayedCount} Layanan`;
+          extraServiceElement.textContent = extraCount > 0 ? ` (+ ${extraCount})` : '';
+
+          let normalPrice = displayedCount * SERVICE_PRICE;
+          let additionalPrice = 0;
+
+          // Check if "Sikat Kamar Mandi" is selected
+          const sikatCheckbox = document.getElementById('gridCheck6');
+          if (sikatCheckbox.checked) {
+            const servicePackage = document.getElementById('servicePackage').value;
+            const bathroomType = document.getElementById('bathroomType').value;
+
+            if (servicePackage === 'intensive_clean') {
+              additionalPrice += ADDITIONAL_PRICE;
+            }
+            if (bathroomType === 'complex') {
+              additionalPrice += ADDITIONAL_PRICE;
+            }
+          }
+
+          normalPrice += additionalPrice;
+
+          let discountPercentage = 0;
+
+          if (displayedCount === 3) {
+            discountPercentage = DISCOUNT_3_SERVICES;
+          } else if (displayedCount === 5) {
+            discountPercentage = DISCOUNT_5_SERVICES;
+          } else if (displayedCount === 7) {
+            discountPercentage = DISCOUNT_7_SERVICES;
+          } else if (displayedCount === 10) {
+            discountPercentage = DISCOUNT_10_SERVICES;
+          }
+
+          const discount = normalPrice * discountPercentage;
+          const discountedPrice = normalPrice - discount;
+
+          normalPriceElement.textContent = `Rp${(displayedCount * SERVICE_PRICE).toLocaleString('id-ID')}`;
+          discountElement.textContent = `${discountPercentage * 100}%`;
+          discountedPriceElement.textContent = `Rp${discountedPrice.toLocaleString('id-ID')}`;
+
+          if (additionalPrice > 0) {
+            additionalPriceContainer.style.display = 'flex';
+            additionalPriceElement.textContent = `+ Rp${additionalPrice.toLocaleString('id-ID')}`;
+          } else {
+            additionalPriceContainer.style.display = 'none';
+          }
+
+          if (extraCount > 0) {
+            const additionalServicePrice = extraCount * SERVICE_PRICE;
+            additionalServiceContainer.style.display = 'flex';
+            additionalServicePriceElement.textContent = `+ Rp${additionalServicePrice.toLocaleString('id-ID')}`;
+            totalPriceElement.textContent = `Rp${(discountedPrice + additionalServicePrice).toLocaleString('id-ID')}`;
+          } else {
+            additionalServiceContainer.style.display = 'none';
+            totalPriceElement.textContent = `Rp${discountedPrice.toLocaleString('id-ID')}`;
+          }
+        }
+
+        function updateSelectedServicesList() {
+          const checkedCheckboxes = document.querySelectorAll('input[name="gridCheck"]:checked');
+          selectedServicesList.innerHTML = ''; // Clear the list
+
+          checkedCheckboxes.forEach((checkbox) => {
+            const listItem = document.createElement('li');
+            listItem.classList.add('list-group-item');
+            listItem.textContent = checkbox.nextElementSibling.textContent.trim();
+            selectedServicesList.appendChild(listItem);
+          });
+        }
+
+        checkboxes.forEach((checkbox) => {
+          checkbox.addEventListener('change', function () {
+            updateButtonState();
+            updatePrices();
+            updateSelectedServicesList(); // Update the selected services list
+          });
+        });
+
+        document.querySelectorAll('.dropdown-menu a').forEach(function (dropdownItem) {
+          dropdownItem.addEventListener('click', function (e) {
+            e.preventDefault();
+            const dropdownButton = this.closest('.dropdown').querySelector('.custom-dropdown-toggle');
+            const hiddenInput = this.closest('.dropdown').querySelector('input[type="hidden"]');
+            const selectedText = this.textContent.trim();
+            const selectedValue = this.getAttribute('data-value');
+
+            dropdownButton.innerHTML = `${selectedText} <i class="ms-4 bi bi-chevron-down"></i>`;
+            hiddenInput.value = selectedValue;
+
+            this.closest('.dropdown-menu')
+              .querySelectorAll('.dropdown-item')
+              .forEach(function (item) {
+                item.classList.remove('active');
+              });
+
+            this.classList.add('active');
+            updatePrices(); // Recalculate prices on dropdown selection
+          });
+        });
+
+        updateButtonState();
+        updateSelectedServicesList(); // Initialize the selected services list
+      });
+    </script>
+  </body>
+</html>

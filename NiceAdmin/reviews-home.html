@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .dropdown-toggle::after {
+        margin-left: 25px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .w-220px {
+        width: 220px;
+      }
+      .btn-star {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.875rem;
+      }
+      @media (min-width: 992px) {
+        .btn-container .btn {
+          margin-right: 0.25rem;
+          margin-left: 0.25rem;
+        }
+      }
+      .pagination {
+        justify-content: center;
+      }
+      .btn-outline-warning.active {
+        background-color: #ffc107;
+        color: white;
+        border-color: #ffc107;
+      }
+      .page-tracker {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="package.html">
+            <i class="bi bi-view-stacked"></i>
+            <span>Package</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Kata Mereka</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Kata Mereka</li>
+          </ol>
+        </nav>
+      </div>
+
+      <section class="section dashboard">
+        <div class="card-container col-12 col-lg-7">
+          <button class="btn btn-light btn-sm alert alert-light mb-3 d-flex align-items-center" type="button" style="height: 40px; color: midnightblue;" data-bs-toggle="collapse" data-bs-target="#filterUlasan" aria-expanded="false" aria-controls="filterUlasan">
+            Tampilkan Filter Ulasan
+          </button>
+          <div class="collapse" id="filterUlasan">
+            <div class="card mb-3">
+              <div class="card-body mt-4">
+                <h6>Filter Ulasan</h6>
+                <div class="mt-3 d-flex flex-wrap justify-content-around btn-container">
+                  <div class="dropdown">
+                    <button style="height: 38.33px; width: 168px;" class="btn btn-light btn-sm alert alert-light text-start dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Semua Ulasan</button>
+                    <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px" aria-labelledby="dropdownMenuButton">
+                      <li><a class="dropdown-item rounded-2 active" href="#" data-value="">Semua Ulasan</a></li>
+                      <li><a class="dropdown-item rounded-2" href="#" data-value="Essential Clean">Essential Clean</a></li>
+                      <li><a class="dropdown-item rounded-2" href="#" data-value="Intensive Clean">Intensive Clean</a></li>
+                      <li><a class="dropdown-item rounded-2" href="#" data-value="Flexible Clean">Flexible Clean</a></li>
+                    </ul>
+                  </div>
+                  <button class="btn btn-light alert alert-light btn-sm btn-star" data-value="5">5 <i class="bi bi-star-fill" style="color: gold"></i></button>
+                  <button class="btn btn-light alert alert-light btn-sm btn-star" data-value="4">4 <i class="bi bi-star-fill" style="color: gold"></i></button>
+                  <button class="btn btn-light alert alert-light btn-sm btn-star" data-value="3">3 <i class="bi bi-star-fill" style="color: gold"></i></button>
+                  <button class="btn btn-light alert alert-light btn-sm btn-star" data-value="2">2 <i class="bi bi-star-fill" style="color: gold"></i></button>
+                  <button class="btn btn-light alert alert-light btn-sm btn-star" data-value="1">1 <i class="bi bi-star-fill" style="color: gold"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-0">
+          <div class="card-body mt-3">
+            <div id="review" class="container">
+              <div class="review-heading mt-2 mb-3">
+                <h6>Kata mereka</h6>
+              </div>
+              <div id="page-tracker" class="page-tracker"></div>
+              <div id="review-cards">
+                <!-- Review Cards will be injected here -->
+              </div>
+              <nav aria-label="Page navigation example">
+                <ul class="pagination" id="pagination">
+                  <!-- Pagination items will be injected here -->
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        const reviews = [
+          { stars: 5, category: 'Flexible Clean', title: 'Keren banget!', author: 'Adam', date: '2024-04-09', content: 'Baru kali ini ada service yang bisa dikustom sesuai kebutuhan. Jadi lebih hemat buat kantong mahasiswa!' },
+          { stars: 5, category: 'Essential Clean', title: 'Helpful abis', author: 'Adam', date: '2024-03-19', content: 'Petugasnya gercep banget dan super detail. Hasilnya juga beneran rapi dan bersih. Makasi banyak kaka petugas!' },
+          { stars: 5, category: 'Essential Clean', title: 'Otw jadi langgananku', author: 'Anna', date: '2024-02-01', content: 'So far udah tiga kali pesan dan puas banget sama hasilnya. Jadi best find-ku tahun ini sih' },
+          {
+            stars: 5,
+            category: 'Intensive Clean',
+            title: 'Bersih bangettt!',
+            author: 'Lia',
+            date: '2023-11-11',
+            content: 'Iseng cobain deepclean kosan yang udah ditinggal berbulan-bulan. Awalnya kotor banget. Udahnya jadi bersih banget, lebih bersih daripada sebelum ditinggal malah. Mana wangi banget lagi. Sukaak',
+          },
+          {
+            stars: 4,
+            category: 'Flexible Clean',
+            title: 'Sangat membantu',
+            author: 'Kevin',
+            date: '2024-01-30',
+            content: 'Senangnya punya kamar bersih tanpa perlu cape-cape. Btw petugasnya juga keren sempet bantuin tugasku haha semangat mba!',
+          },
+          { stars: 4, category: 'Essential Clean', title: 'Lumayan sih', author: 'Dafa', date: '2024-02-21', content: 'Coba mesen karena kata temen bagus. Lumayan sih, harganya juga cocok di kantong 👍🏻' },
+          {
+            stars: 4,
+            category: 'Essential Clean',
+            title: 'Recommended bangeett',
+            author: 'Josie',
+            date: '2024-03-28',
+            content: 'Iseng nyobain karna review di twitter, katanya sih bagus+murah. Ternyata beneran bagus dong?? Tapi mbanya perlu datang lebih cepat. Lain kali jangan telat lagi ya mbaak :)',
+          },
+          {
+            stars: 4,
+            category: 'Essential Clean',
+            title: 'Cukup bagus',
+            author: 'Megan',
+            date: '2023-12-30',
+            content: 'Cukup bagus untuk ukuran jasa kebersihan skala kosan. Meski belum sebagus pesaingnya, setidaknya bisa jadi alternatif kalau mau yang murah. Kalau ditingkatkan bakal lebih bagus lagi sih',
+          },
+          {
+            stars: 5,
+            category: 'Intensive Clean',
+            title: 'Gak nyangka jujur...',
+            author: 'Filsya',
+            date: '2024-05-20',
+            content: 'Asli kamar mandiku yang susah banget dibersihin jadi kinclong banget??? Bener-bener semua sudut bagian tuh bersih. GA NYANGKAAA',
+          },
+          {
+            stars: 3,
+            category: 'Flexible Clean',
+            title: 'Masnya perlu training tambahan',
+            author: 'Elena',
+            date: '2023-12-12',
+            content: 'Petugasnya kurang detail, ada sudut yang belum bersih. Padahal petugas sebelumnya teliti banget. Semoga diperbaiki kedepannya',
+          },
+          { stars: 2, category: 'Flexible Clean', title: 'Masnya perlu training tambahan', author: 'Arif', date: '2023-12-01', content: 'Petugasnya dateng telat. Hasilnya juga miss' },
+          { stars: 2, category: 'Intensive Clean', title: 'Kelarnya lama banget?', author: 'Nahda', date: '2023-11-09', content: 'Aku pesen 1 jam tapi kelarnya lama banget jadi molor' },
+        ];
+
+        let currentPage = 1;
+        const reviewsPerPage = 10;
+        let selectedStars = null;
+        let selectedCategory = '';
+
+        function formatDate(dateStr) {
+          const options = { year: 'numeric', month: 'short', day: 'numeric' };
+          return new Date(dateStr).toLocaleDateString('en-US', options);
+        }
+
+        function renderReviews() {
+          const filteredReviews = reviews.filter((review) => {
+            return (!selectedStars || review.stars === selectedStars) && (!selectedCategory || review.category === selectedCategory);
+          });
+
+          // Urutkan ulasan berdasarkan tanggal (tahun, bulan, hari)
+          filteredReviews.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+          const start = (currentPage - 1) * reviewsPerPage;
+          const end = start + reviewsPerPage;
+          const paginatedReviews = filteredReviews.slice(start, end);
+
+          $('#review-cards').empty();
+          if (paginatedReviews.length === 0) {
+            $('#review-cards').append('<div class="mt-4 alert alert-warning text-center"><small>Yah, review-nya ga ada :(</small></div>');
+          } else {
+            paginatedReviews.forEach((review) => {
+              $('#review-cards').append(`
+                    <div class="alert alert-light">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="star-rating">${renderStars(review.stars)}</div>
+                            <p class="mb-2"><span class="mt-1 badge rounded-pill bg-info text-light">${review.category}</span></p>
+                        </div>
+                        <hr />
+                        <h6 class="alert-heading mb-0" style="color: midnightblue"><small>${review.title}</small></h6>
+                        <p class="mb-2" style="font-size: 14px"><small><b style="font-weight: 600">${review.author}</b> <i class="bi bi-dot"></i> ${formatDate(review.date)}</small></p>
+                        <p class="mb-0"><i class="bi bi-quote" style="color: midnightblue"></i> <small>${review.content}</small></p>
+                    </div>
+                `);
+            });
+          }
+
+          updatePagination(filteredReviews.length);
+          updatePageTracker(filteredReviews.length);
+        }
+
+        function renderStars(starCount) {
+          let stars = '';
+          for (let i = 0; i < 5; i++) {
+            stars += `<i class="bi bi-star-fill" style="color: ${i < starCount ? 'midnightblue' : '#ccc'}"></i>`;
+          }
+          return stars;
+        }
+
+        function updatePagination(totalReviews) {
+          const totalPages = Math.ceil(totalReviews / reviewsPerPage);
+          $('#pagination').empty();
+          for (let i = 1; i <= totalPages; i++) {
+            $('#pagination').append(`
+                <li class="page-item ${i === currentPage ? 'active' : ''}">
+                    <a class="page-link" href="#">${i}</a>
+                </li>
+            `);
+          }
+        }
+
+        function updatePageTracker(totalReviews) {
+          const totalPages = Math.ceil(totalReviews / reviewsPerPage);
+          $('#page-tracker').text(`Halaman ${currentPage} dari ${totalPages}`);
+        }
+
+        $('#pagination').on('click', '.page-link', function (e) {
+          e.preventDefault();
+          currentPage = parseInt($(this).text());
+          renderReviews();
+        });
+
+        $('.dropdown-item').click(function (e) {
+          e.preventDefault();
+          selectedCategory = $(this).data('value');
+          currentPage = 1;
+          renderReviews();
+          $('.dropdown-item').removeClass('active');
+          $(this).addClass('active');
+          $('#dropdownMenuButton').text($(this).text());
+        });
+
+        $('.btn-star').click(function () {
+          const starValue = $(this).data('value');
+          $(this).toggleClass('btn-outline-warning active');
+
+          if ($(this).hasClass('btn-outline-warning active')) {
+            selectedStars = starValue;
+            $('.btn-star').not(this).removeClass('btn-outline-warning active');
+          } else {
+            selectedStars = null;
+          }
+
+          currentPage = 1;
+          renderReviews();
+        });
+
+        renderReviews();
+      });
+    </script>
+  </body>
+</html>

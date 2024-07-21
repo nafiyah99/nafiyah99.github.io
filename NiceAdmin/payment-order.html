@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Package - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-heading">Pages</li>
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>Profile</span>
+          </a>
+        </li>
+        <!-- End Profile Page Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="card mb-0">
+        <div class="card-body">
+          <h5 class="card-title">Pembayaran</h5>
+
+          <div class="alert alert-light">
+            <h4 class="alert-heading">Info Heading</h4>
+            <p>Et suscipit deserunt earum itaque dignissimos</p>
+            <hr />
+            <div class="d-flex justify-content-between align-items-center">
+              <p class="mb-0">Total pembayaran:</p>
+              <p class="mb-0">Rp54.000</p>
+            </div>
+          </div>
+
+          <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+            <h6>Dompet Digital</h6>
+          </div>
+
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="dompetGopay" value="finish-wallet-order.html" />
+                <label class="form-check-label" for="dompetGopay"> Gopay </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="dompetShopeePay" value="finish-wallet-order.html" />
+                <label class="form-check-label" for="dompetShopeePay"> ShopeePay </label>
+              </div>
+            </li>
+          </ul>
+
+          <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+            <h6>Virtual Account</h6>
+          </div>
+
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="virtualCIMB" value="finish-order.html" />
+                <label class="form-check-label" for="virtualCIMB"> Bank CIMB Niaga </label>
+              </div>
+            </li>
+          </ul>
+
+          <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
+            <h6>Rekening/CC</h6>
+          </div>
+
+          <ul class="list-group">
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="rekeningVisa" value="halaman2.html" disabled />
+                <label class="form-check-label" for="rekeningVisa"> VISA </label>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="gridRadios" id="rekeningMasterCard" value="halaman2.html" disabled />
+                <label class="form-check-label" for="rekeningMasterCard"> Master Card </label>
+              </div>
+            </li>
+          </ul>
+
+          <div class="mt-4 card-body d-flex justify-content-between align-items-center">
+            <h6 class="card-title"><small>Total: </small> Rp54.000</h6>
+            <a id="bayarButton" href="#" class="btn btn-primary col-6 disabled">Bayar</a>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="paymentModalLabel">Informasi Pembayaran</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <!-- Konten informasi pembayaran -->
+                  <div class="alert alert-light text-center">
+                    <!-- Ganti dengan QR Code dan informasi sesuai dengan kebutuhan -->
+                    <p>Scan QR Code ini untuk melakukan pembayaran menggunakan Dompet Digital</p>
+                    <div class="alert alert-warning mt-4 text-center">
+                      <p class="alert-info mb-1">
+                        <small>Bayar sebelum <b>dd mm yyyy</b> pukul <b>00:00</b> WIB</small>
+                      </p>
+                    </div>
+                    <img src="aset/thank you!.png" alt="QR Code Pembayaran" width="300" height="300" class="mt-2 mb-2" />
+                    <p>Nominal biaya: <b>Rp54.000</b></p>
+                  </div>
+
+                  <div class="text-end">
+                    <button id="nextButtonModal" class="btn btn-primary" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Memuat...
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const radioButtons = document.querySelectorAll('input[name="gridRadios"]');
+        const bayarButton = document.getElementById('bayarButton');
+
+        radioButtons.forEach(function (radio) {
+          radio.addEventListener('change', function () {
+            bayarButton.classList.remove('disabled');
+            bayarButton.href = '#'; // Reset href when changing selection
+          });
+        });
+
+        bayarButton.addEventListener('click', function (event) {
+          event.preventDefault(); // Prevent default behavior of link click
+          if (bayarButton.classList.contains('disabled')) {
+            alert('Silakan pilih metode pembayaran terlebih dahulu.');
+            return;
+          }
+
+          const selectedRadio = document.querySelector('input[name="gridRadios"]:checked');
+          const paymentType = selectedRadio.value;
+
+          // Menampilkan informasi pembayaran sesuai dengan jenis pembayaran
+          switch (paymentType) {
+            case 'finish-wallet-order.html':
+              showWalletPaymentInfo();
+              break;
+            case 'finish-order.html':
+              window.location.href = 'finish-order.html'; // Virtual Account
+              break;
+            case 'halaman2.html':
+              window.location.href = 'halaman2.html'; // Rekening/CC
+              break;
+            default:
+              alert('Metode pembayaran tidak dikenali.');
+          }
+        });
+
+        function showWalletPaymentInfo() {
+          // Menampilkan modal
+          const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+          paymentModal.show();
+
+          // Event listener untuk tombol "Selanjutnya" di dalam modal
+          const nextButtonModal = document.getElementById('nextButtonModal');
+
+          // Tampilkan spinner saat tombol diaktifkan
+          nextButtonModal.disabled = true;
+
+          // Menunda aktivasi tombol "Selanjutnya" dengan setTimeout
+          setTimeout(function () {
+            nextButtonModal.disabled = false;
+            nextButtonModal.innerHTML = 'Selanjutnya'; // Ubah teks tombol
+            nextButtonModal.classList.remove('disabled'); // Hapus kelas disabled jika masih ada
+            nextButtonModal.querySelector('.spinner-border').style.display = 'none'; // Sembunyikan spinner
+          }, 3000); // Delay dalam milidetik (misalnya 3000 untuk delay 3 detik)
+
+          // Tambahkan event listener untuk mengarahkan ke halaman1.html saat tombol "Selanjutnya" diklik
+          nextButtonModal.addEventListener('click', function () {
+            window.location.href = 'finish-wallet-order.html';
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

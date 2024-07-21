@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+    <style>
+      /* Custom CSS for fixed navbars and horizontal scrolling */
+      .scrolling-wrapper {
+        overflow-x: auto;
+        white-space: nowrap;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
+      .scrolling-wrapper::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+
+      .scrolling-wrapper .card {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .scrolling-wrapper .alert {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .review-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      /* Fixed top and bottom navbars */
+      .navbar-top {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1030;
+      }
+
+      .navbar-bottom {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 1030;
+        background-color: #f8f9fa;
+      }
+
+      /* Style for mobile-style bottom menu */
+      .navbar-bottom .nav-item {
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .navbar-bottom .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* Make sure popular section is responsive and full-width */
+      #popular .card {
+        width: 100%;
+      }
+
+      #review .card {
+        width: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="d-flex align-items-center justify-content-between">
+        <a href="index.html" class="logo d-flex align-items-center">
+          <img src="assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">NiceAdmin</span>
+        </a>
+        <i class="bi bi-list toggle-sidebar-btn"></i>
+      </div>
+      <!-- End Logo -->
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-center">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div>
+      <!-- End Search Bar -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">4</span> </a
+            ><!-- End Notification Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <li class="dropdown-header">
+                You have 4 new notifications
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-exclamation-circle text-warning"></i>
+                <div>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-primary"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Show all notifications</a>
+              </li>
+            </ul>
+            <!-- End Notification Dropdown Items -->
+          </li>
+          <!-- End Notification Nav -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">3</span> </a
+            ><!-- End Messages Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+              <li class="dropdown-header">
+                You have 3 new messages
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle" />
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle" />
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle" />
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li class="dropdown-footer">
+                <a href="#">Show all messages</a>
+              </li>
+            </ul>
+            <!-- End Messages Dropdown Items -->
+          </li>
+          <!-- End Messages Nav -->
+
+          <li class="nav-item dropdown pe-3">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+              <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle" />
+              <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span> </a
+            ><!-- End Profile Iamge Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+              <li class="dropdown-header">
+                <h6>Kevin Anderson</h6>
+                <span>Web Designer</span>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                  <i class="bi bi-person"></i>
+                  <span>My Profile</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                  <i class="bi bi-gear"></i>
+                  <span>Account Settings</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                  <i class="bi bi-question-circle"></i>
+                  <span>Need Help?</span>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <i class="bi bi-box-arrow-right"></i>
+                  <span>Sign Out</span>
+                </a>
+              </li>
+            </ul>
+            <!-- End Profile Dropdown Items -->
+          </li>
+          <!-- End Profile Nav -->
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+      <ul class="sidebar-nav" id="sidebar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">
+            <i class="bi bi-grid"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="package.html">
+            <i class="bi bi-view-stacked"></i>
+            <span>Package</span>
+          </a>
+        </li>
+        <!-- End Dashboard Nav -->
+      </ul>
+    </aside>
+    <!-- End Sidebar-->
+
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <!-- start ads -->
+      <section class="section dashboard">
+        <div class="card">
+          <!-- Slides with controls -->
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="aset/1.png" class="d-block w-75 mx-auto" alt="..." />
+              </div>
+              <div class="carousel-item">
+                <img src="aset/2.png" class="d-block w-75 mx-auto" alt="..." />
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <!-- End Slides with controls -->
+        </div>
+        <!-- end ads -->
+        <div class="card mb-0">
+          <div class="card-body mt-4">
+            <!-- start popular -->
+            <div class="pagetitle">
+              <h6>Paket populer minggu ini</h6>
+            </div>
+            <div class="alert alert-light mb-4">
+              <div class="col-12">
+                <div class="card">
+                  <img src="assets/img/card.jpg" class="card-img-top" style="height: 180px" alt="..." />
+                  <div class="card-img-overlay">
+                    <h5 class="card-title">Essential Clean</h5>
+                    <p class="card-text"><small>Telah dipesan lebih dari 200 kali</small></p>
+                    <a href="" class="btn btn-dark">Coba sekarang</a>
+                  </div>
+                </div>
+              </div>
+              <!-- end popular -->
+            </div>
+
+            <!-- start review -->
+            <div class="row">
+              <div id="review" class="container">
+                <div class="review-heading mb-2">
+                  <h6>Kata mereka</h6>
+                  <a href="full_reviews.html"
+                    ><h6><u>lihat</u></h6></a
+                  >
+                </div>
+
+                <div class="scrolling-wrapper">
+                  <div class="alert alert-light" style="width: 300px">
+                    <div class="mb-2 star-rating">
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                    </div>
+                    <h6 class="alert-heading mb-0" style="color: midnightblue"><small>Keren banget!</small></h6>
+                    <p class="mb-2" style="font-size: 14px">
+                      <small><b style="font-weight: 600">Adam</b> <i class="bi bi-dot"></i> Feb 12, 2024</small>
+                    </p>
+                    <p class="mb-0">
+                      <small>Baru kali ini ada ser... <a href="">lihat selengkapnya</a></small>
+                    </p>
+                  </div>
+                  <div class="alert alert-light" style="width: 300px">
+                    <div class="mb-2 star-rating">
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                    </div>
+                    <h6 class="alert-heading mb-0" style="color: midnightblue"><small>Helpful abis</small></h6>
+                    <p class="mb-2" style="font-size: 14px">
+                      <small><b style="font-weight: 600">Adam</b> <i class="bi bi-dot"></i> Feb 12, 2024</small>
+                    </p>
+                    <p class="mb-0">
+                      <small>Baru kali ini ada ser... <a href="">lihat selengkapnya</a></small>
+                    </p>
+                  </div>
+                  <div class="alert alert-light" style="width: 300px">
+                    <div class="mb-2 star-rating">
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                    </div>
+                    <h6 class="alert-heading mb-0" style="color: midnightblue"><small>Otw jadi langgananku</small></h6>
+                    <p class="mb-2" style="font-size: 14px">
+                      <small><b style="font-weight: 600">Adam</b> <i class="bi bi-dot"></i> Feb 12, 2024</small>
+                    </p>
+                    <p class="mb-0">
+                      <small>Baru kali ini ada ser... <a href="">lihat selengkapnya</a></small>
+                    </p>
+                  </div>
+                  <div class="alert alert-light" style="width: 300px">
+                    <div class="mb-2 star-rating">
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                    </div>
+                    <h6 class="alert-heading mb-0" style="color: midnightblue"><small>Sangat membantu</small></h6>
+                    <p class="mb-2" style="font-size: 14px">
+                      <small><b style="font-weight: 600">Adam</b> <i class="bi bi-dot"></i> Feb 12, 2024</small>
+                    </p>
+                    <p class="mb-0">
+                      <small>Baru kali ini ada ser... <a href="">lihat selengkapnya</a></small>
+                    </p>
+                  </div>
+                  <div class="alert alert-light" style="width: 300px">
+                    <div class="mb-2 star-rating">
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                      <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                    </div>
+                    <h6 class="alert-heading mb-0" style="color: midnightblue"><small>Layanannya cukup menarik</small></h6>
+                    <p class="mb-2" style="font-size: 14px">
+                      <small><b style="font-weight: 600">Adam</b> <i class="bi bi-dot"></i> Feb 12, 2024</small>
+                    </p>
+                    <p class="mb-0">
+                      <small>Baru kali ini ada ser... <a href="">lihat selengkapnya</a></small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- end review -->
+
+            <!-- start promo -->
+            <div class="row">
+              <div id="promo" class="container">
+                <div class="review-heading mb-2">
+                  <h6>Promo</h6>
+                  <a href="full_reviews.html">
+                    <h6><u>lihat</u></h6>
+                  </a>
+                </div>
+
+                <div class="scrolling-wrapper">
+                  <div class="alert alert-light" style="width: 250px">
+                    <h6 class="alert-heading" style="color: midnightblue"><small>Welcome Sale</small></h6>
+                    <p class="mb-4">
+                      <small>Dapatkan diskon 10%</small>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-2" style="font-size: 14px">
+                        <small>*S&K berlaku</small>
+                      </p>
+                      <a href="#" class="btn btn-primary btn-sm">Klaim</a>
+                    </div>
+                  </div>
+                  <div class="alert alert-light" style="width: 250px">
+                    <h6 class="alert-heading" style="color: midnightblue"><small>May Day Sale!</small></h6>
+                    <p class="mb-4">
+                      <small>Dapatkan diskon 10%</small>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-2" style="font-size: 14px">
+                        <small><i class="bi bi-calendar"></i> Berlaku hanya 5 Mei</small>
+                      </p>
+                      <a href="#" class="btn btn-primary btn-sm">Klaim</a>
+                    </div>
+                  </div>
+                  <div class="alert alert-light" style="width: 250px">
+                    <h6 class="alert-heading" style="color: midnightblue"><small>Diskon Awal Bulan</small></h6>
+                    <p class="mb-4">
+                      <small>Dapatkan diskon 10%</small>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-2" style="font-size: 14px">
+                        <small>*S&K berlaku</small>
+                      </p>
+                      <a href="#" class="btn btn-primary btn-sm">Klaim</a>
+                    </div>
+                  </div>
+                  <div class="alert alert-light" style="width: 250px">
+                    <h6 class="alert-heading" style="color: midnightblue"><small>Promo Bebersih</small></h6>
+                    <p class="mb-4">
+                      <small>Dapatkan diskon 10%</small>
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                      <p class="mb-2" style="font-size: 14px">
+                        <small>*S&K berlaku</small>
+                      </p>
+                      <a href="#" class="btn btn-primary btn-sm">Klaim</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end promo -->
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
+      <div class="copyright">
+        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        >. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- start low navbar-->
+    <nav class="navbar navbar-expand navbar-light bg-light navbar-bottom">
+      <div class="container">
+        <ul class="navbar-nav w-100 d-flex justify-content-around">
+          <li class="nav-item">
+            <a class="nav-link" href="home.html">
+              <i class="bi bi-house-door" style="font-size: 1.3rem"></i>
+              <span>Home</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-search" style="font-size: 1.3rem"></i>
+              <span>Search</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-heart" style="font-size: 1.3rem"></i>
+              <span>Favorites</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-person" style="font-size: 1.3rem"></i>
+              <span>Profile</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- end low navbar -->
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
