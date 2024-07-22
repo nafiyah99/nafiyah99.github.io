@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>Package - NiceAdmin Bootstrap Template</title>
+    <title>Package - SparKlean</title>
     <meta content="" name="description" />
     <meta content="" name="keywords" />
 
@@ -121,9 +121,7 @@
         }
       }
 
-      table,
-      th,
-      td {
+      .catatan {
         border: 1px solid black;
         padding: 6px;
       }
@@ -145,6 +143,63 @@
         font-weight: bold;
       }
     </style>
+    <style>
+      .nav-space {
+        margin-right: 20px;
+        display: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      /* Media queries for responsive design */
+      @media (max-width: 991px) {
+        /* Hide sidebar and toggle button */
+        .sidebar {
+          display: none;
+        }
+        .toggle-sidebar-btn {
+          display: none;
+        }
+        /* Show header navigation links */
+        .header .nav-space {
+          display: block !important;
+        }
+
+        .nav-space {
+          display: block !important;
+        }
+        .header-large {
+          display: none;
+        }
+        .header-small {
+          display: block !important;
+        }
+      }
+
+      @media (min-width: 992px) {
+        /* Hide header navigation links */
+        .header .nav-space {
+          display: none !important;
+        }
+        .nav-space {
+          display: none !important;
+        }
+        .sidebar {
+          display: block;
+        }
+        .toggle-sidebar-btn {
+          display: block;
+        }
+        .header-large {
+          display: block !important;
+        }
+        .header-small {
+          display: none;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -153,57 +208,203 @@
       <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="" />
-          <span class="d-none d-lg-block">NiceAdmin</span>
+          <span class="d-none d-lg-block">SparKlean</span>
         </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
       </div>
       <!-- End Logo -->
 
-      <div class="search-bar">
-        <form class="search-form d-flex align-items-center">
-          <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
-          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-        </form>
-      </div>
-      <!-- End Search Bar -->
-
       <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
-          <li class="nav-item d-block d-lg-none">
-            <a class="nav-link nav-icon search-bar-toggle" href="#">
-              <i class="bi bi-search"></i>
+          <li class="nav-item nav-space">
+            <a class="nav-link" href="home.html">
+              <span>Home</span>
             </a>
           </li>
-          <!-- End Search Icon-->
+          <!-- End Home Nav -->
+
+          <li class="nav-item nav-space">
+            <a class="nav-link" href="package.html">
+              <span>Package</span>
+            </a>
+          </li>
+          <!-- End Package Nav -->
+
+          <li class="nav-item nav-space">
+            <a class="nav-link" href="order.html">
+              <span>Order</span>
+            </a>
+          </li>
+          <!-- End Order Nav -->
+
+          <!-- Dropdown for Messages, Notifications, and Profile -->
+          <li class="me-4 nav-item dropdown d-block d-lg-none">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>Menu</span>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+              <li>
+                <a class="dropdown-item" href="#"><i class="bi bi-bell"></i> Notifications</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"><i class="bi bi-chat-left-text"></i> Messages</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="profile.html"><i class="bi bi-person"></i> Profile</a>
+              </li>
+            </ul>
+          </li>
+          <!-- End Dropdown for Messages, Notifications, and Profile -->
+
+          <!-- Notifications Icon -->
+          <li class="nav-item dropdown d-none d-lg-block">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">4</span>
+            </a>
+            <!-- End Notification Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <li class="dropdown-header">
+                You have 4 new notifications
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="notification-item">
+                <i class="bi bi-exclamation-circle text-warning"></i>
+                <div>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-primary"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Show all notifications</a>
+              </li>
+            </ul>
+            <!-- End Notification Dropdown Items -->
+          </li>
+          <!-- End Notification Nav -->
+
+          <!-- Messages Icon -->
+          <li class="nav-item dropdown d-none d-lg-block">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-chat-left-text"></i>
+              <span class="badge bg-success badge-number">3</span>
+            </a>
+            <!-- End Messages Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+              <li class="dropdown-header">
+                You have 3 new messages
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle" />
+                  <div>
+                    <h4>Maria Hudson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>4 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle" />
+                  <div>
+                    <h4>Anna Nelson</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>6 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="message-item">
+                <a href="#">
+                  <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle" />
+                  <div>
+                    <h4>David Muldon</h4>
+                    <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                    <p>8 hrs. ago</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Show all messages</a>
+              </li>
+            </ul>
+            <!-- End Messages Dropdown Items -->
+          </li>
+          <!-- End Messages Nav -->
+
+          <li class="nav-item dropdown d-none d-lg-block">
+            <a class="nav-link nav-icon" href="profile.html">
+              <i class="bi bi-person"></i>
+            </a>
+          </li>
+
+          <!-- Profile Icon -->
+          <li class="nav-item dropdown pe-3 d-none d-lg-block">
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="profile.html">
+              <img src="assets/img/messages-1.jpg" alt="Profile" class="rounded-circle" />
+            </a>
+            <!-- End Profile Image Icon -->
+          </li>
+          <!-- End Profile Nav -->
         </ul>
       </nav>
       <!-- End Icons Navigation -->
     </header>
     <!-- End Header -->
-
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
-      <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">
-            <i class="bi bi-grid"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <!-- End Dashboard Nav -->
-
-        <li class="nav-heading">Pages</li>
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="users-profile.html">
-            <i class="bi bi-person"></i>
-            <span>Profile</span>
-          </a>
-        </li>
-        <!-- End Profile Page Nav -->
-      </ul>
-    </aside>
-    <!-- End Sidebar-->
 
     <main id="main" class="main">
       <div class="card">
@@ -228,102 +429,113 @@
               <h5><small>Lengkapi form berikut</small></h5>
             </div>
 
-            <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
-              <h6>Lokasi Indekos</h6>
-              <a href="#" class="card-link" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#editLocationModal">ubah</a>
-            </div>
+            <div class="my-4">
+              <div id="locationContainer">
+                <!-- Kondisi awal: Lokasi belum dipilih -->
+                <div class="pagetitle mt-4 d-flex justify-content-between align-items-center" id="locationTitle">
+                  <h6>Alamat</h6>
+                </div>
 
-            <div class="alamat alert alert-light">
-              <h6 class="kos mt-3 mb-2" style="font-weight: bold; font-size: 17px"><i class="bi bi-geo-alt-fill"></i> Kost Pondok Amanah</h6>
-              <p class="jalan mb-1" style="font-size: 15.5px">Jl. Radio Sukabirus</p>
-              <p class="daerah text-muted"><small>Dayeuhkolot</small></p>
-              <div class="col-md-12 mb-2">
-                <input type="text" class="patokan form-control" placeholder="Tambah patokan" />
-              </div>
-            </div>
-
-            <!-- Modal -->
-            <div class="modal fade" id="editLocationModal" tabindex="-1" aria-labelledby="editLocationModalLabel" aria-hidden="true">
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="editLocationModalLabel">Edit Lokasi</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="alert alert-light" id="locationAlert">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center" style="color: #202424"> <i class="bi bi-calendar me-2"></i><span id="selectedSchedule"></span> <span id="scheduleText">Pilih Alamat</span> </span>
+                    <a href="#" class="card-link" id="locationLink" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#editLocationModal">pilih</a>
                   </div>
-                  <div class="modal-body">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link active" id="saved-locations-tab" data-bs-toggle="tab" href="#saved-locations" role="tab" aria-controls="saved-locations" aria-selected="true">Alamat Favorit</a>
-                      </li>
-                      <li class="nav-item" role="presentation">
-                        <a class="nav-link" id="maps-tab" data-bs-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="false">Cari di Maps</a>
-                      </li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content mt-3">
-                      <div class="tab-pane fade show active" id="saved-locations" role="tabpanel" aria-labelledby="saved-locations-tab">
-                        <!-- Form for saved locations -->
-                        <form id="editLocationForm">
-                          <div class="pagetitle mt-4">
-                            <h6>Pilih Alamat</h6>
-                          </div>
+                </div>
 
-                          <div class="mb-4">
-                            <ul class="list-group">
-                              <li class="list-group-item">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked />
-                                  <label class="form-check-label" for="gridRadios1">
-                                    <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Pondok Amanah</h6>
-                                    <p class="card-text mb-1" style="font-size: 14px">Jl. Radio Sukabirus</p>
-                                    <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
-                                  </label>
-                                </div>
-                              </li>
-                              <li class="list-group-item">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
-                                  <label class="form-check-label" for="gridRadios2">
-                                    <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Aminah</h6>
-                                    <p class="card-text mb-1" style="font-size: 14px">Jl. Umayyah Sukapura</p>
-                                    <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
-                                  </label>
-                                </div>
-                              </li>
-                              <li class="list-group-item">
-                                <div class="form-check">
-                                  <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" />
-                                  <label class="form-check-label" for="gridRadios3">
-                                    <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Cobain ngeKost</h6>
-                                    <p class="card-text mb-1" style="font-size: 14px">Jl. Cengkeh II</p>
-                                    <p class="card-text text-muted"><small>Bojongsoang</small></p>
-                                  </label>
-                                </div>
-                              </li>
-                            </ul>
-                          </div>
+                <!-- Kondisi setelah lokasi dipilih -->
+                <div class="alamat alert alert-light" id="locationDetails" style="display: none">
+                  <h6 class="kos mt-3 mb-2" style="font-weight: bold; font-size: 17px"><i class="bi bi-geo-alt-fill"></i> Kost Pondok Amanah</h6>
+                  <p class="jalan mb-1" style="font-size: 15.5px">Jl. Radio Sukabirus</p>
+                  <p class="daerah text-muted"><small>Dayeuhkolot</small></p>
+                  <div class="col-md-12 mb-2">
+                    <input type="text" class="patokan form-control" placeholder="Tambah patokan" />
+                  </div>
+                </div>
+              </div>
 
-                          <button type="submit" class="btn btn-primary">Simpan</button>
-                        </form>
-                      </div>
-                      <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
-                        <div class="mb-2 col-12">
-                          <input type="text" id="streetAddress" class="form-control" placeholder="Cari alamat..." />
+              <!-- Modal -->
+              <div class="modal fade" id="editLocationModal" tabindex="-1" aria-labelledby="editLocationModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editLocationModalLabel">Edit Alamat</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Nav tabs -->
+                      <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link active" id="saved-locations-tab" data-bs-toggle="tab" href="#saved-locations" role="tab" aria-controls="saved-locations" aria-selected="true">Alamat Favorit</a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <a class="nav-link" id="maps-tab" data-bs-toggle="tab" href="#maps" role="tab" aria-controls="maps" aria-selected="false">Cari di Maps</a>
+                        </li>
+                      </ul>
+                      <!-- Tab panes -->
+                      <div class="tab-content mt-3">
+                        <div class="tab-pane fade show active" id="saved-locations" role="tabpanel" aria-labelledby="saved-locations-tab">
+                          <!-- Form for saved locations -->
+                          <form id="editLocationForm">
+                            <div class="pagetitle mt-4">
+                              <h6>Pilih Alamat</h6>
+                            </div>
+
+                            <div class="mb-4">
+                              <ul class="list-group">
+                                <li class="list-group-item">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" />
+                                    <label class="form-check-label" for="gridRadios1">
+                                      <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Pondok Amanah</h6>
+                                      <p class="card-text mb-1" style="font-size: 14px">Jl. Radio Sukabirus</p>
+                                      <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
+                                    </label>
+                                  </div>
+                                </li>
+                                <li class="list-group-item">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2" />
+                                    <label class="form-check-label" for="gridRadios2">
+                                      <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Kost Aminah</h6>
+                                      <p class="card-text mb-1" style="font-size: 14px">Jl. Umayyah Sukapura</p>
+                                      <p class="card-text text-muted"><small>Dayeuhkolot</small></p>
+                                    </label>
+                                  </div>
+                                </li>
+                                <li class="list-group-item">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" />
+                                    <label class="form-check-label" for="gridRadios3">
+                                      <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">Cobain ngeKost</h6>
+                                      <p class="card-text mb-1" style="font-size: 14px">Jl. Cengkeh II</p>
+                                      <p class="card-text text-muted"><small>Bojongsoang</small></p>
+                                    </label>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
+                          </form>
                         </div>
-                        <div class="mb-3">
-                          <button class="btn btn-light btn-sm"><i class="bi-crosshair2" style="color: chocolate"></i> Gunakan lokasi saat ini</button>
+                        <div class="tab-pane fade" id="maps" role="tabpanel" aria-labelledby="maps-tab">
+                          <div class="mb-2 col-12">
+                            <input type="text" id="streetAddress" class="form-control" placeholder="Cari alamat..." />
+                          </div>
+                          <div class="mb-3">
+                            <button class="btn btn-light btn-sm"><i class="bi-crosshair2" style="color: chocolate"></i> Gunakan alamat saat ini</button>
+                          </div>
+                          <!-- Embed Google Maps iframe or any map search functionality here -->
+                          <div id="map-container" style="height: 300px">
+                            <iframe src="https://maps.google.com/maps?q=-6.934469,107.605186&z=15&output=embed" width="100%" height="100%" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                          </div>
+                          <button type="submit" class="btn btn-primary mt-3">Simpan</button>
                         </div>
-                        <!-- Embed Google Maps iframe or any map search functionality here -->
-                        <div id="map-container" style="height: 300px">
-                          <iframe src="https://maps.google.com/maps?q=-6.934469,107.605186&z=15&output=embed" width="100%" height="100%" frameborder="0" style="border: 0" allowfullscreen></iframe>
-                        </div>
-                        <button type="submit" class="btn btn-primary mt-3">Simpan</button>
                       </div>
                     </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -334,24 +546,24 @@
             </div>
 
             <div class="hitung alert alert-info">
-              <h4 class="alert-heading">Info</h4>
+              <h4 class="alert-heading">Catatan</h4>
               <p>Kategori kamar ditentukan oleh luas kamar dalam meter persegi (m²). Pilih kategori kamar yang tepat sesuai luas kamar Anda berdasarkan tabel berikut:</p>
-              <table>
-                <tr>
-                  <th>Kategori Kamar</th>
-                  <th>Luas Kamar (m²)</th>
+              <table class="catatan">
+                <tr class="catatan">
+                  <th class="catatan">Kategori Kamar</th>
+                  <th class="catatan">Luas Kamar (m²)</th>
                 </tr>
-                <tr>
-                  <td>Big</td>
-                  <td>> 11.5</td>
+                <tr class="catatan">
+                  <td class="catatan">Small</td>
+                  <td class="catatan">≤ 7 m²</td>
                 </tr>
-                <tr>
-                  <td>Regular</td>
-                  <td>7.1 - 11.5 m²</td>
+                <tr class="catatan">
+                  <td class="catatan">Regular</td>
+                  <td class="catatan">7.1 - 11.5 m²</td>
                 </tr>
-                <tr>
-                  <td>Small</td>
-                  <td>≤ 7 m²</td>
+                <tr class="catatan">
+                  <td class="catatan">Big</td>
+                  <td class="catatan">> 11.5</td>
                 </tr>
               </table>
               <hr />
@@ -368,14 +580,14 @@
               >
                 Cara Mengukur Luas Kamar
               </button>
+              <button type="button" style="color: white; height: 40px" class="btn btn-info btn-sm" data-toggle="modal" data-target="#measurementGuide">Cara Mengukur Luas Kamar</button>
             </div>
 
             <div class="card-container">
               <div class="collapse" id="ukuranKamar">
-                <div class="card mb-3">
-                  <div class="card-body mt-4">
-                    <h6>Cara Mengukur Luas Kamar</h6>
-                    <!-- <div class="mt-3 d-flex flex-wrap justify-content-around btn-container">
+                <div class="alert alert-light mb-3">
+                  <h6>Cara Mengukur Luas Kamar</h6>
+                  <!-- <div class="mt-3 d-flex flex-wrap justify-content-around btn-container">
                       <div class="dropdown">
                         <button
                           style="height: 38.33px; width: 168px"
@@ -395,25 +607,25 @@
                         </ul>
                       </div>
                     </div> -->
-                    <div class="row">
-                      <div class="col-6">
-                        <div class="alert alert-light">
-                          <h5 class="card-text">Mengukur Kamar dengan Jengkal Tangan</h5>
-                          <p class="card-text">1. Buka tangan Anda dengan jari-jari tersebar.</p>
-                          <p class="card-text">2. Ukur panjang kamar Anda dengan meletakkan jengkal tangan satu di depan yang lain dari ujung ke ujung.</p>
-                          <p class="card-text">3. Hitung berapa jengkal yang dibutuhkan untuk panjang kamar.</p>
-                          <p class="card-text">4. Lakukan hal yang sama untuk lebar kamar.</p>
-                          <p class="card-text">5. Kalikan jumlah jengkal dengan 20 cm (rata-rata panjang jengkal) untuk mendapatkan panjang dan lebar dalam cm, kemudian konversikan ke meter.</p>
-                          <p class="card-text">
-                            Contoh: Jika panjang kamar adalah 15 jengkal dan lebar adalah 10 jengkal, maka panjang kamar adalah 15 * 20 cm = 300 cm = 3 meter, dan lebar kamar adalah 10 * 20 cm = 200 cm = 2 meter. Luas kamar = 3 meter * 2
-                            meter = 6 m².
-                          </p>
-                          <p class="card-text">Kalkulator di samping akan memudahkan Anda dalam melakukan perhitungan di atas</p>
-                        </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="container my-4">
+                        <h5 class="card-text">Mengukur Kamar dengan Jengkal Tangan</h5>
+                        <p class="card-text">1. Buka tangan Anda dengan jari-jari tersebar.</p>
+                        <p class="card-text">2. Ukur panjang kamar Anda dengan meletakkan jengkal tangan satu di depan yang lain dari ujung ke ujung.</p>
+                        <p class="card-text">3. Hitung berapa jengkal yang dibutuhkan untuk panjang kamar.</p>
+                        <p class="card-text">4. Lakukan hal yang sama untuk lebar kamar.</p>
+                        <p class="card-text">5. Kalikan jumlah jengkal dengan 20 cm (rata-rata panjang jengkal) untuk mendapatkan panjang dan lebar dalam cm, kemudian konversikan ke meter.</p>
+                        <p class="card-text">
+                          Contoh: Jika panjang kamar adalah 15 jengkal dan lebar adalah 10 jengkal, maka panjang kamar adalah 15 * 20 cm = 300 cm = 3 meter, dan lebar kamar adalah 10 * 20 cm = 200 cm = 2 meter. Luas kamar = 3 meter * 2
+                          meter = 6 m².
+                        </p>
+                        <p class="card-text">Kalkulator di samping akan memudahkan Anda dalam melakukan perhitungan di atas</p>
                       </div>
+                    </div>
 
-                      <div class="col-6">
-                        <!-- <div class="alert alert-light">
+                    <div class="col-6">
+                      <!-- <div class="alert alert-light">
                           <div class="calculator" id="calculator">
                             <label for="length">Panjang (meter)</label>
                             <input type="number" id="length" class="form-control mb-2 mt-1" oninput="calculateArea()" />
@@ -425,22 +637,23 @@
                           </div>
                         </div> -->
 
-                        <div class="container my-4">
-                          <h5 class="mb-4">Kalkulator Luas Kamar (Menggunakan Jengkal Tangan)</h5>
+                      <div class="container my-4">
+                        <h5 class="mb-3">Kalkulator Luas Kamar (Menggunakan Jengkal Tangan)</h5>
+                        <div class="alert alert-light">
                           <form id="measurementForm">
                             <div class="mb-3">
                               <label for="length" class="form-label">Panjang Kamar (dalam jengkal)</label>
-                              <input type="number" class="form-control" id="length" placeholder="Masukkan panjang kamar dalam jengkal" required />
+                              <input type="number" class="form-control" id="length" placeholder="Masukkan panjang kamar dalam jengkal" />
                             </div>
                             <div class="mb-3">
                               <label for="width" class="form-label">Lebar Kamar (dalam jengkal)</label>
-                              <input type="number" class="form-control" id="width" placeholder="Masukkan lebar kamar dalam jengkal" required />
+                              <input type="number" class="form-control" id="width" placeholder="Masukkan lebar kamar dalam jengkal" />
                             </div>
                           </form>
                           <div class="mt-4">
-                            <h4>Hasil Perhitungan:</h4>
+                            <label>Hasil Perhitungan:</label>
                             <p id="result" class="initial-text">Masukkan panjang dan lebar untuk menghitung luas kamar.</p>
-                            <h4>Kategori Kamar:</h4>
+                            <label>Kategori Kamar:</label>
                             <p id="recommendation" class="initial-text"></p>
                           </div>
                         </div>
@@ -451,51 +664,89 @@
               </div>
             </div>
 
-            <form id="ukuran">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="roomSize" id="smallRoom" value="small" />
-                <label class="form-check-label" for="smallRoom"> Small </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="roomSize" id="regularRoom" value="regular" />
-                <label class="form-check-label" for="regularRoom"> Regular </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="roomSize" id="bigRoom" value="big" />
-                <label class="form-check-label" for="bigRoom"> Big </label>
-              </div>
+            <!-- List group With Checkboxes and radios -->
+            <form action="" id="ukuran">
+              <ul class="list-group mt-2 mb-3">
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="roomSize" id="smallRoom" value="small" />
+                    <label class="form-check-label" for="smallRoom"> Small </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="roomSize" id="regularRoom" value="regular" />
+                    <label class="form-check-label" for="regularRoom"> Regular </label>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="roomSize" id="bigRoom" value="big" />
+                    <label class="form-check-label" for="bigRoom"> Big </label>
+                  </div>
+                </li>
+              </ul>
             </form>
 
-            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#measurementGuide">Cara Mengukur Kamar</button>
+            <!-- End List Checkboxes and radios -->
 
             <div class="modal fade" id="measurementGuide" tabindex="-1" role="dialog" aria-labelledby="measurementGuideTitle" aria-hidden="true">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="measurementGuideTitle">Cara Mengukur Kamar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    <h6>Langkah 1: Ukur Panjang</h6>
-                    <p>Gunakan meteran untuk mengukur panjang kamar Anda dari ujung ke ujung.</p>
+                    <div class="card-body mt-4">
+                      <div class="row">
+                        <div class="col-6">
+                          <div class="alert alert-light">
+                            <h5 class="card-text">Mengukur Kamar dengan Jengkal Tangan</h5>
+                            <p class="card-text">1. Buka tangan Anda dengan jari-jari tersebar.</p>
+                            <p class="card-text">2. Ukur panjang kamar Anda dengan meletakkan jengkal tangan satu di depan yang lain dari ujung ke ujung.</p>
+                            <p class="card-text">3. Hitung berapa jengkal yang dibutuhkan untuk panjang kamar.</p>
+                            <p class="card-text">4. Lakukan hal yang sama untuk lebar kamar.</p>
+                            <p class="card-text">5. Kalikan jumlah jengkal dengan 20 cm (rata-rata panjang jengkal) untuk mendapatkan panjang dan lebar dalam cm, kemudian konversikan ke meter.</p>
+                            <p class="card-text">
+                              Contoh: Jika panjang kamar adalah 15 jengkal dan lebar adalah 10 jengkal, maka panjang kamar adalah 15 * 20 cm = 300 cm = 3 meter, dan lebar kamar adalah 10 * 20 cm = 200 cm = 2 meter. Luas kamar = 3 meter * 2
+                              meter = 6 m².
+                            </p>
+                            <p class="card-text">Kalkulator di samping akan memudahkan Anda dalam melakukan perhitungan di atas</p>
+                          </div>
+                        </div>
 
-                    <h6>Langkah 2: Ukur Lebar</h6>
-                    <p>Ukur lebar kamar dari sisi ke sisi.</p>
-
-                    <h6>Langkah 3: Hitung Luas</h6>
-                    <p>Kali panjang dan lebar untuk mendapatkan luas kamar. Misal, panjang 3 meter dan lebar 2 meter, maka luas = 3m x 2m = 6m².</p>
+                        <div class="col-6">
+                          <div class="container my-4">
+                            <h5 class="mb-4">Kalkulator Luas Kamar (Menggunakan Jengkal Tangan)</h5>
+                            <form id="measurementForm">
+                              <div class="mb-3">
+                                <label for="length" class="form-label">Panjang Kamar (dalam jengkal)</label>
+                                <input type="number" class="form-control" id="length" placeholder="Masukkan panjang kamar dalam jengkal" />
+                              </div>
+                              <div class="mb-3">
+                                <label for="width" class="form-label">Lebar Kamar (dalam jengkal)</label>
+                                <input type="number" class="form-control" id="width" placeholder="Masukkan lebar kamar dalam jengkal" />
+                              </div>
+                            </form>
+                            <div class="mt-4">
+                              <h4>Hasil Perhitungan:</h4>
+                              <p id="result" class="initial-text">Masukkan panjang dan lebar untuk menghitung luas kamar.</p>
+                              <h4>Kategori Kamar:</h4>
+                              <p id="recommendation" class="initial-text">-</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="container">
-              <button type="button" class="btn btn-info" onclick="startWalkthrough()">Panduan Interaktif Mengukur Kamar</button>
-            </div>
+            <!-- <button type="button" class="btn btn-info" onclick="startWalkthrough()">Panduan Interaktif Mengukur Kamar</button> -->
 
-            <div id="choose-section" class="alert alert-light container text-center"></div>
+            <div id="choose-section" class="alert alert-light container text-center mt-3"></div>
 
             <p class="card-text text-muted mt-3">
               <small>*Aturan dan Ketentuan <a href="">berlaku</a></small>
@@ -612,7 +863,7 @@
                 <h6><small>1 Jam</small></h6>
               </div>
               <div class="d-flex justify-content-between align-items-center">
-                <h6><small>Jenis Ruangan</small></h6>
+                <h6><small>Kategori Kamar</small></h6>
                 <h6><small>Regular</small></h6>
               </div>
               <div class="d-flex justify-content-between align-items-center">
@@ -669,13 +920,12 @@
               </div>
               <hr style="border-style: dotted" />
               <div class="d-flex justify-content-between align-items-center">
-                <h6><small>Total</small></h6>
-                <h6><small>Rp50.000</small></h6>
-              </div>
-              <hr style="border-style: dotted" />
-              <div class="d-flex justify-content-between align-items-center">
-                <h6><small>Metode Pembayaran</small></h6>
-                <h6><small>Bank CIMB Niaga</small></h6>
+                <h6>
+                  <small><b>Total</b></small>
+                </h6>
+                <h6>
+                  <small><b>Rp50.000</b></small>
+                </h6>
               </div>
             </div>
 
@@ -754,12 +1004,7 @@
               </label>
             </div>
 
-            <div class="alert alert-light">
-              <div class="d-flex justify-content-between align-items-center">
-                <h6 class="card-title">Total: Rp54.000</h6>
-                <button id="orderButton" class="btn btn-primary col-6">Pesan</button>
-              </div>
-            </div>
+            <button id="orderButton" class="btn btn-primary col-12">Pesan</button>
           </div>
           <!-- End Step 3 -->
 
@@ -789,7 +1034,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
       <div class="copyright">
-        &copy; Copyright <strong><span>NiceAdmin</span></strong
+        &copy; Copyright <strong><span>SparKlean</span></strong
         >. All Rights Reserved
       </div>
       <div class="credits">
@@ -871,11 +1116,11 @@
         const widthInHandspans = parseFloat(document.getElementById('width').value);
 
         // Validasi input
-        if (isNaN(lengthInHandspans) || isNaN(widthInHandspans)) {
+        if (isNaN(lengthInHandspans) || isNaN(widthInHandspans) || lengthInHandspans <= 0 || widthInHandspans <= 0) {
           document.getElementById('result').textContent = 'Masukkan nilai panjang dan lebar yang valid.';
           document.getElementById('result').classList.remove('result-text');
           document.getElementById('result').classList.add('initial-text');
-          document.getElementById('recommendation').textContent = '';
+          document.getElementById('recommendation').textContent = '-';
           document.getElementById('recommendation').classList.remove('result-text', 'bold-text');
           document.getElementById('recommendation').classList.add('initial-text');
           return;
@@ -908,9 +1153,37 @@
         document.getElementById('recommendation').classList.add('result-text', 'bold-text');
       }
 
+      function validateInput() {
+        const lengthInput = document.getElementById('length');
+        const widthInput = document.getElementById('width');
+
+        lengthInput.addEventListener('input', () => {
+          if (lengthInput.value.trim() !== '' || widthInput.value.trim() !== '') {
+            lengthInput.setAttribute('required', 'required');
+            widthInput.setAttribute('required', 'required');
+          } else {
+            lengthInput.removeAttribute('required');
+            widthInput.removeAttribute('required');
+          }
+        });
+
+        widthInput.addEventListener('input', () => {
+          if (lengthInput.value.trim() !== '' || widthInput.value.trim() !== '') {
+            lengthInput.setAttribute('required', 'required');
+            widthInput.setAttribute('required', 'required');
+          } else {
+            lengthInput.removeAttribute('required');
+            widthInput.removeAttribute('required');
+          }
+        });
+      }
+
       // Event listener untuk input panjang dan lebar
       document.getElementById('length').addEventListener('input', calculateArea);
       document.getElementById('width').addEventListener('input', calculateArea);
+
+      // Jalankan fungsi validasi input saat halaman dimuat
+      validateInput();
     </script>
 
     <script>
@@ -956,13 +1229,15 @@
 
     <script>
       $(document).ready(function () {
-        // Simpan nilai radio button yang dipilih
-        var selectedOption = $('input[name="gridRadios"]:checked').val();
+        var selectedOption = null; // Simpan nilai radio button yang dipilih
 
         // Saat modal akan ditampilkan
         $('#editLocationModal').on('show.bs.modal', function () {
-          // Pilih kembali radio button yang disimpan sebelumnya tanpa delay
-          $('input[name="gridRadios"][value="' + selectedOption + '"]').prop('checked', true);
+          if (selectedOption) {
+            $('input[name="gridRadios"][value="' + selectedOption + '"]').prop('checked', true);
+          } else {
+            $('input[name="gridRadios"]').prop('checked', false);
+          }
         });
 
         // Tangkap acara saat formulir modal disubmit
@@ -986,6 +1261,15 @@
 
           // Sembunyikan modal setelah menyimpan
           $('#editLocationModal').modal('hide');
+
+          // Ubah tampilan setelah lokasi dipilih
+          $('#locationAlert').hide();
+          $('#locationDetails').show();
+
+          // Tambahkan tautan "ubah" hanya sekali
+          if ($('#locationTitle').find('a').length === 0) {
+            $('#locationTitle').append('<a href="#" class="card-link" style="font-size: 14px" data-bs-toggle="modal" data-bs-target="#editLocationModal">ubah</a>');
+          }
         });
       });
     </script>

@@ -27,7 +27,6 @@
 
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet" />
-    
   </head>
 
   <body>
@@ -36,9 +35,8 @@
       <div class="d-flex align-items-center justify-content-between">
         <a href="index.html" class="logo d-flex align-items-center">
           <img src="assets/img/logo.png" alt="" />
-          <span class="d-none d-lg-block">NiceAdmin</span>
+          <span class="d-none d-lg-block">SparKlean</span>
         </a>
-        <i class="bi bi-list toggle-sidebar-btn"></i>
       </div>
       <!-- End Logo -->
 
@@ -64,43 +62,13 @@
     </header>
     <!-- End Header -->
 
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
-      <ul class="sidebar-nav" id="sidebar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">
-            <i class="bi bi-grid"></i>
-            <span>Dashboard</span>
-          </a>
-        </li>
-        <!-- End Dashboard Nav -->
-
-        <li class="nav-heading">Pages</li>
-
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="users-profile.html">
-            <i class="bi bi-person"></i>
-            <span>Profile</span>
-          </a>
-        </li>
-        <!-- End Profile Page Nav -->
-      </ul>
-    </aside>
-    <!-- End Sidebar-->
-
     <main id="main" class="main">
       <div class="card mb-0">
         <div class="card-body">
           <h5 class="card-title">Pembayaran</h5>
 
-          <div class="alert alert-light">
-            <h4 class="alert-heading">Info Heading</h4>
-            <p>Et suscipit deserunt earum itaque dignissimos</p>
-            <hr />
-            <div class="d-flex justify-content-between align-items-center">
-              <p class="mb-0">Total pembayaran:</p>
-              <p class="mb-0">Rp54.000</p>
-            </div>
+          <div class="alert alert-info">
+            <p class="mb-0">Pilih metode pembayaran yang tersedia</p>
           </div>
 
           <div class="pagetitle mt-4 d-flex justify-content-between align-items-center">
@@ -154,10 +122,7 @@
             </li>
           </ul>
 
-          <div class="mt-4 card-body d-flex justify-content-between align-items-center">
-            <h6 class="card-title"><small>Total: </small> Rp54.000</h6>
-            <a id="bayarButton" href="#" class="btn btn-primary col-6 disabled">Bayar</a>
-          </div>
+          <a id="bayarButton" href="#" class="btn btn-primary col-12 disabled mt-4">Bayar</a>
 
           <!-- Modal -->
           <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
@@ -212,68 +177,46 @@
     <script src="assets/js/main.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        const radioButtons = document.querySelectorAll('input[name="gridRadios"]');
-        const bayarButton = document.getElementById('bayarButton');
+      function showToast(message) {
+        var toastElement = document.getElementById('customAlertToast');
+        var toastBody = toastElement.querySelector('.toast-body');
+        toastBody.textContent = message;
 
-        radioButtons.forEach(function (radio) {
-          radio.addEventListener('change', function () {
-            bayarButton.classList.remove('disabled');
-            bayarButton.href = '#'; // Reset href when changing selection
-          });
-        });
+        var toast = new bootstrap.Toast(toastElement);
+        toast.show();
+      }
 
-        bayarButton.addEventListener('click', function (event) {
-          event.preventDefault(); // Prevent default behavior of link click
-          if (bayarButton.classList.contains('disabled')) {
-            alert('Silakan pilih metode pembayaran terlebih dahulu.');
-            return;
-          }
+      function login(event) {
+        event.preventDefault();
+        var form = document.querySelector('.needs-validation');
+        var inputLogin = document.getElementById('inputLogin').value;
+        var inputPass = document.getElementById('inputPass').value;
 
-          const selectedRadio = document.querySelector('input[name="gridRadios"]:checked');
-          const paymentType = selectedRadio.value;
+        var phonePattern = /^8\d{9,}$/;
+        var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-          // Menampilkan informasi pembayaran sesuai dengan jenis pembayaran
-          switch (paymentType) {
-            case 'finish-wallet-order.html':
-              showWalletPaymentInfo();
-              break;
-            case 'finish-order.html':
-              window.location.href = 'finish-order.html'; // Virtual Account
-              break;
-            case 'halaman2.html':
-              window.location.href = 'halaman2.html'; // Rekening/CC
-              break;
-            default:
-              alert('Metode pembayaran tidak dikenali.');
-          }
-        });
-
-        function showWalletPaymentInfo() {
-          // Menampilkan modal
-          const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
-          paymentModal.show();
-
-          // Event listener untuk tombol "Selanjutnya" di dalam modal
-          const nextButtonModal = document.getElementById('nextButtonModal');
-
-          // Tampilkan spinner saat tombol diaktifkan
-          nextButtonModal.disabled = true;
-
-          // Menunda aktivasi tombol "Selanjutnya" dengan setTimeout
+        if (form.checkValidity() && (phonePattern.test(inputLogin) || emailPattern.test(inputLogin))) {
+          showToast('Login successful');
           setTimeout(function () {
-            nextButtonModal.disabled = false;
-            nextButtonModal.innerHTML = 'Selanjutnya'; // Ubah teks tombol
-            nextButtonModal.classList.remove('disabled'); // Hapus kelas disabled jika masih ada
-            nextButtonModal.querySelector('.spinner-border').style.display = 'none'; // Sembunyikan spinner
-          }, 3000); // Delay dalam milidetik (misalnya 3000 untuk delay 3 detik)
-
-          // Tambahkan event listener untuk mengarahkan ke halaman1.html saat tombol "Selanjutnya" diklik
-          nextButtonModal.addEventListener('click', function () {
-            window.location.href = 'finish-wallet-order.html';
-          });
+            window.location.href = './home.html';
+          }, 2000); // Adjust the delay as needed
+        } else {
+          if (!phonePattern.test(inputLogin) && !emailPattern.test(inputLogin)) {
+            document.getElementById('inputLogin').classList.add('is-invalid');
+          }
+          form.classList.add('was-validated');
         }
-      });
+      }
+
+      (function () {
+        'use strict';
+
+        var forms = document.querySelectorAll('.needs-validation');
+
+        Array.prototype.slice.call(forms).forEach(function (form) {
+          form.addEventListener('submit', login, false);
+        });
+      })();
     </script>
   </body>
 </html>
