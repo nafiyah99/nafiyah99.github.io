@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Profil - Spark Clean</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/NiceAdmin/assets/img/favicon.png" rel="icon" />
+    <link href="/NiceAdmin/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="/NiceAdmin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="/NiceAdmin/assets/css/style.css" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #012970;
+      }
+      .nav-space {
+        margin-right: 30px;
+        display: none;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .modal-title {
+        font-weight: bold;
+      }
+
+      @media (max-width: 991px) {
+        .header .nav-space {
+          display: block !important;
+        }
+
+        .nav-space {
+          display: block !important;
+        }
+        .header-large {
+          display: none;
+        }
+        .header-small {
+          display: block !important;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .header .nav-space {
+          display: block !important;
+        }
+        .nav-space {
+          display: block !important;
+        }
+        .header-large {
+          display: block !important;
+        }
+        .header-small {
+          display: none;
+        }
+      }
+    </style>
+    <style>
+      .list-group-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .list-group-item .d-flex .me-2 {
+        margin-right: 8px; /* Ensure there's a margin-right on the icons */
+      }
+
+      .col-form-label {
+        font-size: 15px;
+        color: #677fa9;
+        font-weight: 520;
+      }
+    </style>
+    <style>
+      footer {
+        background-color: #f9f9f9;
+        padding: 40px 0;
+      }
+      footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      footer .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      footer .col {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 20px;
+      }
+      footer h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      footer ul {
+        list-style: none;
+        padding: 0;
+      }
+      footer ul li {
+        margin-bottom: 10px;
+      }
+      footer ul li a {
+        text-decoration: none;
+        color: #666;
+        font-size: 0.9em;
+      }
+      footer ul li a:hover {
+        color: #333;
+      }
+      footer p {
+        font-size: 0.9em;
+        color: #666;
+      }
+      .list-inline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .list-inline-item {
+        display: inline;
+        margin-right: 10px;
+      }
+      .list-inline-item a {
+        text-decoration: none;
+        color: #666;
+      }
+      .list-inline-item a:hover {
+        color: #333;
+      }
+      footer .d-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+    <style>
+      .logo {
+        margin-left: 10px;
+      }
+      nav {
+        margin-right: 15px;
+      }
+      .menu {
+        /* margin-right: 370px; */
+        margin-right: 30px;
+        margin-left: auto;
+      }
+      @media only screen and (max-width: 750px) {
+        .menu {
+          margin-right: 30px;
+          margin-left: auto;
+        }
+      }
+    </style>
+    <style>
+      .active-nav {
+        color: #012970; /* Change to your desired active color */
+        font-weight: 600; /* Optional: make it bold */
+        font-size: 16px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="logo d-flex align-items-center justify-content-between">
+        <a href="/index.html" class="logo d-flex align-items-center">
+          <img src="/NiceAdmin/assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block">SparKlean</span>
+        </a>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav ms-auto">
+        <ul class="d-flex align-items-center">
+          <div class="menu d-flex justify-content-between align-items-center">
+            <li class="nav-item nav-space">
+              <a class="nav-link" href="/home/home.html">
+                <span>Beranda</span>
+              </a>
+            </li>
+
+            <li class="nav-item nav-space">
+              <a class="nav-link" href="/package/package.html">
+                <span>Paket</span>
+              </a>
+            </li>
+
+            <li class="nav-item nav-space">
+              <a class="nav-link" href="/order/order.html">
+                <span>Aktivitas</span>
+              </a>
+            </li>
+          </div>
+
+          <div class="search-bar">
+            <form class="search-form d-flex align-items-center">
+              <input type="text" name="query" placeholder="Search" title="Enter search keyword" />
+              <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+          </div>
+          <!-- End Search Bar -->
+
+          <li class="nav-item d-block d-lg-none">
+            <a class="nav-link nav-icon search-bar-toggle" href="#">
+              <i class="bi bi-search"></i>
+            </a>
+          </li>
+          <!-- End Search Icon-->
+
+          <!-- Notifications Icon -->
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-danger badge-number">2</span>
+            </a>
+            <!-- End Notification Icon -->
+
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <li class="dropdown-header">
+                Kamu punya 1 pemberitahuan baru
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">Lihat</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-info"></i>
+                <div>
+                  <h4><b>Pesanan telah dikonfirmasi</b></h4>
+                  <p>Petugas sedang bersiap menuju lokasimu!</p>
+                  <p>30 menit lalu</p>
+                </div>
+                <a href="/transactions/status.html" class="me-3"><span class="badge rounded-pill bg-primary p-2 ms-2">Lihat</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Pembayaran Gagal</h4>
+                  <p>Waktu pembayaranmu habis! Pesan ulang untuk melakukan pembayaran</p>
+                  <p>1 jam lalu</p>
+                </div>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Pesanan selesai</h4>
+                  <p>Terima kasih! Jangan lupa berikan ulasanmu, ya! 🤩</p>
+                  <p>2 hari lalu</p>
+                </div>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li class="dropdown-footer">
+                <a href="#">Lihat semua</a>
+              </li>
+            </ul>
+            <!-- End Notification Dropdown Items -->
+          </li>
+          <!-- End Notification Nav -->
+
+          <li class="nav-item dropdown">
+            <a class="nav-link nav-icon pe-0" href="#" id="profileDropdown" data-bs-toggle="dropdown">
+              <i class="bi bi-person"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="/profile/profile.html"><i class="bi bi-person me-2"></i><span>Profil</span></a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item d-flex align-items-center" href="/index.html"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <!-- End Icons Navigation -->
+    </header>
+    <!-- End Header -->
+    <main id="main" class="main">
+      <div class="pagetitle">
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item active" style="color: white">Profil</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+
+      <section class="section profile">
+        <div class="row">
+          <div class="col-xl-8">
+            <div class="card">
+              <div class="card-body pt-3">
+                <!-- Bordered Tabs -->
+                <ul class="nav nav-tabs nav-tabs-bordered">
+                  <li class="nav-item">
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Detail Profil</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Edit Profil</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-change-password">Ganti Kata Sandi</button>
+                  </li>
+                  <li class="nav-item">
+                    <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-address">Daftar Alamat</button>
+                  </li>
+                </ul>
+                <div class="tab-content pt-2">
+                  <div class="tab-pane fade show active profile-overview" id="profile-overview">
+                    <div class="row mt-4">
+                      <div class="col-lg-3 col-md-4 label">Nama</div>
+                      <div class="col-lg-9 col-md-8">Anna</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Nomor Telepon</div>
+                      <div class="col-lg-9 col-md-8">(+62) 876-3538-2907</div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-3 col-md-4 label">Email</div>
+                      <div class="col-lg-9 col-md-8">anna@mail.com</div>
+                    </div>
+                    <div class="text-end mt-4">
+                      <button type="button" class="btn btn-danger me-2" id="delete-account">Hapus Akun</button>
+                    </div>
+                  </div>
+
+                  <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                    <!-- Profile Edit Form -->
+                    <form>
+                      <div class="row mb-3">
+                        <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Nama</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="fullName" type="text" class="form-control" id="fullName" value="Anna" />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Nomor Telepon</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="phone" type="text" class="form-control" id="Phone" value="(+62) 876-3538-2907" />
+                        </div>
+                      </div>
+                      <div class="row mb-3">
+                        <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
+                        <div class="col-md-8 col-lg-9">
+                          <input name="email" type="email" class="form-control" id="Email" value="anna@mail.com" />
+                        </div>
+                      </div>
+                      <div class="text-end">
+                        <button type="button" id="cancel-edit-btn" class="btn btn-secondary mt-2">Batal</button>
+                        <button type="submit" class="btn btn-primary mt-2">Simpan</button>
+                      </div>
+                    </form>
+                    <!-- End Profile Edit Form -->
+                  </div>
+
+                  <div class="tab-pane fade pt-3" id="profile-change-password">
+                    <!-- Change Password Form -->
+                    <form class="mt-2 mb-2">
+                      <div class="row mb-3">
+                        <label for="currentPassword" class="col-md-4 col-lg-4 col-form-label">Kata Sandi Saat Ini</label>
+                        <div class="col-md-8 col-lg-8">
+                          <input name="currentPassword" type="password" class="form-control" id="currentPassword" required />
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="newPassword" class="col-md-4 col-lg-4 col-form-label">Kata Sandi Baru</label>
+                        <div class="col-md-8 col-lg-8">
+                          <input name="newPassword" type="password" class="form-control" id="newPassword" required minlength="8" pattern=".*[0-9].*" />
+                          <p class="mb-0" style="color: grey"><small>Kata sandi harus mengandung min. 8 karakter dan angka</small></p>
+                        </div>
+                      </div>
+
+                      <div class="row mb-3">
+                        <label for="confirmPassword" class="col-md-4 col-lg-4 col-form-label">Konfirmasi Kata Sandi Baru</label>
+                        <div class="col-md-8 col-lg-8">
+                          <input name="confirmPassword" type="password" class="form-control" id="confirmPassword" required minlength="8" pattern=".*[0-9].*" />
+                        </div>
+                      </div>
+
+                      <div class="text-end">
+                        <button type="button" id="cancel-edit-btn" class="btn btn-secondary mt-2">Batal</button>
+                        <button type="submit" class="btn btn-primary mt-2">Simpan</button>
+                      </div>
+                    </form>
+                    <!-- End Change Password Form -->
+                  </div>
+
+                  <div class="tab-pane fade pt-3" id="profile-address">
+                    <!-- Address List Form -->
+                    <div class="mb-4">
+                      <ul id="addressList" class="list-group">
+                        <!-- Alamat akan di-render di sini -->
+                      </ul>
+                    </div>
+                    <div class="text-end">
+                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addAddressModal">Tambah Alamat</button>
+                    </div>
+
+                    <!-- Modal Tambah Alamat -->
+                    <div class="modal fade" id="addAddressModal" tabindex="-1" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="addAddressModalLabel">Tambah Alamat Baru</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="addAddressForm">
+                              <div class="mb-3">
+                                <label for="costName" class="form-label">Nama Kost</label>
+                                <input type="text" id="costName" name="costName" class="form-control" required />
+                              </div>
+                              <div class="mb-3">
+                                <label for="streetAddress" class="form-label">Alamat</label>
+                                <input type="text" id="streetAddress" name="streetAddress" class="form-control" required />
+                              </div>
+                              <div class="mb-3">
+                                <label for="region" class="form-label">Daerah</label>
+                                <input type="text" id="region" name="region" class="form-control" required />
+                              </div>
+                              <input type="hidden" id="editIndex" />
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelAddButton">Batal</button>
+                            <button type="submit" class="btn btn-primary" id="saveAddButton">Simpan</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal Edit Alamat -->
+                    <div class="modal fade" id="editAddressModal" tabindex="-1" aria-labelledby="editAddressModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="editAddressModalLabel">Edit Alamat</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <form id="editAddressForm">
+                              <div class="mb-3">
+                                <label for="editCostName" class="form-label">Nama Kost</label>
+                                <input type="text" id="editCostName" name="costName" class="form-control" required />
+                              </div>
+                              <div class="mb-3">
+                                <label for="editStreetAddress" class="form-label">Alamat</label>
+                                <input type="text" id="editStreetAddress" name="streetAddress" class="form-control" required />
+                              </div>
+                              <div class="mb-3">
+                                <label for="editRegion" class="form-label">Daerah</label>
+                                <input type="text" id="editRegion" name="region" class="form-control" required />
+                              </div>
+                              <input type="hidden" id="editIndex" />
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelEditButton">Batal</button>
+                            <button type="submit" class="btn btn-primary" id="saveEditButton">Simpan</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Modal Konfirmasi Hapus -->
+                    <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="deleteConfirmModalLabel">Konfirmasi Hapus</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>Apakah kamu yakin ingin menghapus alamat ini?</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancelDeleteButton">Batal</button>
+                            <button type="button" class="btn btn-danger" id="confirmDeleteButton">Hapus</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Toast Container -->
+                    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                      <div id="customAlertToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                          <strong class="me-auto">Alert</strong>
+                          <small class="text-muted">just now</small>
+                          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                          <!-- Alert message will be dynamically set here -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Bordered Tabs -->
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="card-title mb-0" style="font-size: medium">Pengaturan</h6>
+                <div class="list-group">
+                  <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center"> <i class="bi bi-globe2 me-2"></i> Bahasa </span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center"> <i class="bi bi-bell me-2"></i> Notifikasi </span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center"> <i class="bi bi-shield-lock me-2"></i> Kebijakan Privasi </span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center"> <i class="bi bi-exclamation-circle me-2"></i> Ketentuan Layanan </span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                  <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                    <span class="d-flex align-items-center"> <i class="bi bi-shield-check me-2"></i> Jaminan dan Garansi </span>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal Konfirmasi Hapus Akun -->
+      <div class="modal fade" id="deleteAccountModal" tabindex="-1" aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="deleteAccountModalLabel">Konfirmasi Hapus Akun</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p class="mb-0">Apakah Anda yakin ingin menghapus akun ini?</p>
+              <p>Anda tidak dapat memulihkan akun yang telah dihapus!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+              <button type="button" class="btn btn-danger" id="confirmDeleteAccountButton">Hapus Akun</button>
+              <button id="loadingButton" class="btn btn-danger d-none" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Memuat...
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="/find-store">Find A Store</a></li>
+              <li><a href="/become-member">Become A Member</a></li>
+              <li><a href="/student-discounts">Student Discounts</a></li>
+              <li><a href="/send-feedback">Send Us Feedback</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Help</h3>
+            <ul>
+              <li><a href="/get-help">Get Help</a></li>
+              <li><a href="/order-status">Order Status</a></li>
+              <li><a href="/delivery">Delivery</a></li>
+              <li><a href="/returns">Returns</a></li>
+              <li><a href="/payment-options">Payment Options</a></li>
+              <li><a href="/contact-us">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="/about-sparklean">About SparKlean</a></li>
+              <li><a href="/news">News</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="/investors">Investors</a></li>
+              <li><a href="/sustainability">Sustainability</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+              <p>&copy; 2024 SparKlean. All rights reserved.</p>
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="/guides">Guides</a></li>
+                <li class="list-inline-item"><a href="/terms-of-sale">Terms of Sale</a></li>
+                <li class="list-inline-item"><a href="/terms-of-use">Terms of Use</a></li>
+                <li class="list-inline-item"><a href="/privacy-policy">Privacy Policy</a></li>
+              </ul>
+              <a href="https://github.com/nafiyah99" class="text-dark"><i class="bi bi-heart-fill text-danger"></i> nafiyah99</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- End #main -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const deleteAccountModal = new bootstrap.Modal(document.getElementById('deleteAccountModal'));
+        const deleteAccountButton = document.getElementById('delete-account');
+        const confirmDeleteAccountButton = document.getElementById('confirmDeleteAccountButton');
+        const loadingButton = document.getElementById('loadingButton');
+        const cancelDeleteAccountButton = document.querySelector('#deleteAccountModal .btn-secondary');
+
+        deleteAccountButton.addEventListener('click', () => {
+          deleteAccountModal.show();
+        });
+
+        confirmDeleteAccountButton.addEventListener('click', () => {
+          // Sembunyikan tombol konfirmasi dan tampilkan tombol loading
+          confirmDeleteAccountButton.classList.add('d-none');
+          loadingButton.classList.remove('d-none');
+
+          setTimeout(() => {
+            window.location.href = '/menu/login.html'; // Ubah URL sesuai kebutuhan
+          }, 2000); // 2 detik delay
+        });
+
+        cancelDeleteAccountButton.addEventListener('click', () => {
+          deleteAccountModal.hide();
+          confirmDeleteAccountButton.classList.remove('d-none');
+          loadingButton.classList.add('d-none');
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const addressList = document.getElementById('addressList');
+        const addAddressForm = document.getElementById('addAddressForm');
+        const editAddressForm = document.getElementById('editAddressForm');
+        const saveAddButton = document.getElementById('saveAddButton');
+        const saveEditButton = document.getElementById('saveEditButton');
+        const cancelAddButton = document.getElementById('cancelAddButton');
+        const cancelEditButton = document.getElementById('cancelEditButton');
+        const cancelDeleteButton = document.getElementById('cancelDeleteButton');
+        const confirmDeleteButton = document.getElementById('confirmDeleteButton');
+        const customAlertToast = document.getElementById('customAlertToast');
+        const toastBody = customAlertToast.querySelector('.toast-body');
+        const toast = new bootstrap.Toast(customAlertToast, { delay: 5000 });
+
+        const deleteConfirmModal = new bootstrap.Modal(document.getElementById('deleteConfirmModal'));
+        const addAddressModal = new bootstrap.Modal(document.getElementById('addAddressModal'));
+        const editAddressModal = new bootstrap.Modal(document.getElementById('editAddressModal'));
+
+        let currentEditIndex = null;
+
+        // Simulated data
+        const addresses = [
+          { costName: 'Kost Melati', streetAddress: 'Jl. Bengawan', region: 'Dayeuhkolot' },
+          { costName: 'Kost Mawar', streetAddress: 'Jl. Pahlawan 2', region: 'Dayeuhkolot' },
+          { costName: 'Cobain ngeKost', streetAddress: 'Jl. Cengkeh II', region: 'Bojongsoang' },
+        ];
+
+        function renderAddresses() {
+          addressList.innerHTML = '';
+          addresses.forEach((addr, index) => {
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.innerHTML = `
+                <div class="form-check">
+                  <h6 class="card-subtitle mt-1 mb-2" style="font-weight: bold; font-size: 16px">${addr.costName}</h6>
+                  <p class="card-text mb-1" style="font-size: 14px">${addr.streetAddress}</p>
+                  <p class="card-text text-muted"><small>${addr.region}</small></p>
+                </div>
+                <div class="btn-group" style="top: -25px">
+                  <a style="color: black" class="btn-sm" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="bi bi-three-dots-vertical"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item edit-address" href="#" data-index="${index}">Edit</a></li>
+                      <li><a class="dropdown-item delete-address" href="#" data-index="${index}">Hapus</a></li>
+                  </ul>
+                </div>
+            `;
+            addressList.appendChild(li);
+          });
+
+          document.querySelectorAll('.edit-address').forEach((button) => {
+            button.addEventListener('click', (event) => {
+              event.preventDefault();
+              currentEditIndex = event.target.dataset.index;
+              const address = addresses[currentEditIndex];
+              editAddressForm.editCostName.value = address.costName;
+              editAddressForm.editStreetAddress.value = address.streetAddress;
+              editAddressForm.editRegion.value = address.region;
+              editAddressModal.show();
+            });
+          });
+
+          document.querySelectorAll('.delete-address').forEach((button) => {
+            button.addEventListener('click', (event) => {
+              event.preventDefault();
+              currentEditIndex = event.target.dataset.index;
+              deleteConfirmModal.show();
+            });
+          });
+        }
+
+        saveAddButton.addEventListener('click', () => {
+          const costName = addAddressForm.costName.value.trim();
+          const streetAddress = addAddressForm.streetAddress.value.trim();
+          const region = addAddressForm.region.value.trim();
+
+          if (costName && streetAddress && region) {
+            addresses.push({ costName, streetAddress, region });
+            toastBody.textContent = 'Alamat berhasil ditambahkan!';
+            toast.show();
+            renderAddresses();
+            addAddressForm.reset();
+            addAddressModal.hide();
+          } else {
+            toastBody.textContent = 'Semua field harus diisi!';
+            toast.show();
+          }
+        });
+
+        cancelAddButton.addEventListener('click', () => {
+          addAddressForm.reset();
+          addAddressModal.hide();
+        });
+
+        saveEditButton.addEventListener('click', () => {
+          const costName = editAddressForm.editCostName.value.trim();
+          const streetAddress = editAddressForm.editStreetAddress.value.trim();
+          const region = editAddressForm.editRegion.value.trim();
+
+          if (costName && streetAddress && region) {
+            addresses[currentEditIndex] = { costName, streetAddress, region };
+            toastBody.textContent = 'Alamat berhasil diubah!';
+            toast.show();
+            renderAddresses();
+            editAddressForm.reset();
+            editAddressModal.hide();
+            currentEditIndex = null;
+          } else {
+            toastBody.textContent = 'Semua field harus diisi!';
+            toast.show();
+          }
+        });
+
+        cancelEditButton.addEventListener('click', () => {
+          editAddressForm.reset();
+          editAddressModal.hide();
+          currentEditIndex = null;
+        });
+
+        confirmDeleteButton.addEventListener('click', () => {
+          addresses.splice(currentEditIndex, 1);
+          toastBody.textContent = 'Alamat berhasil dihapus!';
+          toast.show();
+          renderAddresses();
+          deleteConfirmModal.hide();
+          currentEditIndex = null;
+        });
+
+        // Add event listener for cancel button in delete modal
+        cancelDeleteButton.addEventListener('click', () => {
+          deleteConfirmModal.hide();
+          currentEditIndex = null;
+        });
+
+        // Initial render
+        renderAddresses();
+      });
+    </script>
+    <script>
+      document.getElementById('cancel-edit-btn').addEventListener('click', function () {
+        window.location.href = '/profile/profile.html';
+      });
+
+      document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const newPassword = document.getElementById('newPassword').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (newPassword !== confirmPassword) {
+          alert('Password baru dan konfirmasi password tidak cocok.');
+          return;
+        }
+
+        alert('Password berhasil disimpan.');
+        setTimeout(function () {
+          window.location.href = '/profile/profile.html';
+        }, 2000); // 2 seconds delay
+      });
+    </script>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="/NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/quill/quill.js"></script>
+    <script src="/NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/NiceAdmin/assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
