@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Spark Clean</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/NiceAdmin/assets/img/favicon.png" rel="icon" />
+    <link href="/NiceAdmin/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet" />
+
+    <!-- Vendor CSS Files -->
+    <link href="/NiceAdmin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+    <link href="/NiceAdmin/assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="/NiceAdmin/assets/css/style.css" rel="stylesheet" />
+    <style>
+      .scrolling-wrapper {
+        overflow-x: auto;
+        white-space: nowrap;
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+        text-align: start;
+      }
+
+      .scrolling-wrapper::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+
+      .scrolling-wrapper .card {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .scrolling-wrapper .alert {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      .review-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .review-card {
+        display: inline-block;
+        width: 300px;
+        vertical-align: top;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        background-color: white;
+      }
+
+      .review-card h6,
+      .review-card p {
+        margin: 0;
+      }
+
+      .text-review {
+        white-space: normal;
+        margin-top: 10px;
+      }
+
+      .star-rating {
+        margin-bottom: 10px;
+      }
+
+      .carousel-inner {
+        height: 150px;
+      }
+
+      .alert {
+        border: 1px solid #ddd;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+
+      .alert img {
+        max-width: 150px;
+        margin-bottom: 10px;
+      }
+    </style>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #012970;
+      }
+
+      .header {
+        background-color: #00509e;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+      }
+
+      .logo img {
+        margin-right: 10px;
+      }
+
+      .header-nav {
+        display: flex;
+        justify-content: center;
+      }
+
+      .header-nav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+      }
+
+      .login {
+        display: flex;
+        align-items: center;
+        margin-left: 50px;
+      }
+
+      .regis {
+        color: white;
+        font-weight: 600;
+        margin-right: 40px;
+      }
+
+      .hero {
+        background: url('essential 201.png') no-repeat center center/cover;
+        color: white;
+        padding: 50px 20px;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        margin: 0;
+      }
+
+      .hero p {
+        font-size: 1.5em;
+      }
+
+      .hero .cta {
+        background-color: #ffa726;
+        color: black;
+        font-weight: 600;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .title .cta {
+        background-color: #ffa726;
+        color: black;
+        font-weight: 600;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      .btn-warning {
+        background-color: #ffa726;
+        color: white;
+        padding: 8px 30px;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* .section .title {
+        background-color: #F6F9FF;
+        color: #012970;
+        padding: 20px;
+      } */
+
+      .section {
+        padding: 50px 20px;
+        text-align: center;
+      }
+
+      .promo-banner {
+        background-color: #ffa726;
+        color: white;
+        text-align: center;
+        padding: 20px 20px;
+      }
+
+      .section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+
+      .grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+
+      .accordion-body {
+        text-align: start;
+      }
+
+      .additional-info {
+        color: #f6f9ff;
+        text-align: start;
+      }
+
+      .card {
+        border: 1px solid #ddd;
+        padding: 20px;
+        flex: 1 1 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card h3 {
+        margin: 20px 0 10px;
+        font-size: 20px;
+      }
+
+      .learn-more-btn {
+        margin-top: auto;
+        width: 100%;
+        max-width: 200px;
+      }
+
+      #discount-promotions .alert {
+        background-color: #f6f9ff;
+        transition: transform 0.3s ease, background-color 0.3s;
+      }
+
+      #discount-promotions .alert:hover {
+        transform: translateY(-10px);
+      }
+
+      #reviews .alert {
+        background-color: #f6f9ff;
+        transition: transform 0.3s ease, background-color 0.3s;
+      }
+
+      #reviews .alert:hover {
+        transform: translateY(-10px);
+      }
+
+      /* Styling for the title */
+      #popular-packages .card-title {
+        color: #ffffff; /* White text color */
+      }
+
+      #popular-packages .card {
+        background-color: #012970; /* Dark blue background */
+        border: 2px solid #ffffff; /* White border */
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff; /* White text color */
+        transition: transform 0.3s ease, background-color 0.3s, border-color 0.3s; /* Smooth transition */
+      }
+
+      /* Card hover effect */
+      #popular-packages .card:hover {
+        transform: translateY(-10px);
+        border-color: #ffa726; /* Yellow border on hover */
+      }
+
+      /* Styling for the title */
+      #room-sizes .card-title {
+        color: #ffffff; /* White text color */
+      }
+
+      #room-sizes .card {
+        background-color: #012970; /* Dark blue background */
+        border: 2px solid #ffffff; /* White border */
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff; /* White text color */
+        transition: transform 0.3s ease, background-color 0.3s, border-color 0.3s; /* Smooth transition */
+      }
+
+      /* Card hover effect */
+      #room-sizes .card:hover {
+        transform: translateY(-10px);
+        border-color: #ffa726; /* Yellow border on hover */
+      }
+
+      .promo-banner h2 {
+        font-size: 2rem;
+      }
+    </style>
+    <style>
+      footer {
+        background-color: #f9f9f9;
+        padding: 40px 0;
+      }
+      footer .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      footer .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      footer .col {
+        flex: 1;
+        min-width: 200px;
+        margin-bottom: 20px;
+      }
+      footer h3 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      footer ul {
+        list-style: none;
+        padding: 0;
+      }
+      footer ul li {
+        margin-bottom: 10px;
+      }
+      footer ul li a {
+        text-decoration: none;
+        color: #666;
+        font-size: 0.9em;
+      }
+      footer ul li a:hover {
+        color: #333;
+      }
+      footer p {
+        font-size: 0.9em;
+        color: #666;
+      }
+      .list-inline {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .list-inline-item {
+        display: inline;
+        margin-right: 10px;
+      }
+      .list-inline-item a {
+        text-decoration: none;
+        color: #666;
+      }
+      .list-inline-item a:hover {
+        color: #333;
+      }
+      footer .d-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top d-flex align-items-center">
+      <div class="logo">
+        <a href="/NiceAdmin/menu/index.html" class="d-flex align-items-center">
+          <img src="/NiceAdmin/assets/img/logo.png" alt="" />
+          <span class="d-none d-lg-block" style="color: white">SparKlean</span>
+        </a>
+      </div>
+      <!-- End Logo -->
+
+      <nav class="header-nav">
+        <a href="#main">Home</a>
+        <a href="#popular-packages">Services</a>
+        <a href="#faq">About Us</a>
+        <a href="#reviews">Reviews</a>
+      </nav>
+
+      <div class="login">
+        <a class="regis" href="/NiceAdmin/home/home.html">Log In</a>
+        <a class="btn btn-warning" style="font-weight: 600; color: black" type="button" href="/NiceAdmin/menu/regist.html">Sign Up</a>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <main id="main" class="main">
+      <div class="row">
+        <section class="hero col-6">
+          <div class="hero">
+            <h1 class="card-title" style="color: #f6f9ff">The <b class="text-warning" style="font-weight: 500">Best</b> Cleaning Services for Students</h1>
+            <p class="mb-4 text-warning">Keeping Your Room Shines</p>
+            <p><small>Affordable and customizable cleaning services for busy students</small></p>
+            <a href="/NiceAdmin/menu/login.html" class="btn btn-warning" style="color: black; font-weight: 600; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer">Book Now</a>
+          </div>
+        </section>
+        <section class="hero col-6">
+          <div class="heros">
+            <img src="/NiceAdmin/assets/img/image 23.png" alt="" width="611px" />
+          </div>
+        </section>
+      </div>
+
+      <div class="section">
+        <h2 class="card-title" style="color: #f6f9ff; margin-bottom: 0px"><b class="text-warning" style="font-weight: 500">Personalized Cleaning</b> for Your Room</h2>
+      </div>
+
+      <div class="row">
+        <section class="hero col-6">
+          <div class="container p1" style="text-align: start">
+            <h2 class="card-title text-warning" style="color: #f6f9ff; font-size: 2em; margin-bottom: 10px">Convenient Cleaning for Busy Students</h2>
+            <p><small>Maintain a clean and healthy space without disrupting your hectic schedule. SparKlean provides thorough cleaning services designed specifically for students.</small></p>
+          </div>
+        </section>
+        <section class="hero col-6">
+          <div class="heros">
+            <div class="heros" style="margin-left: 50px">
+              <img src="/NiceAdmin/assets/img/undraw_remotely.svg" alt="" height="300px" />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="row">
+        <section class="hero col-6">
+          <div class="heros" style="margin-top: 30px; margin-left: 30px">
+            <img src="/NiceAdmin/assets/img/undraw_to_do.svg" alt="" height="300px" />
+          </div>
+        </section>
+        <section class="hero col-6">
+          <div class="container heros">
+            <p class="mb-2 text-warning" style="font-size: 22px"><i class="bi bi-check-lg text-warning"></i> Affordable and Fair Pricing</p>
+            <p class="mb-4" style="font-size: 20px"><small>Enjoy competitive rates based on your room size. Our pricing ensures you only pay for the space that needs cleaning, making it ideal for smaller living areas.</small></p>
+            <p class="mb-2 text-warning" style="font-size: 22px"><i class="bi bi-check-lg text-warning"></i> Customizable Service Packages</p>
+            <p class="mb-4" style="font-size: 20px"><small>Select from a range of cleaning task options to suit your needs. Our Flexible Clean package lets you tailor the cleaning to your preferences and budget.</small></p>
+            <p class="mb-2 text-warning" style="font-size: 22px"><i class="bi bi-check-lg text-warning"></i> Student-Friendly Service</p>
+            <p class="mb-4" style="font-size: 20px"><small>Affordable, customizable, and reliable cleaning solutions perfect for students in dormitories or shared accommodations.</small></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="row">
+        <section class="hero col-6">
+          <div class="container p1" style="text-align: start">
+            <h2 class="card-title text-warning" style="color: #f6f9ff; font-size: 2em; margin-bottom: 10px">Trust and Assurance</h2>
+            <p>
+              <small
+                >Rest easy with our guarantees and warranties to cover unlikely event of any issues, such as lost or damaged items. Additionaly, choose the gender of your cleaning staff for added comfort and security, ensuring a
+                personalized and reassuring experience.</small
+              >
+            </p>
+          </div>
+        </section>
+        <section class="hero col-6">
+          <div class="heros" style="margin-left: 50px">
+            <img src="/NiceAdmin/assets/img/undraw_secure.svg" alt="" height="300px" />
+          </div>
+        </section>
+      </div>
+
+      <div class="row">
+        <section class="hero col-6">
+          <div class="heros" style="margin-left: 100px">
+            <img src="/NiceAdmin/assets/img/undraw_reviews.svg" alt="" height="300px" />
+          </div>
+        </section>
+        <section class="hero col-6">
+          <div class="container p1" style="text-align: start">
+            <h2 class="card-title text-warning" style="color: #f6f9ff; font-size: 2em; margin-bottom: 10px">Customer Feedback and Testimonials</h2>
+            <p><small>Share your experiences and read others’ reviews on our platform to us continuously improve our services. This transparency helps build trust and confidence in our services.</small></p>
+          </div>
+        </section>
+      </div>
+
+      <div class="section" id="popular-packages">
+        <h2 class="card-title">Our <b class="text-warning" style="font-weight: 500">Packages</b></h2>
+        <div class="grid">
+          <div class="card">
+            <div class="center">
+              <img src="/NiceAdmin/assets/img/essential 201.svg" alt="Essential Clean" width="130px" />
+            </div>
+            <h3 class="card-title mb-1">Essential Clean</h3>
+            <p class="mb-4">Basic cleaning services to keep your space tidy. Includes sweeping, mopping, dusting, and bathroom cleaning. Perfect for regular maintenance.</p>
+            <p class="mb-4">Starts from:<strong class="text-warning"> Rp40.000</strong></p>
+          </div>
+          <div class="card">
+            <div class="center">
+              <img src="/NiceAdmin/assets/img/intensive 201.svg" alt="Intensive Clean" width="130px" />
+            </div>
+            <h3 class="card-title mb-1">Intensive Clean</h3>
+            <p class="mb-4">Deep cleaning for a healthier and cleaner space. Includes everything in Essential Clean plus detailed cleaning and thorough sanitization.</p>
+            <p class="mb-4">Starts from:<strong class="text-warning"> Rp90.000</strong></p>
+          </div>
+          <div class="card">
+            <div class="center">
+              <img src="/NiceAdmin/assets/img/flexible 201.svg" alt="Flexible Clean" width="130px" />
+            </div>
+            <h3 class="card-title mb-1">Flexible Clean</h3>
+            <p class="mb-4">Customizable cleaning package tailored to your needs. Choose the tasks you want to prioritize, fitting your preferences and budget.</p>
+            <p class="mb-4">Starts from:<strong class="text-warning"> Rp51.000</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="room-sizes">
+        <h2 class="card-title">Pick Your <b class="text-warning" style="font-weight: 500">Room</b></h2>
+
+        <div class="grid">
+          <h5 class="mb-4" style="color: #f6f9ff">
+            To better serve students in dorm rooms, we provide cleaning services with a pricing model that adjusts based on room size. The base package sets the initial cost, with the final price reflecting your room's dimensions. Measure
+            your room and select the appropriate size category for a fair and customized rate. We offer three distinct room size categories to help you find the best fit and pricing. Here are the room categories you can pick from for
+            optimal pricing!
+          </h5>
+          <div class="card">
+            <div class="center mt-4">
+              <img src="/NiceAdmin/assets/img/small.svg" alt="Essential Clean" width="130px" />
+            </div>
+            <p class="mb-0">≤ 7 m²</p>
+            <h3 class="card-title mb-1 mt-3">Small</h3>
+            <p class="mb-4 mt-2">
+              Perfect for students with cozy dorm rooms or compact living spaces. If your room is 7 square meters or less, this service is designed to keep your space tidy without breaking the bank. Ideal for those who value efficiency and
+              minimalism.
+            </p>
+          </div>
+          <div class="card">
+            <div class="center mt-4">
+              <img src="/NiceAdmin/assets/img/regular.svg" alt="Intensive Clean" width="130px" />
+            </div>
+            <p class="mb-0">7.1 - 11.5 m²</p>
+            <h3 class="card-title mb-1 mt-3">Regular</h3>
+            <p class="mb-4 mt-2">
+              Ideal for students with a bit more space, such as a standard dorm room or a small studio apartment. This category covers rooms between 7.1 and 11.5 square meters, providing a balanced service that ensures thorough cleaning
+              without unnecessary costs.
+            </p>
+          </div>
+          <div class="card">
+            <div class="center mt-4">
+              <img src="/NiceAdmin/assets/img/big.svg" alt="Flexible Clean" width="130px" />
+            </div>
+            <p class="mb-0">> 11.5 m²</p>
+            <h3 class="card-title mb-1 mt-3">Big</h3>
+            <p class="mb-4 mt-2">
+              Suitable for students with larger living spaces, such as spacious studio apartments or shared living areas. For rooms over 11.5 square meters, our service ensures that every corner is spotless, offering a comprehensive
+              cleaning solution that meets all your needs.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="discount-promotions">
+        <h2 class="card-title" style="color: #f6f9ff"><b class="text-warning" style="font-weight: 500">Exclusive</b> Promotions</h2>
+        <div class="grid">
+          <!-- Discount promotions here -->
+          <div class="scrolling-wrapper" style="text-align: center; margin-bottom: 50px">
+            <div class="alert alert-light" style="width: 250px">
+              <h6 class="alert-heading" style="color: midnightblue"><small>Welcome Sale</small></h6>
+              <p class="mb-0">
+                <small>Get 10% offer</small>
+              </p>
+            </div>
+            <div class="alert alert-light" style="width: 250px">
+              <h6 class="alert-heading" style="color: midnightblue"><small>Summer Cleaning Offer</small></h6>
+              <p class="mb-0">
+                <small>Get 20% offer</small>
+              </p>
+            </div>
+            <div class="alert alert-light" style="width: 250px">
+              <h6 class="alert-heading" style="color: midnightblue"><small>Independence Day Sale</small></h6>
+              <p class="mb-0">
+                <small>Get 17% offer</small>
+              </p>
+            </div>
+            <div class="alert alert-light" style="width: 250px">
+              <h6 class="alert-heading" style="color: midnightblue"><small>2 Packs Offer</small></h6>
+              <p class="mb-0">
+                <small>Get 15% offer</small>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h5 class="mt-4 mb-4" style="color: #f6f9ff">
+          Alongside our regular discounts, we feature special promotions that apply to each of our service packages. Discover these personalized deals to select the best option that suits your needs and budget!
+        </h5>
+      </div>
+
+      <div class="container" style="padding: 50px; text-align: center" id="faq">
+        <h2 class="card-title" style="color: #f6f9ff; font-size: 2em; margin-bottom: 20px">F<b class="text-warning" style="font-weight: 500">A</b>Q's About Us</h2>
+
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">What is SparKlean?</button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+              <div class="accordion-body"><b class="text-warning">A:</b> SparKlean is a cleaning service company that helps students with their cleaning duties without interrupting their busy schedules.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Why is it best for students?</button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> Our service is aims to help students who want to clean their rooms but are too busy with their college life. We understand that finding time to thoroughly clean their rooms can be challenging.
+                We also address concerns about pricing, ensuring students only pay based on the size of their room, preventing them from feeling overcharged for smaller spaces. Our goal is to provide the best cleaning experience without
+                putting a strain on their finances.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">What services does SparKlean offer?</button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> SparKlean offers a range of cleaning services, including dusting, vacuuming, mopping, and bathroom cleaning. These services are available in two different packages: the Essential Clean for
+                basic cleaning needs and the Intensive Clean for a deeper, more thorough cleaning. Additionally, we offer a Flexible Clean package, allowing you to customize the tasks according to your specific needs and preferences.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                How does SparKlean ensure the safety and security of my belongings?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> We prioritize the safety and security of your belongings. Our staff undergoes thorough background checks and training. Additionally, we offer guarantees and warranties to protect you against
+                any potential issues.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                What makes SparKlean different from other cleaning services?
+              </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> SparKlean stands out due to our student-friendly pricing, customizable service packages, and our commitment to customer satisfaction. We offer affordable rates that fit a typical student budget
+                and allow you to adjust the price based on the size of your room. Moreover, you can choose the gender of your cleaning staff for added comfort.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSix">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">How do I book a cleaning service with SparKlean?</button>
+            </h2>
+            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> Booking a service with SparKlean is easy. You can visit our website, choose your preferred service package, select a convenient time, and make a booking in just a few clicks.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSeven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                What if I’m not satisfied with the cleaning service?
+              </button>
+            </h2>
+            <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> Customer satisfaction is our top priority. If you’re not satisfied with our service, please let us know immediately. We offer a satisfaction guarantee and will work to resolve any issues
+                promptly.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEight">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">How does SparKlean handle feedback and complaints?</button>
+            </h2>
+            <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> We value your feedback and take complaints seriously. You can provide feedback through our website or contact our customer service team. We strive to improve continuously based on your input.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNine">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">Does SparKlean offer any discounts or promotions?</button>
+            </h2>
+            <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> Yes, SparKlean regularly offers discounts and promotions, especially for students. Check our website or follow us on social media to stay updated on the latest deals.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">How long does the cleaning take?</button>
+            </h2>
+            <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#accordionExample">
+              <div class="accordion-body"><b class="text-warning">A:</b> Typically, our Essential Clean takes about 2-3 hours.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingEleven">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                Can I schedule a cleaning service at a time that suits me?
+              </button>
+            </h2>
+            <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> Yes, SparKlean offers flexible scheduling options. You can book a cleaning service at a time that fits your busy schedule, including evenings and weekends. However, please note that scheduling
+                is only available up to 7 days in advance. We are closed on certain public holidays, but otherwise, our services are available from 7 AM to 9 PM daily.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwelve">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">Are cleaning supplies provided by SparKlean?</button>
+            </h2>
+            <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample">
+              <div class="accordion-body"><b class="text-warning">A:</b> Yes, SparKlean provides all necessary cleaning supplies and equipment. You don’t need to worry about providing anything; we come fully prepared.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThirteen">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                Can I make special requests for certain cleaning tasks?
+              </button>
+            </h2>
+            <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <b class="text-warning">A:</b> Absolutely! We understand that every room and user may have unique needs. With our Flexible Clean package, you can make special requests when booking your service, and our staff will
+                accommodate them as best as possible. This ensures that you get exactly the cleaning services you need without being confined to default packages.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="reviews">
+        <h2 class="card-title" style="color: #f6f9ff">What Our <b class="text-warning" style="font-weight: 500">Customers Say</b></h2>
+        <div class="grid">
+          <!-- Sneak peek reviews here -->
+
+          <div class="scrolling-wrapper">
+            <div class="alert alert-light review-card">
+              <div class="mb-2 star-rating">
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Otw jadi langgananku</small></h6>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small
+                  >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar. Untung
+                  ada SpearKlean</small
+                >
+              </p>
+              <p class="mt-4">
+                <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
+              </p>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="mb-2 star-rating">
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Jasa Terbaik untuk Kostan</small></h6>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small>Sebagai mahasiswa yang tinggal di kamar kost, SparKlean sangat membantu saya menjaga kebersihan ruang saya tanpa harus repot. Hasilnya memuaskan dan harga sangat terjangkau!</small>
+              </p>
+              <p class="mt-4">
+                <small><b style="font-weight: 600">Rendi</b> <i class="bi bi-dot"></i> Bandung</small>
+              </p>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="mb-2 star-rating">
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Kostan Terawat dengan Baik</small></h6>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small>Saya sangat puas dengan layanan SparKlean untuk kamar kost saya. Mereka sangat detail dan membuat kamar saya terasa seperti baru. Sangat cocok untuk mahasiswa yang sibuk seperti saya!</small>
+              </p>
+              <p class="mt-4">
+                <small><b style="font-weight: 600">Nina</b> <i class="bi bi-dot"></i> Dayeuhkolot</small>
+              </p>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="mb-2 star-rating">
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Solusi Terbaik</small></h6>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small>Layanan SparKlean sangat membantu saya yang tinggal sendiri di kost. Kamar saya selalu bersih dan nyaman tanpa harus saya bersusah payah. Sungguh investasi yang berharga!</small>
+              </p>
+              <p class="mt-4">
+                <small><b style="font-weight: 600">Deni</b> <i class="bi bi-dot"></i> Buah Batu</small>
+              </p>
+            </div>
+            <div class="alert alert-light review-card" style="width: 400px">
+              <div class="mb-2 star-rating">
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Kebersihan Maksimal untuk Ruang Kecil</small></h6>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small>SparKlean memberikan hasil yang luar biasa untuk kamar kecil saya. Mereka benar-benar tahu bagaimana cara membersihkan dengan efektif. Sangat direkomendasikan untuk mahasiswa yang tinggal sendiri!</small>
+              </p>
+              <p class="mt-4">
+                <small><b style="font-weight: 600">Lia</b> <i class="bi bi-dot"></i> Antapani</small>
+              </p>
+            </div>
+            <div class="alert alert-light review-card" style="width: 400px">
+              <div class="mb-2 star-rating">
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                <i class="bi bi-star-fill" style="color: midnightblue"></i>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Kualitas Terbaik untuk Mahasiswa</small></h6>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small>SparKlean membuat hidup saya sebagai mahasiswa jauh lebih mudah dengan menjaga kamar kost saya tetap bersih dan nyaman. Layanan yang sangat terpercaya dan efisien!</small>
+              </p>
+              <p class="mt-4">
+                <small><b style="font-weight: 600">Tari</b> <i class="bi bi-dot"></i> Bojongsoang</small>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section" id="cta">
+        <div class="title">
+          <h2 class="card-title" style="color: #f6f9ff">Ready to Experience <b class="text-warning" style="font-weight: 500">SparKlean</b>?</h2>
+          <h5 class="mb-4" style="color: #f6f9ff">Book your cleaning today and enjoy a spotless living space</h5>
+          <a href="/NiceAdmin/menu/login.html" class="btn btn-warning" style="color: black; font-weight: 600; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer; margin-top: 10px">Book Your Cleaning</a>
+        </div>
+      </div>
+    </main>
+    <!-- End #main -->
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="/find-store">Find A Store</a></li>
+              <li><a href="/become-member">Become A Member</a></li>
+              <li><a href="/student-discounts">Student Discounts</a></li>
+              <li><a href="/send-feedback">Send Us Feedback</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Help</h3>
+            <ul>
+              <li><a href="/get-help">Get Help</a></li>
+              <li><a href="/order-status">Order Status</a></li>
+              <li><a href="/delivery">Delivery</a></li>
+              <li><a href="/returns">Returns</a></li>
+              <li><a href="/payment-options">Payment Options</a></li>
+              <li><a href="/contact-us">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="/about-sparklean">About SparKlean</a></li>
+              <li><a href="/news">News</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="/investors">Investors</a></li>
+              <li><a href="/sustainability">Sustainability</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center">
+              <p>&copy; 2024 SparKlean. All rights reserved.</p>
+              <ul class="list-inline mb-0">
+                <li class="list-inline-item"><a href="/guides">Guides</a></li>
+                <li class="list-inline-item"><a href="/terms-of-sale">Terms of Sale</a></li>
+                <li class="list-inline-item"><a href="/terms-of-use">Terms of Use</a></li>
+                <li class="list-inline-item"><a href="/privacy-policy">Privacy Policy</a></li>
+              </ul>
+              <a href="/change-language" style="color: white">Indonesia</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="/NiceAdmin/assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="/NiceAdmin/assets/vendor/echarts/echarts.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/quill/quill.js"></script>
+    <script src="/NiceAdmin/assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="/NiceAdmin/assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="/NiceAdmin/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="/NiceAdmin/assets/js/main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
