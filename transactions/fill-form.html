@@ -616,7 +616,7 @@
                   <div class="modal-body">
                     <div class="card-body mt-4">
                       <div class="row">
-                        <div class="col-6">
+                        <div class="col-xl-6">
                           <div class="alert alert-light">
                             <h5 class="card-text"><b>Cara Mengukur Luas Kamar dengan Jengkal Tangan</b></h5>
                             <p class="card-text">1. Buka tanganmu dengan jari-jari tersebar.</p>
@@ -634,7 +634,7 @@
                           </div>
                         </div>
 
-                        <div class="col-6">
+                        <div class="col-xl-6">
                           <div class="container my-4">
                             <h5 class="mb-0"><b>Kalkulator Luas Kamar</b></h5>
                             <h5 class="mb-4">(Menggunakan Jengkal Tangan)</h5>
@@ -1000,101 +1000,116 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', (event) => {
-        const daysOfWeek = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
-        const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
-
-        const dates = [];
-        for (let i = 0; i < 7; i++) {
-          const date = new Date();
-          date.setDate(date.getDate() + i);
-          dates.push(date);
-        }
-
-        const now = new Date();
-        let startHourToday = now.getHours() + 1;
-        const times = [];
-        for (let i = 7; i <= 21; i++) {
-          if (i >= startHourToday) {
-            times.push(i.toString().padStart(2, '0') + ':00');
+          const daysOfWeek = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+          const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+  
+          const dates = [];
+          for (let i = 0; i < 7; i++) {
+              const date = new Date();
+              date.setDate(date.getDate() + i);
+              dates.push(date);
           }
-        }
-
-        let dateIndex = 0;
-        let timeIndex = 0;
-
-        const dateDisplay = document.getElementById('date-display');
-        const timeDisplay = document.getElementById('time-display');
-        const scheduleText = document.getElementById('scheduleText');
-
-        function formatDate(date) {
-          return `${daysOfWeek[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
-        }
-
-        function updateDisplays() {
-          dateDisplay.textContent = formatDate(dates[dateIndex]);
-          timeDisplay.textContent = times[timeIndex];
-        }
-
-        document.getElementById('prev-date').addEventListener('click', () => {
-          if (dateIndex > 0) {
-            dateIndex--;
-            updateDisplays();
+  
+          let now = new Date();
+          let startHourToday = now.getHours() + 1;
+          if (now.getMinutes() > 0) {
+              startHourToday += 1;
           }
-        });
-
-        document.getElementById('next-date').addEventListener('click', () => {
-          if (dateIndex < dates.length - 1) {
-            dateIndex++;
-            updateDisplays();
+          
+          let timesToday = [];
+          for (let i = 7; i <= 21; i++) {
+              if (i >= startHourToday) {
+                  timesToday.push(i.toString().padStart(2, '0') + ':00');
+              }
           }
-        });
-
-        document.getElementById('prev-time').addEventListener('click', () => {
-          if (timeIndex > 0) {
-            timeIndex--;
-            updateDisplays();
+  
+          let timesDefault = [];
+          for (let i = 7; i <= 21; i++) {
+              timesDefault.push(i.toString().padStart(2, '0') + ':00');
           }
-        });
-
-        document.getElementById('next-time').addEventListener('click', () => {
-          if (timeIndex < times.length - 1) {
-            timeIndex++;
-            updateDisplays();
+  
+          let dateIndex = 0;
+          let timeIndex = 0;
+  
+          const dateDisplay = document.getElementById('date-display');
+          const timeDisplay = document.getElementById('time-display');
+          const scheduleText = document.getElementById('scheduleText');
+  
+          function formatDate(date) {
+              return `${daysOfWeek[date.getDay()]}, ${date.getDate()} ${months[date.getMonth()]}`;
           }
-        });
-
-        document.getElementById('schedule-button').addEventListener('click', function () {
-          const selectedDate = formatDate(dates[dateIndex]);
-          const selectedTime = times[timeIndex];
-
-          const customAlertToast = document.getElementById('customAlertToast');
-          const toastBody = customAlertToast.querySelector('.toast-body');
-          toastBody.textContent = 'Jadwal berhasil disimpan!';
-
-          // Aktifkan toast
-          const alertToast = new bootstrap.Toast(customAlertToast, { delay: 2000 });
-          alertToast.show();
-
-          // Menambahkan delay sebelum berpindah dari step 2 ke step 3
-          setTimeout(() => {
-            const scheduleModal = bootstrap.Modal.getInstance(document.getElementById('scheduleModal'));
-            if (scheduleModal) {
-              scheduleModal.hide();
-            }
-          }, 2000);
-          scheduleText.textContent = `${selectedDate}, ${selectedTime}`;
-        });
-
-        // Initial display update
-        updateDisplays();
-
-        // Show the modal when needed
-        document.getElementById('open-modal').addEventListener('click', function () {
-          const scheduleModal = new bootstrap.Modal(document.getElementById('scheduleModal'));
-          scheduleModal.show();
-        });
+  
+          function updateDisplays() {
+              dateDisplay.textContent = formatDate(dates[dateIndex]);
+  
+              let times = (dateIndex === 0) ? timesToday : timesDefault;
+              if (timeIndex >= times.length) {
+                  timeIndex = times.length - 1;
+              }
+              timeDisplay.textContent = times[timeIndex];
+          }
+  
+          document.getElementById('prev-date').addEventListener('click', () => {
+              if (dateIndex > 0) {
+                  dateIndex--;
+                  timeIndex = 0; // Reset time index
+                  updateDisplays();
+              }
+          });
+  
+          document.getElementById('next-date').addEventListener('click', () => {
+              if (dateIndex < dates.length - 1) {
+                  dateIndex++;
+                  timeIndex = 0; // Reset time index
+                  updateDisplays();
+              }
+          });
+  
+          document.getElementById('prev-time').addEventListener('click', () => {
+              if (timeIndex > 0) {
+                  timeIndex--;
+                  updateDisplays();
+              }
+          });
+  
+          document.getElementById('next-time').addEventListener('click', () => {
+              let times = (dateIndex === 0) ? timesToday : timesDefault;
+              if (timeIndex < times.length - 1) {
+                  timeIndex++;
+                  updateDisplays();
+              }
+          });
+  
+          document.getElementById('schedule-button').addEventListener('click', function () {
+              const selectedDate = formatDate(dates[dateIndex]);
+              const selectedTime = (dateIndex === 0) ? timesToday[timeIndex] : timesDefault[timeIndex];
+  
+              const customAlertToast = document.getElementById('customAlertToast');
+              const toastBody = customAlertToast.querySelector('.toast-body');
+              toastBody.textContent = 'Jadwal berhasil disimpan!';
+  
+              const alertToast = new bootstrap.Toast(customAlertToast, { delay: 2000 });
+              alertToast.show();
+  
+              setTimeout(() => {
+                  const scheduleModal = bootstrap.Modal.getInstance(document.getElementById('scheduleModal'));
+                  if (scheduleModal) {
+                      scheduleModal.hide();
+                  }
+              }, 2000);
+              scheduleText.textContent = `${selectedDate}, ${selectedTime}`;
+          });
+  
+          updateDisplays();
+  
+          document.getElementById('open-modal').addEventListener('click', function () {
+              const scheduleModal = new bootstrap.Modal(document.getElementById('scheduleModal'));
+              scheduleModal.show();
+          });
       });
     </script>
+  
+  
 
     <script>
       function startWalkthrough() {
