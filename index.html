@@ -133,6 +133,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 10px 20px;
+        flex-wrap: wrap;
       }
 
       .logo img {
@@ -142,6 +143,7 @@
       .header-nav {
         display: flex;
         justify-content: center;
+        flex-grow: 1;
       }
 
       .header-nav a {
@@ -153,7 +155,7 @@
       .login {
         display: flex;
         align-items: center;
-        margin-left: 50px;
+        margin-left: auto;
       }
 
       .regis {
@@ -207,11 +209,63 @@
         cursor: pointer;
       }
 
-      /* .section .title {
-        background-color: #F6F9FF;
-        color: #012970;
-        padding: 20px;
-      } */
+      @media (max-width: 768px) {
+        .logo img {
+            margin-top: 5px;
+            margin-right: 400px;
+        }
+        
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .header-nav, .login {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: auto;
+            margin-top: 7px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 2px;
+            background-color: white;
+            margin: 3px 0;
+        }
+
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            background-color: #00509e;
+            width: 100%;
+            padding: 10px 0;
+            position: absolute;
+            top: 60px; /* Adjust based on header height */
+            left: 0;
+            z-index: 1000;
+        }
+
+        .dropdown-menu.active {
+            display: flex;
+        }
+
+        .dropdown-menu a {
+            padding: 10px 20px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #003f7f;
+        }
+      }
 
       .section {
         padding: 50px 20px;
@@ -418,6 +472,22 @@
       <div class="login">
         <a class="regis" href="menu/login.html">Log In</a>
         <a class="btn btn-warning" style="font-weight: 600; color: black" type="button" href="menu/regist.html">Sign Up</a>
+      </div>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <!-- Dropdown Menu -->
+      <div class="dropdown-menu" style="padding: 20px;">
+          <a href="#main">Home</a>
+          <a href="#popular-packages">Services</a>
+          <a href="#faq">About Us</a>
+          <a href="#reviews">Reviews</a>
+          <a href="menu/login.html">Log In</a>
+          <a class="btn btn-warning" href="menu/regist.html">Sign Up</a>
       </div>
     </header>
     <!-- End Header -->
@@ -983,5 +1053,12 @@
 
     <!-- JavaScript Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+      function toggleMenu() {
+          const dropdownMenu = document.querySelector('.dropdown-menu');
+          dropdownMenu.classList.toggle('active');
+      }
+    </script>
   </body>
 </html>
