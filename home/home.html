@@ -7,21 +7,21 @@
         try {
           t = m.sessionStorage.getItem('maze-us');
         } catch (err) {}
-      
+
         if (!t) {
           t = new Date().getTime();
           try {
             m.sessionStorage.setItem('maze-us', t);
           } catch (err) {}
         }
-      
+
         s = a.createElement('script');
         s.src = z + '?apiKey=' + e;
         s.async = true;
         a.getElementsByTagName('head')[0].appendChild(s);
         m.mazeUniversalSnippetApiKey = e;
       })(window, document, 'https://snippet.maze.co/maze-universal-loader.js', '0ad2b8fe-108e-47a7-b875-61904d03ff18');
-      </script>
+    </script>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
@@ -171,13 +171,13 @@
         margin-bottom: 10px;
       }
 
-      .review-card #activity {
+      .review-card {
         transition: transform 0.3s ease, background-color 0.3s, border-color 0.3s; /* Smooth transition */
       }
 
       /* Card hover effect */
-      .review-card #activity:hover {
-        transform: translateX(-10px);
+      .review-card:hover {
+        transform: translateY(-10px);
         border-color: #ffa726; /* Yellow border on hover */
       }
 
@@ -567,19 +567,26 @@
     </header>
     <!-- End Header -->
 
-    <div class="first mt-4">
+    <div class="first">
       <div class="row">
         <section class="hero">
           <div class="container ms-4">
             <h1 class="card-title" style="color: #f6f9ff">The <b class="text-warning" style="font-weight: 500">Best</b> Cleaning Services for Students</h1>
             <p class="text-light"><small>Affordable and customizable cleaning services for busy students</small></p>
-            <a href="../package/package.html" class="btn btn-warning" style="color: black; font-weight: 600; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer">Book Now</a>
+            <div class="d-flex justify-content-center align-items-center mt-4" style="gap: 20px;">
+              <a href="../package/package.html" class="btn btn-warning" style="color: black; font-weight: 600; padding: 15px 30px; border: none; border-radius: 8px; cursor: pointer">Pesan Sekarang</a>
+              <a href="#beranda" class="btn btn-outline-light" style="color: #ffa726; font-weight: 600; padding: 15px 30px; border: bold; border-radius: 8px; cursor: pointer">Jelajahi Beranda</a>
+            </div>
+            
           </div>
         </section>
       </div>
     </div>
 
-    <div class="promo-banner mt-4">
+    <div id="beranda" style="margin-bottom: 50px;">
+
+    </div>
+    <div class="promo-banner mt-4" id="">
       <h2 class="card-title" style="color: #f6f9ff">Summer Cleaning Special - 20% Off!</h2>
     </div>
 
@@ -590,468 +597,493 @@
       </div>
 
       <section class="section home">
-        <div class="row">
-          <div class="">
-            <div class="card-body">
-              <div class="row" style="margin-bottom: 40px">
-                <section class="high col-xl-6">
-                  <div class="high">
-                    <div class="scrolling-wrapper">
-                      <div class="review-card">
-                        <div class="review-heading">
-                          <div class="col-12 ms-2">
-                            <h5 class="card-title mb-0">
-                              <i class="bi bi-hand-thumbs-up-fill me-2 text-danger"></i> Paket Populer <i><small>bulan ini</small></i>
-                            </h5>
-                          </div>
-                        </div>
-                        <div class="review-card" id="activity">
-                          <div class="review-heading">
-                            <div class="col-12 ms-2 mt-2">
-                              <span class="card-title mb-4">Essential Clean</span>
-                              <!-- Baris pertama: Informasi dan gambar -->
-                              <div class="row">
-                                <!-- Kolom untuk informasi (Telah dipesan dan Nilai) -->
-                                <div class="col-7">
-                                  <div class="row">
-                                    <div class="col-6 mt-3">
-                                      <p class="card-text mb-1">Telah dipesan:</p>
-                                      <p class="card-text mb-1">
-                                        <b style="font-size: 18px; color: #012970"><i class="bi bi-arrow-counterclockwise" style="color: #ffa726"></i> 200</b>
-                                      </p>
-                                    </div>
-                                    <div class="col-6 mt-3" style="padding-left: 20px">
-                                      <p class="card-text mb-1">Nilai:</p>
-                                      <p class="card-text mb-1">
-                                        <b style="font-size: 18px; color: #012970"><i class="bi bi-star-fill" style="color: #ffa726"></i> 4.9/5</b>
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div class="row mt-3">
-                                    <div class="col-12">
-                                      <p class="card-text mb-1">Pengguna Kembali:</p>
-                                      <p class="card-text mb-0">
-                                        <b style="color: #012970"><i class="bi bi-arrow-repeat" style="color: #ffa726"></i> 90%</b> pelanggan setia kami
-                                      </p>
-                                      <p class="card-text mb-1">menggunakan kembali paket ini</p>
-                                    </div>
-                                  </div>
-                                  <div class="col-6 mt-3">
-                                    <p class="card-text mb-1">Catatan Pemesananmu:</p>
-                                    <p class="card-text mb-0"><b style="font-size: 18px" class="text-success"> 3x</b></p>
-                                  </div>
-                                </div>
-                                <!-- Kolom untuk gambar -->
-                                <div class="col-xl-5">
-                                  <img src="../NiceAdmin/assets/img/essential 201.svg" alt="" width="220px" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="review-card" id="activity">
-                          <div class="review-heading">
-                            <div class="col-12 ms-2 mt-2">
-                              <span class="card-title mb-4">Flexible Clean</span>
-                              <!-- Baris pertama: Informasi dan gambar -->
-                              <div class="row">
-                                <!-- Kolom untuk informasi (Telah dipesan dan Nilai) -->
-                                <div class="col-7">
-                                  <div class="row">
-                                    <div class="col-6 mt-3">
-                                      <p class="card-text mb-1">Telah dipesan:</p>
-                                      <p class="card-text mb-1">
-                                        <b style="font-size: 18px; color: #012970"><i class="bi bi-arrow-counterclockwise" style="color: #ffa726"></i> 189</b>
-                                      </p>
-                                    </div>
-                                    <div class="col-6 mt-3" style="padding-left: 20px">
-                                      <p class="card-text mb-1">Nilai:</p>
-                                      <p class="card-text mb-1">
-                                        <b style="font-size: 18px; color: #012970"><i class="bi bi-star-fill" style="color: #ffa726"></i> 4.9/5</b>
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div class="row mt-3">
-                                    <div class="col-12">
-                                      <p class="card-text mb-1">Pengguna Kembali:</p>
-                                      <p class="card-text mb-0">
-                                        <b style="color: #012970"><i class="bi bi-arrow-repeat" style="color: #ffa726"></i> 70%</b> pelanggan setia kami
-                                      </p>
-                                      <p class="card-text mb-1">menggunakan kembali paket ini</p>
-                                    </div>
-                                  </div>
-                                  <div class="col-6 mt-3">
-                                    <p class="card-text mb-1">Catatan Pemesananmu:</p>
-                                    <p class="card-text mb-0"><b style="font-size: 18px" class="text-success"> 1x</b></p>
-                                  </div>
-                                </div>
-                                <!-- Kolom untuk gambar -->
-                                <div class="col-xl-5">
-                                  <img src="../NiceAdmin/assets/img/flexible 201.svg" alt="" width="220px" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="review-card" id="activity">
-                          <div class="review-heading">
-                            <div class="col-12 ms-2 mt-2">
-                              <span class="card-title mb-4">Intensive Clean</span>
-                              <!-- Baris pertama: Informasi dan gambar -->
-                              <div class="row">
-                                <!-- Kolom untuk informasi (Telah dipesan dan Nilai) -->
-                                <div class="col-7">
-                                  <div class="row">
-                                    <div class="col-6 mt-3">
-                                      <p class="card-text mb-1">Telah dipesan:</p>
-                                      <p class="card-text mb-1">
-                                        <b style="font-size: 18px; color: #012970"><i class="bi bi-arrow-counterclockwise" style="color: #ffa726"></i> 170</b>
-                                      </p>
-                                    </div>
-                                    <div class="col-6 mt-3" style="padding-left: 20px">
-                                      <p class="card-text mb-1">Nilai:</p>
-                                      <p class="card-text mb-1">
-                                        <b style="font-size: 18px; color: #012970"><i class="bi bi-star-fill" style="color: #ffa726"></i> 4.9/5</b>
-                                      </p>
-                                    </div>
-                                  </div>
-                                  <div class="row mt-3">
-                                    <div class="col-12">
-                                      <p class="card-text mb-1">Pengguna Kembali:</p>
-                                      <p class="card-text mb-0">
-                                        <b style="color: #012970"><i class="bi bi-arrow-repeat" style="color: #ffa726"></i> 70%</b> pelanggan setia kami
-                                      </p>
-                                      <p class="card-text mb-1">menggunakan kembali paket ini</p>
-                                    </div>
-                                  </div>
-                                  <div class="col-6 mt-3">
-                                    <p class="card-text mb-1">Catatan Pemesananmu:</p>
-                                    <p class="card-text mb-0"><b style="font-size: 18px" class="text-danger"> Belum ada</b></p>
-                                  </div>
-                                </div>
-                                <!-- Kolom untuk gambar -->
-                                <div class="col-xl-5">
-                                  <img src="../NiceAdmin/assets/img/intensive 201.svg" alt="" width="220px" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="review-heading">
-                          <div class="col-12 ms-2" style="text-align: end; padding-right: 20px">
-                            <h5 class="card-title mb-0">
-                              <a href="../package/package.html" style="color: #012970"> Pesan Sekarang <i class="bi bi-arrow-right"></i></a>
-                            </h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+        <section class="alert alert-light" style="margin-bottom: 40px">
+          <div class="review-heading">
+            <div class="col-12 ms-2">
+              <h5 class="card-title mb-0"><i class="bi bi-pin-angle-fill me-2 text-danger"></i> Sorotan Aktivitas</h5>
+            </div>
+          </div>
+
+          <div class="scrolling-wrapper">
+            <div class="alert alert-light review-card">
+              <div class="col-12 ms-2">
+                <span class="badge bg-warning mb-2">Sedang berjalan</span>
+                <div class="row">
+                  <div class="col-xl-4">
+                    <p class="card-text mb-0"><small>ID Pesanan:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>O-2137-1814</b></small>
+                    </p>
                   </div>
-                </section>
-
-                <section class="high col-xl-6">
-                  <div class="high">
-                    <div class="scrolling-wrapper">
-                      <div class="review-card">
-                        <div class="review-heading">
-                          <div class="col-12 ms-2">
-                            <h5 class="card-title mb-0"><i class="bi bi-pin-angle-fill me-2 text-danger"></i> <i>Highlight</i> Aktivitas</h5>
-                          </div>
-                        </div>
-
-                        <div class="review-card" id="activity">
-                          <div class="review-heading">
-                            <div class="col-12 ms-2">
-                              <span class="badge bg-warning mb-2">Sedang berjalan</span>
-                              <div class="row">
-                                <div class="col-xl-4">
-                                  <p class="card-text mb-0"><small>ID Pesanan:</small></p>
-                                  <p class="card-text mb-1">
-                                    <small><b class="">O-2137-1814</b></small>
-                                  </p>
-                                </div>
-                                <div class="col-xl-5">
-                                  <p class="card-text mb-0"><small>Paket:</small></p>
-                                  <p class="card-text mb-1">
-                                    <small><b class="">Essential Clean</b></small>
-                                  </p>
-                                </div>
-                                <div class="col-xl-3">
-                                  <p class="card-text mb-0"><small>Waktu:</small></p>
-                                  <p class="card-text mb-1">
-                                    <small><b class="">00:26:08</b></small>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="review-card" id="activity">
-                          <div class="review-heading">
-                            <div class="col-12 ms-2">
-                              <span class="badge bg-success mb-2">Terjadwal</span>
-                              <div class="row">
-                                <div class="col-xl-4">
-                                  <p class="card-text mb-0"><small>ID Pesanan:</small></p>
-                                  <p class="card-text mb-1">
-                                    <small><b class="">O-2137-1832</b></small>
-                                  </p>
-                                </div>
-                                <div class="col-xl-5">
-                                  <p class="card-text mb-0"><small>Paket:</small></p>
-                                  <p class="card-text mb-1">
-                                    <small><b class="">Essential Clean</b></small>
-                                  </p>
-                                </div>
-                                <div class="col-xl-3">
-                                  <p class="card-text mb-0"><small>Diatur untuk:</small></p>
-                                  <p class="card-text mb-1">
-                                    <small><b class="">06 Juli | 09:00</b></small>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="col-xl-5">
+                    <p class="card-text mb-0"><small>Paket:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>Essential Clean</b></small>
+                    </p>
                   </div>
-
-                  <div class="high">
-                    <div class="scrolling-wrapper mt-2">
-                      <div class="review-card">
-                        <div class="review-heading">
-                          <div class="col-12 ms-2">
-                            <h5 class="card-title mb-0"><i class="bi bi-percent me-2 text-danger"></i> Promo</h5>
-                          </div>
-                        </div>
-
-                        <div class="ticket-card" id="activity">
-                          <div class="discount-side">
-                            <div class="discount-text">20% OFF</div>
-                            <div class="dashed-line"></div>
-                          </div>
-                          <div class="ticket-content">
-                            <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
-                            <h6 class="ticket-title mb-1">Summer Cleaning Offer</h6>
-                            <p class="ticket-desc">Get 20% off</p>
-                          </div>
-                        </div>
-
-                        <div class="ticket-card" id="activity">
-                          <div class="discount-side">
-                            <div class="discount-text">17% OFF</div>
-                            <div class="dashed-line"></div>
-                          </div>
-                          <div class="ticket-content">
-                            <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
-                            <h6 class="ticket-title mb-1">Independence Day Sale</h6>
-                            <p class="ticket-desc">Get 17% off</p>
-                          </div>
-                        </div>
-
-                        <div class="ticket-card" id="activity">
-                          <div class="discount-side">
-                            <div class="discount-text">10% OFF</div>
-                            <div class="dashed-line"></div>
-                          </div>
-                          <div class="ticket-content">
-                            <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
-                            <h6 class="ticket-title mb-1">Welcome Sale</h6>
-                            <p class="ticket-desc">Get 10% off</p>
-                          </div>
-                        </div>
-
-                        <div class="ticket-card" id="activity">
-                          <div class="discount-side">
-                            <div class="discount-text">15% OFF</div>
-                            <div class="dashed-line"></div>
-                          </div>
-                          <div class="ticket-content">
-                            <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
-                            <h6 class="ticket-title mb-1">2 Packs Offer</h6>
-                            <p class="ticket-desc">Get 15% off</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-
-              <div class="alert alert-light mt-4" style="margin-bottom: 50px">
-                <div class="mb-0" style="margin-left: 15px; margin-right: 15px">
-                  <h5 class="card-title mb-0">Kategori Kamar</h5>
-                </div>
-                <div class="row" style="margin-left: 10px; margin-right: 10px">
-                  <div class="scrolling-wrapper d-flex review-card col-6">
-                    <div class="alert alert-light news-card me-3" style="width: 30rem">
-                      <img src="../NiceAdmin/assets/img/small2.svg" alt="Gambar Berita 1" class="card-img-top mb-0" style="object-fit: cover; width: 200px" />
-                      <div class="card-body p-2">
-                        <h6 class="alert-heading mb-1">Small</h6>
-                        <p class="mb-0"><small>≤ 7 m²</small></p>
-                      </div>
-                    </div>
-                    <div class="alert alert-light news-card me-3" style="width: 30rem">
-                      <img src="../NiceAdmin/assets/img/regular2.svg" alt="Gambar Berita 2" class="card-img-top" style="object-fit: cover; width: 200px" />
-                      <div class="card-body p-2">
-                        <h6 class="alert-heading mb-1">Regular</h6>
-                        <p class="mb-0"><small>7.1 - 11.5 m²</small></p>
-                      </div>
-                    </div>
-                    <div class="alert alert-light news-card me-3" style="width: 30rem">
-                      <img src="../NiceAdmin/assets/img/big2.svg" alt="Gambar Berita 3" class="card-img-top" style="object-fit: cover; width: 200px" />
-                      <div class="card-body p-2">
-                        <h6 class="alert-heading mb-1">Big</h6>
-                        <p class="mb-0"><small>> 11.5 m²</small></p>
-                      </div>
-                    </div>
-                    <!-- Tambahkan card berita lain jika diperlukan -->
-                  </div>
-                  <div class="col-6">
-                    <p class="mt-2">Kami menyesuaikan harga layanan kebersihan berdasarkan ukuran kamar:</p>
-                    <ol>
-                      <li>
-                        <strong>Small:</strong>
-                        <p>Ideal untuk kamar single atau studio kecil</p>
-                      </li>
-                      <li>
-                        <strong>Regular</strong>
-                        <p>Sesuai untuk kamar yang sedikit lebih besar, seperti kamar double atau studio berukuran sedang</p>
-                      </li>
-                      <li>
-                        <strong>Big</strong>
-                        <p>Dirancang untuk kamar yang lebih luas, seperti suite atau apartemen kecil</p>
-                      </li>
-                    </ol>
-
-                    <p>Pilih kategori yang sesuai agar biaya layanan adil dan transparan!</p>
+                  <div class="col-xl-3">
+                    <p class="card-text mb-0"><small>Waktu:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>00:26:08</b></small>
+                    </p>
                   </div>
                 </div>
               </div>
-
-              <div class="row alert alert-light" style="padding-top: 10px">
-                <div id="review" class="">
-                  <div class="mb-0" style="margin-left: 15px; margin-right: 15px">
-                    <h5 class="card-title mb-0">Ulasan</h5>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="col-12 ms-2">
+                <span class="badge bg-success mb-2">Terjadwal</span>
+                <div class="row">
+                  <div class="col-xl-4">
+                    <p class="card-text mb-0"><small>ID Pesanan:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>O-2137-1832</b></small>
+                    </p>
                   </div>
+                  <div class="col-xl-5">
+                    <p class="card-text mb-0"><small>Paket:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>Essential Clean</b></small>
+                    </p>
+                  </div>
+                  <div class="col-xl-3">
+                    <p class="card-text mb-0"><small>Diatur untuk:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>06 Juli | 09:00</b></small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="col-12 ms-2">
+                <span class="badge bg-danger mb-2">Belum dinilai</span>
+                <div class="row">
+                  <div class="col-xl-4">
+                    <p class="card-text mb-0"><small>ID Pesanan:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>O-2137-1800</b></small>
+                    </p>
+                  </div>
+                  <div class="col-xl-5">
+                    <p class="card-text mb-0"><small>Paket:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>Essential Clean</b></small>
+                    </p>
+                  </div>
+                  <div class="col-xl-3">
+                    <p class="card-text mb-0"><small>Waktu:</small></p>
+                    <p class="card-text mb-1">
+                      <small><b>3 bulan lalu</b></small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-                  <div class="scrolling-wrapper">
-                    <div class="alert alert-light review-card">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="mb-2 star-rating">
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
+          <div class="review-heading">
+            <div class="col-12 ms-2" style="text-align: end; padding-right: 20px">
+              <h5 class="card-title mb-0">
+                <a href="../order/order.html" style="color: #012970"> Lihat Sekarang <i class="bi bi-arrow-right"></i></a>
+              </h5>
+            </div>
+          </div>
+        </section>
+
+        <section class="alert alert-light" style="margin-bottom: 40px">
+          <div class="review-heading">
+            <div class="col-12 ms-2">
+              <h5 class="card-title mb-0">
+                <i class="bi bi-hand-thumbs-up-fill me-2 text-danger"></i> Paket Populer <i><small>bulan ini</small></i>
+              </h5>
+            </div>
+          </div>
+
+          <div class="scrolling-wrapper">
+            <div class="alert alert-light review-card">
+              <div class="review-heading">
+                <div class="col-12 ms-2 mt-2">
+                  <span class="card-title mb-4">Essential Clean</span>
+                  <!-- Baris pertama: Informasi dan gambar -->
+                  <div class="row">
+                    <!-- Kolom untuk informasi (Telah dipesan dan Nilai) -->
+                    <div class="col-7">
+                      <div class="row">
+                        <div class="col-6 mt-3">
+                          <p class="card-text mb-1">Telah dipesan:</p>
+                          <p class="card-text mb-1">
+                            <b style="font-size: 18px; color: #012970"><i class="bi bi-arrow-counterclockwise" style="color: #ffa726"></i> 200</b>
+                          </p>
                         </div>
-                        <p class="mt-0 mb-2" style="font-weight: 600">
-                          <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Essential Clean</span>
-                        </p>
+                        <div class="col-6 mt-3" style="padding-left: 20px">
+                          <p class="card-text mb-1">Nilai:</p>
+                          <p class="card-text mb-1">
+                            <b style="font-size: 18px; color: #012970"><i class="bi bi-star-fill" style="color: #ffa726"></i> 4.9/5</b>
+                          </p>
+                        </div>
                       </div>
-                      <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Sudah jadi langgananku!</small></h6>
-                      <p class="mb-1">
-                        <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
-                      </p>
-                      <p class="text-review">
-                        <i class="bi bi-quote" style="color: midnightblue"></i>
-                        <small
-                          >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar.
-                          Untung ada SpearKlean!</small
-                        >
-                      </p>
+                      <div class="row mt-3">
+                        <div class="col-12">
+                          <p class="card-text mb-1">Pengguna Kembali:</p>
+                          <p class="card-text mb-0">
+                            <b style="color: #012970"><i class="bi bi-arrow-repeat" style="color: #ffa726"></i> 90%</b> pelanggan setia kami
+                          </p>
+                          <p class="card-text mb-1">menggunakan kembali paket ini</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mt-3">
+                        <p class="card-text mb-1">Catatan Pemesananmu:</p>
+                        <p class="card-text mb-0"><b style="font-size: 18px" class="text-success"> 3x</b></p>
+                      </div>
                     </div>
-                    <div class="alert alert-light review-card">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="mb-2 star-rating">
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                        </div>
-                        <p class="mt-0 mb-2" style="font-weight: 600">
-                          <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Flexible Clean</span>
-                        </p>
-                      </div>
-                      <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Inovatif banget!</small></h6>
-                      <p class="mb-1">
-                        <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
-                      </p>
-                      <p class="text-review">
-                        <i class="bi bi-quote" style="color: midnightblue"></i>
-                        <small
-                          >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar.
-                          Untung ada SpearKlean!</small
-                        >
-                      </p>
-                    </div>
-                    <div class="alert alert-light review-card">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="mb-2 star-rating">
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                        </div>
-                        <p class="mt-0 mb-2" style="font-weight: 600">
-                          <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Essential Clean</span>
-                        </p>
-                      </div>
-                      <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Andalan saya banget!</small></h6>
-                      <p class="mb-1">
-                        <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
-                      </p>
-                      <p class="text-review">
-                        <i class="bi bi-quote" style="color: midnightblue"></i>
-                        <small
-                          >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar.
-                          Untung ada SpearKlean!</small
-                        >
-                      </p>
-                    </div>
-                    <div class="alert alert-light review-card">
-                      <div class="d-flex justify-content-between align-items-center">
-                        <div class="mb-2 star-rating">
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                          <i class="bi bi-star-fill" style="color: midnightblue"></i>
-                        </div>
-                        <p class="mt-0 mb-2" style="font-weight: 600">
-                          <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Intensive Clean</span>
-                        </p>
-                      </div>
-                      <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Bagus! Sangat bersih!</small></h6>
-                      <p class="mb-1">
-                        <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
-                      </p>
-                      <p class="text-review">
-                        <i class="bi bi-quote" style="color: midnightblue"></i>
-                        <small
-                          >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar.
-                          Untung ada SpearKlean!</small
-                        >
-                      </p>
+                    <!-- Kolom untuk gambar -->
+                    <div class="col-xl-5">
+                      <img src="../NiceAdmin/assets/img/essential 201.svg" alt="" width="220px" />
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
 
-                  <div class="review-heading">
-                    <div class="col-12 ms-2" style="text-align: end; padding-right: 10px">
-                      <h5 class="card-title mb-0">
-                        <a href="review.html" style="color: #012970"> Lihat Selengkapnya <i class="bi bi-arrow-right"></i></a>
-                      </h5>
+            <div class="alert alert-light review-card">
+              <div class="review-heading">
+                <div class="col-12 ms-2 mt-2">
+                  <span class="card-title mb-4">Flexible Clean</span>
+                  <!-- Baris pertama: Informasi dan gambar -->
+                  <div class="row">
+                    <!-- Kolom untuk informasi (Telah dipesan dan Nilai) -->
+                    <div class="col-7">
+                      <div class="row">
+                        <div class="col-6 mt-3">
+                          <p class="card-text mb-1">Telah dipesan:</p>
+                          <p class="card-text mb-1">
+                            <b style="font-size: 18px; color: #012970"><i class="bi bi-arrow-counterclockwise" style="color: #ffa726"></i> 189</b>
+                          </p>
+                        </div>
+                        <div class="col-6 mt-3" style="padding-left: 20px">
+                          <p class="card-text mb-1">Nilai:</p>
+                          <p class="card-text mb-1">
+                            <b style="font-size: 18px; color: #012970"><i class="bi bi-star-fill" style="color: #ffa726"></i> 4.9/5</b>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col-12">
+                          <p class="card-text mb-1">Pengguna Kembali:</p>
+                          <p class="card-text mb-0">
+                            <b style="color: #012970"><i class="bi bi-arrow-repeat" style="color: #ffa726"></i> 70%</b> pelanggan setia kami
+                          </p>
+                          <p class="card-text mb-1">menggunakan kembali paket ini</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mt-3">
+                        <p class="card-text mb-1">Catatan Pemesananmu:</p>
+                        <p class="card-text mb-0"><b style="font-size: 18px" class="text-success"> 1x</b></p>
+                      </div>
+                    </div>
+                    <!-- Kolom untuk gambar -->
+                    <div class="col-xl-5">
+                      <img src="../NiceAdmin/assets/img/flexible 201.svg" alt="" width="220px" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert alert-light review-card">
+              <div class="review-heading">
+                <div class="col-12 ms-2 mt-2">
+                  <span class="card-title mb-4">Intensive Clean</span>
+                  <!-- Baris pertama: Informasi dan gambar -->
+                  <div class="row">
+                    <!-- Kolom untuk informasi (Telah dipesan dan Nilai) -->
+                    <div class="col-7">
+                      <div class="row">
+                        <div class="col-6 mt-3">
+                          <p class="card-text mb-1">Telah dipesan:</p>
+                          <p class="card-text mb-1">
+                            <b style="font-size: 18px; color: #012970"><i class="bi bi-arrow-counterclockwise" style="color: #ffa726"></i> 170</b>
+                          </p>
+                        </div>
+                        <div class="col-6 mt-3" style="padding-left: 20px">
+                          <p class="card-text mb-1">Nilai:</p>
+                          <p class="card-text mb-1">
+                            <b style="font-size: 18px; color: #012970"><i class="bi bi-star-fill" style="color: #ffa726"></i> 4.9/5</b>
+                          </p>
+                        </div>
+                      </div>
+                      <div class="row mt-3">
+                        <div class="col-12">
+                          <p class="card-text mb-1">Pengguna Kembali:</p>
+                          <p class="card-text mb-0">
+                            <b style="color: #012970"><i class="bi bi-arrow-repeat" style="color: #ffa726"></i> 70%</b> pelanggan setia kami
+                          </p>
+                          <p class="card-text mb-1">menggunakan kembali paket ini</p>
+                        </div>
+                      </div>
+                      <div class="col-6 mt-3">
+                        <p class="card-text mb-1">Catatan Pemesananmu:</p>
+                        <p class="card-text mb-0"><b style="font-size: 18px" class="text-danger"> Belum ada</b></p>
+                      </div>
+                    </div>
+                    <!-- Kolom untuk gambar -->
+                    <div class="col-xl-5">
+                      <img src="../NiceAdmin/assets/img/intensive 201.svg" alt="" width="220px" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+
+          <div class="review-heading">
+            <div class="col-12 ms-2" style="text-align: end; padding-right: 20px">
+              <h5 class="card-title mb-0">
+                <a href="../package/package.html" style="color: #012970"> Pesan Sekarang <i class="bi bi-arrow-right"></i></a>
+              </h5>
+            </div>
+          </div>
+        </section>
+
+        <section class="alert alert-light" style="margin-bottom: 40px">
+          <div class="review-heading">
+            <div class="col-12 ms-2">
+              <h5 class="card-title mb-0"><i class="bi bi-percent me-2 text-danger"></i> Promo</h5>
+            </div>
+          </div>
+
+          <div class="alert alert-light" style="border: none; padding: 0; margin: 0;">
+            <div class="scrolling-wrapper">
+              <div class="alert alert-light" style="padding: 0; border: none; margin: 0;">
+                <div class="ticket-card review-card">
+                  <div class="discount-side">
+                    <div class="discount-text">20% OFF</div>
+                    <div class="dashed-line"></div>
+                  </div>
+                  <div class="ticket-content">
+                    <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
+                    <h6 class="ticket-title mb-1">Summer Cleaning Offer</h6>
+                    <p class="ticket-desc">Get 20% off</p>
+                  </div>
+                </div>
+              </div>
+              <div class="alert alert-light" style="padding: 0px; border: none; margin: 0px;">
+                <div class="ticket-card review-card">
+                  <div class="discount-side">
+                    <div class="discount-text">17% OFF</div>
+                    <div class="dashed-line"></div>
+                  </div>
+                  <div class="ticket-content">
+                    <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
+                    <h6 class="ticket-title mb-1">Independence Day Sale</h6>
+                    <p class="ticket-desc">Get 17% off</p>
+                  </div>
+                </div>
+              </div>
+              <div class="alert alert-light" style="padding: 0px; border: none; margin: 0px;">
+                <div class="ticket-card review-card">
+                  <div class="discount-side">
+                    <div class="discount-text">15% OFF</div>
+                    <div class="dashed-line"></div>
+                  </div>
+                  <div class="ticket-content">
+                    <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
+                    <h6 class="ticket-title mb-1">2 Packs Offer</h6>
+                    <p class="ticket-desc">Get 15% off</p>
+                  </div>
+                </div>
+              </div>
+              <div class="alert alert-light" style="padding: 0px; border: none; margin: 0px;">
+                <div class="ticket-card review-card">
+                  <div class="discount-side">
+                    <div class="discount-text">10% OFF</div>
+                    <div class="dashed-line"></div>
+                  </div>
+                  <div class="ticket-content">
+                    <h5 class="text-danger" style="font-size: 18px">Discount Coupon</h5>
+                    <h6 class="ticket-title mb-1">Welcome Sale</h6>
+                    <p class="ticket-desc">Get 10% off</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="alert alert-light" style="margin-bottom: 40px">
+          <div class="review-heading">
+            <div class="col-12 ms-2">
+              <h5 class="card-title mb-0"><i class="bi bi-bounding-box me-2 text-danger"></i> Kategori Kamar</h5>
+            </div>
+          </div>
+
+          <div class="row" style="margin-left: 2px; margin-right: 2px">
+            <div class="scrolling-wrapper d-flex review-card col-xl-6" style="transform: none; transition: none; border: none;">
+              <div class="alert alert-light news-card me-3" style="width: 30rem">
+                <img src="../NiceAdmin/assets/img/small2.svg" alt="Gambar Berita 1" class="card-img-top mb-0" style="object-fit: cover; width: 200px" />
+                <div class="card-body p-2">
+                  <h6 class="alert-heading mb-1">Small</h6>
+                  <p class="mb-0"><small>≤ 7 m²</small></p>
+                </div>
+              </div>
+              <div class="alert alert-light news-card me-3" style="width: 30rem">
+                <img src="../NiceAdmin/assets/img/regular2.svg" alt="Gambar Berita 2" class="card-img-top" style="object-fit: cover; width: 200px" />
+                <div class="card-body p-2">
+                  <h6 class="alert-heading mb-1">Regular</h6>
+                  <p class="mb-0"><small>7.1 - 11.5 m²</small></p>
+                </div>
+              </div>
+              <div class="alert alert-light news-card me-3" style="width: 30rem">
+                <img src="../NiceAdmin/assets/img/big2.svg" alt="Gambar Berita 3" class="card-img-top" style="object-fit: cover; width: 200px" />
+                <div class="card-body p-2">
+                  <h6 class="alert-heading mb-1">Big</h6>
+                  <p class="mb-0"><small>> 11.5 m²</small></p>
+                </div>
+              </div>
+              <!-- Tambahkan card berita lain jika diperlukan -->
+            </div>
+
+            <div class="col-xl-6">
+              <p class="mt-2">Kami menyesuaikan harga layanan kebersihan berdasarkan ukuran kamar:</p>
+              <ol>
+                <li>
+                  <strong>Small:</strong>
+                  <p>Ideal untuk kamar single atau studio kecil</p>
+                </li>
+                <li>
+                  <strong>Regular</strong>
+                  <p>Sesuai untuk kamar yang sedikit lebih besar, seperti kamar double atau studio berukuran sedang</p>
+                </li>
+                <li>
+                  <strong>Big</strong>
+                  <p>Dirancang untuk kamar yang lebih luas, seperti suite atau apartemen kecil</p>
+                </li>
+              </ol>
+
+              <p>Pilih kategori yang sesuai agar biaya layanan adil dan transparan!</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="alert alert-light" style="margin-bottom: 40px">
+          <div class="review-heading">
+            <div class="col-12 ms-2">
+              <h5 class="card-title mb-0"><i class="bi bi-chat-right-quote me-2 text-danger"></i> Ulasan</h5>
+            </div>
+          </div>
+
+          <div class="scrolling-wrapper">
+            <div class="alert alert-light review-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="mb-2 star-rating">
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                </div>
+                <p class="mt-0 mb-2" style="font-weight: 600">
+                  <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Essential Clean</span>
+                </p>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Sudah jadi langgananku!</small></h6>
+              <p class="mb-1">
+                <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
+              </p>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small
+                  >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar. Untung
+                  ada SpearKlean!</small
+                >
+              </p>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="mb-2 star-rating">
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                </div>
+                <p class="mt-0 mb-2" style="font-weight: 600">
+                  <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Flexible Clean</span>
+                </p>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Inovatif banget!</small></h6>
+              <p class="mb-1">
+                <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
+              </p>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small
+                  >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar. Untung
+                  ada SpearKlean!</small
+                >
+              </p>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="mb-2 star-rating">
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                </div>
+                <p class="mt-0 mb-2" style="font-weight: 600">
+                  <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Essential Clean</span>
+                </p>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Andalan saya banget!</small></h6>
+              <p class="mb-1">
+                <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
+              </p>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small
+                  >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar. Untung
+                  ada SpearKlean!</small
+                >
+              </p>
+            </div>
+            <div class="alert alert-light review-card">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="mb-2 star-rating">
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                  <i class="bi bi-star-fill" style="color: midnightblue"></i>
+                </div>
+                <p class="mt-0 mb-2" style="font-weight: 600">
+                  <span class="mt-1 ms-2 mb-1 badge rounded-pill bg-info text-light" style="font-size: 12px">Intensive Clean</span>
+                </p>
+              </div>
+              <h6 class="alert-heading mb-2" style="color: midnightblue"><small>Bagus! Sangat bersih!</small></h6>
+              <p class="mb-1">
+                <small><b style="font-weight: 600">Ghea</b> <i class="bi bi-dot"></i> Sukabirus</small>
+              </p>
+              <p class="text-review">
+                <i class="bi bi-quote" style="color: midnightblue"></i>
+                <small
+                  >SparKlean betul-betul membantu kegiatan bersih-bersih saya. Padahal rasanya saya udah mau nyerah karena sibuk skripsian. Mau pesen jasa kebersihan rasanya nanggung, kamarku kecil tapi harus nanggung biaya besar. Untung
+                  ada SpearKlean!</small
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="review-heading">
+            <div class="col-12 ms-2" style="text-align: end; padding-right: 10px">
+              <h5 class="card-title mb-0">
+                <a href="review.html" style="color: #012970"> Lihat Selengkapnya <i class="bi bi-arrow-right"></i></a>
+              </h5>
+            </div>
+          </div>
+        </section>
       </section>
     </main>
     <footer>
